@@ -11,10 +11,11 @@ function getQueryVariable(variable) {
 }
 
 var userType = getQueryVariable('type');
-
+const donor = document.getElementById('donor');
+const Organization = document.getElementById('Organization');
 if (userType === 'donor') {
-    
+    Organization.style.display = "none";
 } 
-else if (userType === 'organization') {
-    
+else{
+    donor.style.display = "none";
 }

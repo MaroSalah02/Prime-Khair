@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
+    <div class="donor_card">
         <h1>Login</h1>
-        <input type="text" placeholder="USERNAME" id="name">
-        <input type="password" placeholder="PASSWORD" id="password">
-        <div class="container">
-            <button id="Login">Login</button>
-            <button id="show">show password</button>
-        </div>
+        <form class="inputs">
+            <div class="card1">
+                <p>User name</p>
+                <input type="text" placeholder="Enter your user name" id="first_name">
+            </div>
+            <div class="card2">
+                <p>Password</p>
+                <input type="password" placeholder="Enter your password" id="password">
+            </div>
+        </form>
+        <button>Login</button>
     </div>
     <script src="script.js"></script>
 </body>
