@@ -66,3 +66,7 @@ button {
 button:hover {
     background-color: green;
 }
+.gender button{
+    border: none;
+    background-color: transparent;
+}

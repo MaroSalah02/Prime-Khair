@@ -15,7 +15,7 @@
                 <input type="text" placeholder="Enter your first name" id="first_name">
                 <p>Email</p>
                 <input type="text" placeholder="Enter your email" id="email">
-                <p>password</p>
+                <p>Password</p>
                 <input type="password" placeholder="Enter your password" id="password">
                 <p>Address</p>
                 <input type="text" placeholder="Enter your address" id="address">
@@ -23,7 +23,7 @@
             <div class="card2">
                 <p>Last name</p>
                 <input type="text" placeholder="Enter your last name" id="last_name">
-                <p>contact info</p>
+                <p>Contact info</p>
                 <input type="text" placeholder="Enter your contact info" id="contact">
                 <p>Area</p>
                 <input type="text" placeholder="Enter your area" id="area">
@@ -34,17 +34,19 @@
         <div class="gender">
             <h1>Gender</h1>
             <div class="radio">
-                <label>
-                    <input type="radio" name="gender" value="male"> Male
+                <label id="option1">
+                    <input type="radio" name="gender" value="male" > Male
                 </label>
-                <label>
-                    <input type="radio" name="gender" value="female"> Female
+                <label id="option2">
+                    <input type="radio" name="gender" value="female" > Female
                 </label>
-                <label>
+                <label  id="option3">
                     <input type="radio" name="gender" value="other"> Other
                 </label>
+                <button id="show_password">show password</button>
             </div>
         </div>
+        <p id="error" style="color: red;"></p>
         <button id="clicked" onclick="buttonClickHandler()">Register</button>
     </div>
 
@@ -79,17 +81,19 @@
         <div class="gender">
             <h1>Gender</h1>
             <div class="radio">
-                <label>
-                    <input type="radio" name="gender" value="male"> Male
+                <label id="option1">
+                    <input type="radio" name="gender" value="male" > Male
                 </label>
-                <label>
-                    <input type="radio" name="gender" value="female"> Female
+                <label id="option2">
+                    <input type="radio" name="gender" value="female" > Female
                 </label>
-                <label>
+                <label  id="option3">
                     <input type="radio" name="gender" value="other"> Other
                 </label>
+                <button id="show_password2">show password</button>
             </div>
         </div>
+        <p id="error" style="color: red;"></p>
         <button id="clicked" onclick="buttonClickHandler()">Register</button>
     </div>
     <script src="script.js"></script>

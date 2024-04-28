@@ -6,7 +6,9 @@ const donor_last = document.getElementById('last_name');
 const donor_contact = document.getElementById('contact');
 const donor_area = document.getElementById('area');
 const donor_governorate = document.getElementById('governorate');
-
+const option1 = document.getElementById('option1');
+const option2 = document.getElementById('option2');
+const option3 = document.getElementById('option3');
 const org_first_name = document.getElementById('org_first_name');
 const org_email = document.getElementById('org_email');
 const org_password = document.getElementById('org_password');
@@ -17,7 +19,9 @@ const org_contact = document.getElementById('org_contact');
 const org_area = document.getElementById('org_area');
 const org_governorate = document.getElementById('org_governorate');
 const org_type = document.getElementById('org_type'); 
-
+const error = document.getElementById('error'); 
+const show_password = document.getElementById("show_password");
+const show_password2 = document.getElementById("show_password2");
 var userType = getQueryVariable('type');
 const donor = document.getElementById('donor');
 const Organization = document.getElementById('Organization');
@@ -38,22 +42,49 @@ function getQueryVariable(variable) {
     }
     return null;
 }
-function check_empty(...args){
-    for(let input_field of args){
-        if(input_field.value === ""){
-            return true;
-        }
-    }
-    return false;
-}
-function validate(userType){
-    if(userType === 'donor') {
-        let is_empty = check_empty(donor_first,donor_email,donor_password,donor_address,donor_last,donor_contact,donor_area,donor_governorate);
-        console.log(is_empty);
+show_password.addEventListener('click',function() {
+    if(donor_password.type === 'password'){
+        donor_password.type = 'text';
+        show_password.innerText = 'hide password';
     }
     else {
-        let is_empty = check_empty(org_first_name,org_email,org_password,org_address,org_name,org_last_name,org_contact,org_area,org_governorate,org_type);
-        console.log(is_empty);
+        donor_password.type = 'password';
+        show_password.innerText = 'show password';
+    }
+});
+show_password2.addEventListener('click',function() {
+    if(org_password.type === 'password'){
+        org_password.type = 'text';
+        show_password.innerText = 'hide password';
+    }
+    else {
+        org_password.type = 'password';
+        show_password.innerText = 'show password';
+    }
+});
+function check_empty(...args){
+    let is_empty = false;
+    error.textContent = "";
+    for(let item of args){
+        item.style.border = "";
+    }
+    for(let input_field of args){
+        if(input_field.value === ""){
+            input_field.style.border = "2px solid red";
+            error.textContent = "The highlighted field(s) is empty";
+            is_empty = true;
+        }
+    }
+    return is_empty;
+}
+function validate(userType)
+{
+    if(userType === 'donor') {
+        check_empty(donor_first,donor_email,donor_password,donor_address,donor_last,donor_contact,donor_area,donor_governorate);
+    }
+    else 
+    {
+        check_empty(org_first_name,org_email,org_password,org_address,org_name,org_last_name,org_contact,org_area,org_governorate,org_type);
     }
 }
 function buttonClickHandler() {
