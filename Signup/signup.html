@@ -45,7 +45,7 @@
                 </label>
             </div>
         </div>
-        <button>Register</button>
+        <button id="clicked" onclick="buttonClickHandler()">Register</button>
     </div>
 
     <div class="Organization_card" id="Organization">
@@ -53,23 +53,27 @@
         <form class="inputs">
             <div class="card1">
                 <p>First name</p>
-                <input type="text" placeholder="Enter your first name" id="first_name">
+                <input type="text" placeholder="Enter your first name" id="org_first_name">
                 <p>Email</p>
-                <input type="text" placeholder="Enter your email" id="email">
-                <p>password</p>
-                <input type="password" placeholder="Enter your password" id="password">
-                <p>Address</p>
-                <input type="text" placeholder="Enter your address" id="address">
+                <input type="text" placeholder="Enter your email" id="org_email">
+                <p>Password</p>
+                <input type="password" placeholder="Enter your password" id="org_password">
+                <p>Organization Address</p>
+                <input type="text" placeholder="Enter Organization address" id="org_address">
+                <p>Organization Name</p>
+                <input type="text" placeholder="Enter Organization name" id="org_name">
             </div>
             <div class="card2">
                 <p>Last name</p>
-                <input type="text" placeholder="Enter your last name" id="last_name">
+                <input type="text" placeholder="Enter your last name" id="org_last_name">
                 <p>contact info</p>
-                <input type="text" placeholder="Enter your contact info" id="contact">
-                <p>Area</p>
-                <input type="text" placeholder="Enter your area" id="area">
-                <p>Governorate</p>
-                <input type="text" placeholder="Enter your governorate" id="governorate">
+                <input type="text" placeholder="Enter your contact info" id="org_contact">
+                <p>Organization Area</p>
+                <input type="text" placeholder="Enter Organization area" id="org_area">
+                <p>Organization Governorate</p>
+                <input type="text" placeholder="Enter Organization governorate" id="org_governorate">
+                <p>Organization type</p>
+                <input type="text" placeholder="Enter Organization type" id="org_type">
             </div>
         </form>
         <div class="gender">
@@ -86,7 +90,7 @@
                 </label>
             </div>
         </div>
-        <button>Register</button>
+        <button id="clicked" onclick="buttonClickHandler()">Register</button>
     </div>
     <script src="script.js"></script>
 </body>
