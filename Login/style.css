@@ -1,0 +1,36 @@
+*{
+    box-sizing: 0;
+    color: white;
+    text-align: center;
+    font-size: medium;
+}
+.card{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+.card input {
+    width: 40%;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5rem;
+    padding-left: 3rem;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    background-color: #f8fafc;
+    color: #0d0c22;
+    transition: .5s ease;
+    margin: auto;
+    margin-bottom: 10px;
+}
+.input::placeholder {
+    color: #94a3b8;
+}
+.input:focus, input:hover {
+    outline: none;
+    border-color: green;
+    background-color: #fff;
+    box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
+}
