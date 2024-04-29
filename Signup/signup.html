@@ -34,17 +34,58 @@
         <div class="gender">
             <h1>Gender</h1>
             <div class="radio">
-                <label id="option1">
-                    <input type="radio" name="gender" value="male" > Male
+                <label>
+                    <input type="radio" name="gender" value="male" id="option1" > Male
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="female" id="option2" > Female
+                </label>
+                <label >
+                    <input type="radio" name="gender" value="other" id="option3"> Other
+                </label>
+                <!-- <button id="show_password">show password</button> -->
+            </div>
+        </div>
+        <div class="gender">
+            <h1>Donor Type</h1>
+            <div class="radio">
+                <label >
+                    <input type="radio" name="gender" value="male" id="option1"> Regular
                 </label>
                 <label id="option2">
-                    <input type="radio" name="gender" value="female" > Female
+                    <input type="radio" name="gender" value="female" id="option2" > Doctor
                 </label>
                 <label  id="option3">
-                    <input type="radio" name="gender" value="other"> Other
+                    <input type="radio" name="gender" value="other" id="option3"> Teacher
                 </label>
-                <button id="show_password">show password</button>
             </div>
+        </div>
+        <form class="inputs">
+            <div class="card1">
+                <p>Clinic Address</p>
+                <input type="text" placeholder="Enter your Clinic address" id="clinic_address">
+                <p>Clinic Area</p>
+                <input type="text" placeholder="Enter your Clinic area" id="clinic_area">
+                <p>Clinic governorate</p>
+                <input type="text" placeholder="Enter your Clinic governorate" id="clinic_governrate">
+                <p>Specialty</p>
+                <input type="text" placeholder="Enter your Specialty" id="clinic_governrate">
+                <p>Number of Pro-bono cases</p>
+                <input type="number" placeholder="Enter your Number of cases" id="clinic_governrate" min="0"> 
+            </div>
+            <div id="map" style="width: 50%; height: 344px; border-radius: 10px;"></div>
+        </form>
+        <form class="inputs">
+            <div class="card1">
+                <p>Subjects</p>
+                <input type="text" placeholder="Enter your Subjects" id="teacher_address">
+                <p>Clinic Area</p>
+                <input type="number" placeholder="Enter your Number of classes or number of students" id="teacher_classes" min="0"> 
+            </div>
+        </form>
+        <div class="file_upload">
+            <label for="">Upload Verification</label>
+            <input type="file">
         </div>
         <p id="error" style="color: red;"></p>
         <button id="clicked" onclick="buttonClickHandler()">Register</button>
@@ -81,21 +122,27 @@
         <div class="gender">
             <h1>Gender</h1>
             <div class="radio">
-                <label id="option1">
-                    <input type="radio" name="gender" value="male" > Male
+                <label>
+                    <input type="radio" name="gender" value="male" id="option1" > Male
                 </label>
-                <label id="option2">
-                    <input type="radio" name="gender" value="female" > Female
+                <label>
+                    <input type="radio" name="gender" value="female" id="option2" > Female
                 </label>
-                <label  id="option3">
-                    <input type="radio" name="gender" value="other"> Other
+                <label>
+                    <input type="radio" name="gender" value="other" id="option3"> Other
                 </label>
-                <button id="show_password2">show password</button>
+                <!-- <button id="show_password2">show password</button> -->
             </div>
         </div>
+        <div class="file_upload">
+            <label for="">Upload Verification</label>
+            <input type="file">
+        </div>
+        <div id="map2" style="width: 100%; height: 300px; border-radius: 10px;"></div>
         <p id="error" style="color: red;"></p>
         <button id="clicked" onclick="buttonClickHandler()">Register</button>
     </div>
     <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1IETOWKceQ_gRqH-8Tdq18qzMRqmJebo&callback=initMap" async defer></script>
 </body>
 </html>

@@ -90,3 +90,52 @@ function validate(userType)
 function buttonClickHandler() {
     validate(userType);
 }
+function initMap() {
+    const center = { lat: 30.0444, lng: 31.2357 };
+
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12, 
+        center: center,
+    });
+
+    const marker = new google.maps.Marker({
+        position: center,
+        map: map,
+        title: "Marker Title",
+    });
+
+    function updateMap(markerPosition) {
+        map.setCenter(markerPosition);
+    }
+    google.maps.event.addListener(map, "click", function(event) {
+        const newMarkerPosition = event.latLng;
+        marker.setPosition(newMarkerPosition);
+        updateMap(newMarkerPosition);
+    });
+
+    const map2 = new google.maps.Map(document.getElementById("map2"), {
+        zoom: 12, 
+        center: center,
+    });
+    
+    const marker2 = new google.maps.Marker({
+        position: center,
+        map: map2,
+        title: "Marker Title",
+    });
+    
+    function updateMap2(markerPosition) {
+        map2.setCenter(markerPosition);
+    }
+    
+    google.maps.event.addListener(map2, "click", function(event) {
+        const newMarkerPosition = event.latLng;
+        marker2.setPosition(newMarkerPosition);
+        updateMap2(newMarkerPosition);
+    });
+    
+}
+initMap();
+
+
