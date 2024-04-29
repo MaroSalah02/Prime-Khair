@@ -1,14 +1,26 @@
 const donor_first = document.getElementById('first_name');
 const donor_email = document.getElementById('email');
+const email_error = document.getElementById('email_error');
 const donor_password = document.getElementById('password');
 const donor_address = document.getElementById('address');
 const donor_last = document.getElementById('last_name');
 const donor_contact = document.getElementById('contact');
 const donor_area = document.getElementById('area');
 const donor_governorate = document.getElementById('governorate');
-const option1 = document.getElementById('option1');
-const option2 = document.getElementById('option2');
-const option3 = document.getElementById('option3');
+
+const option_regular = document.getElementById('option_regular');
+const option_doctor = document.getElementById('option_doctor');
+const option_teacher = document.getElementById('option_teacher');
+
+const clinic_address = document.getElementById('clinic_address');
+const clinic_area = document.getElementById('clinic_area');
+const clinic_governrate = document.getElementById('clinic_governrate');
+const Specialty = document.getElementById('Specialty');
+const no_of_cases = document.getElementById('no_of_cases');
+
+const teacher_subjects = document.getElementById('teacher_subjects');
+const teacher_classes = document.getElementById('teacher_classes');
+
 const org_first_name = document.getElementById('org_first_name');
 const org_email = document.getElementById('org_email');
 const org_password = document.getElementById('org_password');
@@ -18,16 +30,24 @@ const org_last_name = document.getElementById('org_last_name');
 const org_contact = document.getElementById('org_contact');
 const org_area = document.getElementById('org_area');
 const org_governorate = document.getElementById('org_governorate');
-const org_type = document.getElementById('org_type'); 
+const org_type = document.getElementById('org_type');
+
 const error = document.getElementById('error'); 
-const show_password = document.getElementById("show_password");
-const show_password2 = document.getElementById("show_password2");
-var userType = getQueryVariable('type');
+
 const donor = document.getElementById('donor');
-const Organization = document.getElementById('Organization');
+
+const inputs_clinic = document.getElementById('inputs_clinic');
+const inputs_teacher = document.getElementById('inputs_teacher');
+const Upload = document.getElementById('Upload');
+
+inputs_clinic.style.display = "none";
+inputs_teacher.style.display = "none";
+Upload.style.display = "none";
+
 function return_back(){
     window.location.href = "../Main_page/index.html";
 }
+var userType = getQueryVariable('type');
 if (userType === 'donor') { 
     Organization.style.display = "none";
 } 
@@ -45,28 +65,7 @@ function getQueryVariable(variable) {
     }
     return null;
 }
-show_password.addEventListener('click',function() {
-    if(donor_password.type === 'password'){
-        donor_password.type = 'text';
-        show_password.innerText = 'hide password';
-    }
-    else {
-        donor_password.type = 'password';
-        show_password.innerText = 'show password';
-    }
-});
-show_password2.addEventListener('click',function() {
-    if(org_password.type === 'password'){
-        org_password.type = 'text';
-        show_password.innerText = 'hide password';
-    }
-    else {
-        org_password.type = 'password';
-        show_password.innerText = 'show password';
-    }
-});
 function check_empty(...args){
-    let is_empty = false;
     error.textContent = "";
     for(let item of args){
         item.style.border = "";
@@ -75,15 +74,52 @@ function check_empty(...args){
         if(input_field.value === ""){
             input_field.style.border = "2px solid red";
             error.textContent = "The highlighted field(s) is empty";
-            is_empty = true;
         }
     }
-    return is_empty;
 }
+option_regular.addEventListener('click',function(){
+    inputs_teacher.style.display = "none";
+    inputs_clinic.style.display = "none";
+    Upload.style.display = "none";
+});
+option_doctor.addEventListener('click',function(){
+    inputs_teacher.style.display = "none";
+    inputs_clinic.style.display = "flex";
+    Upload.style.display = "block";
+});
+option_teacher.addEventListener('click',function(){
+    inputs_teacher.style.display = "flex";
+    inputs_clinic.style.display = "none";
+    Upload.style.display = "block";
+});
 function validate(userType)
 {
+    email_error.textContent = "";
     if(userType === 'donor') {
         check_empty(donor_first,donor_email,donor_password,donor_address,donor_last,donor_contact,donor_area,donor_governorate);
+        if(option_doctor.checked){
+            check_empty(clinic_address,clinic_area,clinic_governrate,Specialty,no_of_cases);
+        }
+        if(option_teacher.checked){
+            check_empty(teacher_subjects,teacher_classes);
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!emailRegex.test(donor_email.value))
+        {
+            donor_email.style.border = "2px solid red";
+            email_error.textContent = "example: Ali@gmail.com";
+            email_error.style.color = "red";
+            email_error.style.fontWeight = "bold";
+            if(error.textContent != "")
+            {
+                error.appendChild(document.createElement('br'));
+                error.appendChild(document.createTextNode("Invalid email format"));
+            }
+            else
+            {
+                error.appendChild(document.createTextNode("Invalid email format"));
+            }
+        }
     }
     else 
     {

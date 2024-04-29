@@ -67,3 +67,16 @@ button {
 button:hover {
     background-color: green;
 }
+.back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back img {
+    cursor: pointer;
+    height: 60px;
+    margin-right: 970%;
+}
+.back h1 {
+    position: fixed;
+}

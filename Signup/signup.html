@@ -18,6 +18,7 @@
                 <input type="text" placeholder="Enter your first name" id="first_name">
                 <p>Email</p>
                 <input type="text" placeholder="Enter your email" id="email">
+                <p id="email_error"></p>
                 <p>Password</p>
                 <input type="password" placeholder="Enter your password" id="password">
                 <p>Address</p>
@@ -38,32 +39,31 @@
             <h1>Gender</h1>
             <div class="radio">
                 <label>
-                    <input type="radio" name="gender" value="male" id="option1" > Male
+                    <input type="radio" name="gender" value="male" id="option_male" > Male
                 </label>
                 <label>
-                    <input type="radio" name="gender" value="female" id="option2" > Female
+                    <input type="radio" name="gender" value="female" id="option_female" > Female
                 </label>
                 <label >
-                    <input type="radio" name="gender" value="other" id="option3"> Other
+                    <input type="radio" name="gender" value="other" id="option_other"> Other
                 </label>
-                <!-- <button id="show_password">show password</button> -->
             </div>
         </div>
         <div class="gender">
             <h1>Donor Type</h1>
             <div class="radio">
                 <label >
-                    <input type="radio" name="gender" value="male" id="option1"> Regular
+                    <input type="radio" name="gender" value="male" id="option_regular"> Regular
                 </label>
                 <label id="option2">
-                    <input type="radio" name="gender" value="female" id="option2" > Doctor
+                    <input type="radio" name="gender" value="female" id="option_doctor" > Doctor
                 </label>
                 <label  id="option3">
-                    <input type="radio" name="gender" value="other" id="option3"> Teacher
+                    <input type="radio" name="gender" value="other" id="option_teacher"> Teacher
                 </label>
             </div>
         </div>
-        <form class="inputs">
+        <form class="inputs" id="inputs_clinic">
             <div class="card1">
                 <p>Clinic Address</p>
                 <input type="text" placeholder="Enter your Clinic address" id="clinic_address">
@@ -72,21 +72,23 @@
                 <p>Clinic governorate</p>
                 <input type="text" placeholder="Enter your Clinic governorate" id="clinic_governrate">
                 <p>Specialty</p>
-                <input type="text" placeholder="Enter your Specialty" id="clinic_governrate">
+                <input type="text" placeholder="Enter your Specialty" id="Specialty">
                 <p>Number of Pro-bono cases</p>
-                <input type="number" placeholder="Enter your Number of cases" id="clinic_governrate" min="0"> 
+                <input type="number" placeholder="Enter your Number of cases" id="no_of_cases" min="0"> 
             </div>
             <div id="map" style="width: 50%; height: 344px; border-radius: 10px;"></div>
         </form>
-        <form class="inputs">
+        <form class="inputs" id="inputs_teacher">
             <div class="card1">
                 <p>Subjects</p>
                 <input type="text" placeholder="Enter your Subjects" id="teacher_subjects">
+            </div>
+            <div class="card2">
                 <p>Number of Classes</p>
                 <input type="number" placeholder="Enter No of classes or students" id="teacher_classes" min="0"> 
             </div>
         </form>
-        <div class="file_upload">
+        <div class="file_upload" id="Upload">
             <label for="">Upload Verification</label>
             <input type="file">
         </div>
@@ -105,6 +107,7 @@
                 <input type="text" placeholder="Enter your first name" id="org_first_name">
                 <p>Email</p>
                 <input type="text" placeholder="Enter your email" id="org_email">
+                <p id="email_error"></p>
                 <p>Password</p>
                 <input type="password" placeholder="Enter your password" id="org_password">
                 <p>Organization Address</p>
@@ -137,7 +140,6 @@
                 <label>
                     <input type="radio" name="gender" value="other" id="option3"> Other
                 </label>
-                <!-- <button id="show_password2">show password</button> -->
             </div>
         </div>
         <div class="file_upload">

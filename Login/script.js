@@ -11,3 +11,6 @@ show_password.addEventListener('click',function() {
         show_password.innerText = 'show password'
     }
 });
+function return_back(){
+    window.location.href = "../Main_page/index.html";
+}
