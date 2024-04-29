@@ -25,6 +25,9 @@ const show_password2 = document.getElementById("show_password2");
 var userType = getQueryVariable('type');
 const donor = document.getElementById('donor');
 const Organization = document.getElementById('Organization');
+function return_back(){
+    window.location.href = "../Main_page/index.html";
+}
 if (userType === 'donor') { 
     Organization.style.display = "none";
 } 

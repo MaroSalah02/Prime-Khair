@@ -8,7 +8,10 @@
 </head>
 <body>
     <div class="donor_card" id="donor">
-        <h1>Register</h1>
+        <div class="back">
+            <img src="../icons/left-arrow.png" id="back_button" onclick="return_back()">
+            <h1>Register</h1>
+        </div>
         <form class="inputs">
             <div class="card1">
                 <p>First name</p>
@@ -78,9 +81,9 @@
         <form class="inputs">
             <div class="card1">
                 <p>Subjects</p>
-                <input type="text" placeholder="Enter your Subjects" id="teacher_address">
-                <p>Clinic Area</p>
-                <input type="number" placeholder="Enter your Number of classes or number of students" id="teacher_classes" min="0"> 
+                <input type="text" placeholder="Enter your Subjects" id="teacher_subjects">
+                <p>Number of Classes</p>
+                <input type="number" placeholder="Enter No of classes or students" id="teacher_classes" min="0"> 
             </div>
         </form>
         <div class="file_upload">
@@ -92,7 +95,10 @@
     </div>
 
     <div class="Organization_card" id="Organization">
-        <h1>Register</h1>
+        <div class="back">
+            <img src="../icons/left-arrow.png" onclick="return_back()">
+            <h1>Register</h1>
+        </div>
         <form class="inputs">
             <div class="card1">
                 <p>First name</p>
