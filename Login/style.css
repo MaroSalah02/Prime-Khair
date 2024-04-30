@@ -58,7 +58,7 @@ body {
     margin-right: 100px;
 }
 button {
-    width: 100%;
+    width: 20%;
     cursor: pointer;
     transition: 0.5s;
     border-radius: 7px;
@@ -68,15 +68,12 @@ button:hover {
     background-color: green;
 }
 .back {
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 .back img {
     cursor: pointer;
     height: 60px;
-    margin-right: 970%;
-}
-.back h1 {
-    position: fixed;
+    margin-right: 32%;
 }

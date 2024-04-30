@@ -33,6 +33,8 @@ const org_governorate = document.getElementById('org_governorate');
 const org_type = document.getElementById('org_type');
 
 const error = document.getElementById('error'); 
+const error2 = document.getElementById('error2');
+const email_error2 = document.getElementById('email_error2');
 
 const donor = document.getElementById('donor');
 
@@ -66,19 +68,30 @@ function getQueryVariable(variable) {
     return null;
 }
 function check_empty(...args){
-    let is_empty = false;
     error.textContent = "";
-    for(let item of args){
-        item.style.border = "";
-    }
-    for(let input_field of args){
-        if(input_field.value === ""){
-            input_field.style.border = "2px solid red";
-            error.textContent = "The highlighted field(s) is empty";
-            is_empty = true;
+    if(userType === 'donor'){
+        for(let item of args){
+            item.style.border = "";
+        }
+        for(let input_field of args){
+            if(input_field.value === ""){
+                input_field.style.border = "2px solid red";
+                error.textContent = "The highlighted field(s) is empty";
+            }
         }
     }
-    return is_empty;
+    else{
+        for(let item of args){
+            item.style.border = "";
+        }
+        for(let input_field of args){
+            if(input_field.value === ""){
+                input_field.style.border = "2px solid red";
+                error2.textContent = "The highlighted field(s) is empty";
+            }
+        }
+    }
+
 }
 option_regular.addEventListener('click',function(){
     inputs_teacher.style.display = "none";
@@ -127,6 +140,23 @@ function validate(userType)
     else 
     {
         check_empty(org_first_name,org_email,org_password,org_address,org_name,org_last_name,org_contact,org_area,org_governorate,org_type);
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!emailRegex.test(org_email.value))
+        {
+            org_email.style.border = "2px solid red";
+            email_error2.textContent = "example: Ali@gmail.com";
+            email_error2.style.color = "red";
+            email_error2.style.fontWeight = "bold";
+            if(error2.textContent != "")
+            {
+                error2.appendChild(document.createElement('br'));
+                error2.appendChild(document.createTextNode("Invalid email format"));
+            }
+            else
+            {
+                error2.appendChild(document.createTextNode("Invalid email format"));
+            }
+        }
     }
 }
 function buttonClickHandler() {
@@ -178,6 +208,5 @@ function initMap() {
     });
     
 }
-initMap();
 
 
