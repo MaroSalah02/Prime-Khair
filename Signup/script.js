@@ -66,6 +66,7 @@ function getQueryVariable(variable) {
     return null;
 }
 function check_empty(...args){
+    let is_empty = false;
     error.textContent = "";
     for(let item of args){
         item.style.border = "";
@@ -74,8 +75,10 @@ function check_empty(...args){
         if(input_field.value === ""){
             input_field.style.border = "2px solid red";
             error.textContent = "The highlighted field(s) is empty";
+            is_empty = true;
         }
     }
+    return is_empty;
 }
 option_regular.addEventListener('click',function(){
     inputs_teacher.style.display = "none";
@@ -90,7 +93,7 @@ option_doctor.addEventListener('click',function(){
 option_teacher.addEventListener('click',function(){
     inputs_teacher.style.display = "flex";
     inputs_clinic.style.display = "none";
-    Upload.style.display = "block";
+    
 });
 function validate(userType)
 {

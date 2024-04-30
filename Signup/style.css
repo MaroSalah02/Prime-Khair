@@ -43,7 +43,7 @@ body {
     border-radius: 5px;
     padding-left: 15px;
 }
-.gender {
+.gender, .donor_type {
     width: 100%;
     display: flex;
     flex-direction: column;
