@@ -5,9 +5,15 @@ html {
   height: 100%;
   font-family: Arial, sans-serif;
 }
+
 body {
   background: url("../icons/org_background.jpg") no-repeat center center fixed;
   background-size: cover;
+}
+.page {
+  display: flex;
+  padding-left: 350px;
+  padding-top: 50px;
 }
 .sidebar {
   height: 70%;
@@ -15,9 +21,13 @@ body {
   position: fixed;
   left: 10px;
   top: 100px;
-  background-color: #333;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(9, 90, 151),
+    rgb(42, 83, 136)
+  );
   padding: 10px 0;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 0 5px rgb(105, 42, 136, 0.5);
   border-radius: 10px;
 }
 
@@ -56,4 +66,11 @@ body {
 .sidebar-nav ul li a:hover {
   background-color: #555;
   color: #fff;
+}
+.donation-post-box {
+  background-color: rgb(162, 204, 232);
+  width: 1000px;
+  height: 800px;
+  box-shadow: 3px 0 5px rgb(105, 42, 136, 0.5);
+  border-radius: 10px;
 }
