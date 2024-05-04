@@ -13,9 +13,10 @@
             display: flex;
             flex-direction: column;
             padding: 1.5%;
-            background-color: #e0eec6;
+            background-color: #c2a83e;
             border-radius: 20px;
             margin: 2%;
+            font-weight: bold;
         }
 
         .info-field>* {
@@ -35,28 +36,198 @@
             background-color: #f1f7ed;
             border-radius: 20px;
             width: 90%;
+            margin-left: 5%;
         }
 
         .full-row-item {
             flex-basis: 100%;
         }
+
+        /*Sidebar code*/
+
+        .sidebar {
+            height: 100%;
+            width: 3%;
+            position: fixed;
+            /* left: 10px; */
+            /* top: 3rem; */
+            /* background-image: linear-gradient(to bottom,
+                    rgb(9, 90, 151),
+                    rgb(42, 83, 136)); */
+            background-color: #243e36;
+            padding: 10px 0;
+            /* border-radius: 10px; */
+            z-index: 1;
+            transition: width 0.5s ease;
+            color: #FFFFFF;
+        }
+
+        .sidebar-shadow {
+            /* box-shadow: 5px 0 5px rgb(124, 169, 130, 0.5); */
+
+        }
+
+        .sidebar>* {
+            white-space: nowrap;
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav ul li {
+            margin: 10px;
+            border: #106fe3;
+            border-radius: 10px;
+            border-style: solid;
+            overflow: hidden;
+        }
+
+        .sidebar-nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidebar-nav ul li a:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        .visible {
+            opacity: 1;
+            transition: opacity 0.5s ease;
+
+        }
+
+        .fade {
+            opacity: 0;
+            transition: all 0.5s ease;
+            visibility: hidden;
+        }
+
+        .sidebar-button {
+            position: relative;
+            padding: 0.5vw;
+            margin-left: 0.5vw;
+            margin-top: 0.6vh;
+            align-items: center;
+            aspect-ratio: 1/1;
+        }
+
+        .sidebar-button:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+        }
+
+        .logo {
+            width: 77%;
+            overflow: hidden;
+            margin-right: 3vh;
+        }
+
+        .logo img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+
+        :root {
+            --menu-color: #243e36;
+        }
+
+        #sidebar-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* End of sidebar */
+
+        /* Topbar code */
+
+        .topbar {
+            /* background-image: linear-gradient(to bottom,
+                    rgb(9, 90, 151),
+                    rgb(42, 83, 136)); */
+            margin-left: 3%;
+            background-color: var(--menu-color);
+            min-height: 4vw;
+            align-content: center;
+        }
+
+        .topbar ul {
+            list-style: none;
+            margin: 0px;
+        }
+
+        .topbar ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0px;
+        }
     </style>
+
+    <link rel="stylesheet" type="text/css" href="general-styles.css">
 </head>
 
+
 <body>
+    <div class="sidebar">
+        <div id="sidebar-top">
+            <div class="sidebar-button" id="3-bars" onclick="expand()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div id="logo-img" class="visible fade logo">
+                <img src="/Images/prime-khair-high-resolution-logo-transparent.png" href="/Main_page/">
+            </div>
+        </div>
+
+        <hr class="visible fade">
+        <div class="profile-user-photo visible fade">
+            <img src="profile.jpg" alt="user" />
+            <p>Organization name</p>
+        </div>
+        <nav class="sidebar-nav visible fade">
+            <ul>
+                <li><a href="#">Profie Managment</a></li>
+                <li><a href="#">Create new Donation Post</a></li>
+                <li><a href="#">Donation History</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="topbar">
+        <ul>
+            <li>
+                <a href="/Main_page">Home</a>
+                <a></a>
+            </li>
+        </ul>
+    </div>
+
     <div id="container">
-        <h2 id="container-header" class="full-row-item" style="padding-left: 4%; padding-top: 1%;">
+        <h1 id="container-header" class="full-row-item" style="padding-left: 4%; padding-top: 1%;">
             Request Details
-        </h2>
+        </h1>
 
         <hr class="full-row-item">
-
-
-
-
     </div>
+
+
+    <script src="/Scripts/fulfilRequestScript.js"></script>
+    <script src="/Scripts/sidebar.js"></script>
+    <script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
 </body>
 
-<script src="fulfilRequestScript.js"></script>
+
 
 </html>

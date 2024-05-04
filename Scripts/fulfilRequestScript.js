@@ -14,12 +14,22 @@ function loadData() {
     }
   }
 
-  document.getElementById("container-header").innerHTML =
-    pageParams.get("type").charAt(0).toUpperCase() +
-    pageParams.get("type").slice(1) +
-    document.getElementById("container-header").innerHTML;
-  //console.log(pageParams.get("type"));
+  if (keys.length == 0) {
+    console.log("Error: No URL Query");
 
+    return;
+  }
+  console.log(keys);
+  try {
+    document.getElementById("container-header").innerHTML =
+      pageParams.get("type").charAt(0).toUpperCase() +
+      pageParams.get("type").slice(1) +
+      document.getElementById("container-header").innerHTML;
+    //console.log(pageParams.get("type"));
+  } catch {
+    console.log("Error: Unspecified type");
+  }
+  //Shows the request info for confirmation, loads it from the URL query
   keys.forEach((key) => {
     var infoField = document.createElement("div");
     infoField.classList.add("info-field");
@@ -39,6 +49,7 @@ function loadData() {
     document.getElementById("container").appendChild(infoField);
   });
 
+  //Adds the quantity selection box for the selected request
   var infoField = document.createElement("div");
   infoField.classList.add("info-field");
 
