@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .info-field {
+            flex-basis: 18%;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5%;
+            background-color: #c2a83e;
+            border-radius: 20px;
+            margin: 2%;
+            font-weight: bold;
+        }
+
+        .info-field>* {
+            max-width: 80%;
+            min-width: 80%;
+        }
+
+        .info-label {
+            margin-bottom: 2%;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: start;
+            background-color: #f1f7ed;
+            border-radius: 20px;
+            width: 90%;
+            margin-left: 5%;
+        }
+
+        .full-row-item {
+            flex-basis: 100%;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="/Styles/navElements.css">
+
+</head>
+
+
+<body>
+    <div class="sidebar">
+        <div id="sidebar-top">
+            <div class="sidebar-button" id="3-bars" onclick="expand()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div id="logo-img" class="visible fade logo">
+                <img src="/Images/prime-khair-high-resolution-logo-transparent.png" href="/Main_page/">
+            </div>
+        </div>
+
+        <hr class="visible fade">
+        <div class="profile-user-photo visible fade">
+            <img src="profile.jpg" alt="user" />
+            <p>Organization name</p>
+        </div>
+        <nav class="sidebar-nav visible fade">
+            <ul>
+                <li><a href="#">Profie Managment</a></li>
+                <li><a href="#">Create new Donation Post</a></li>
+                <li><a href="#">Donation History</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="topbar">
+        <ul>
+            <li>
+                <a href="/Main_page">Home</a>
+                <a></a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="container">
+        <h1 id="container-header" class="full-row-item" style="padding-left: 4%; padding-top: 1%;">
+            Request Details
+        </h1>
+
+        <hr class="full-row-item">
+    </div>
+
+
+    <script src="/Scripts/fulfilRequestScript.js"></script>
+    <script src="/Scripts/sidebar.js"></script>
+    <script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
+</body>
+
+
+
+</html>
