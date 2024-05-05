@@ -110,6 +110,9 @@
   margin-left: 3%;
   background-color: var(--menu-color);
   min-height: 4vw;
+  max-height: 4vw;
+  z-index: 1;
+
   align-content: center;
 }
 
