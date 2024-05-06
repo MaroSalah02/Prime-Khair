@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
     font-size: 16px;
+    color: #fff;
 }
 h1 {
     font-size: 25px;
@@ -18,7 +19,7 @@ body {
     width: 100%;
     margin: auto;
     margin-top: 1%;
-    background-color: #fff;
+    background-color: #2a3e36;
     padding: 20px 35px;
     border-radius: 5px;
     display: flex;
@@ -57,14 +58,17 @@ body {
     justify-content: space-between;
 }
 button {
-    width: 100%;
-    cursor: pointer;
-    transition: 0.5s;
-    border-radius: 7px;
+    color: black;
+    background-color: #c2a83e;
+    width: 20%;
+    padding: 10px;
+    border-radius: 5px;
     margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 button:hover {
-    background-color: green;
+    scale: 1.2;
 }
 .gender button{
     border: none;
@@ -91,4 +95,10 @@ button:hover {
     cursor: pointer;
     height: 60px;
     margin-right: 32%;
+}
+.donor_card button {
+    width: 20%;
+}
+.Organization_card button {
+    width: 20%;
 }

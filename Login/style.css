@@ -5,12 +5,13 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
     font-size: 16px;
+    color: #fff;
 }
 h1 {
     font-size: 25px;
 }
 body {
-    background: url('../icons/dontae_l.jpg') no-repeat center center fixed;
+    background: url('../icons/donate.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 .donor_card {
@@ -18,7 +19,7 @@ body {
     width: 100%;
     margin: auto;
     margin-top: 2%;
-    background-color: #fff;
+    background-color: #2a3e36;
     padding: 25px 30px;
     border-radius: 5px;
     display: flex;
@@ -43,6 +44,8 @@ body {
     outline: none;
     border-radius: 5px;
     padding-left: 15px;
+    color: black;
+    font-weight: bold;
 }
 .gender {
     width: 100%;
@@ -58,14 +61,16 @@ body {
     margin-right: 100px;
 }
 button {
+    color: black;
+    background-color: #c2a83e;
     width: 20%;
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: 0.5s;
-    border-radius: 7px;
-    margin-top: 10px;
+    transition: 0.3s ease-in-out;
 }
 button:hover {
-    background-color: green;
+    scale: 1.2;
 }
 .back {
     width: 100%;
@@ -76,4 +81,12 @@ button:hover {
     cursor: pointer;
     height: 60px;
     margin-right: 32%;
+    transition: 0.3s ease-in-out;
 }
+.back img:hover {
+    cursor: pointer;
+    height: 60px;
+    margin-right: 32%;
+    scale: 1.2;
+}
+

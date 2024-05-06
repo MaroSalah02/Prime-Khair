@@ -47,173 +47,153 @@ inputs_teacher.style.display = "none";
 Upload.style.display = "none";
 
 function return_back() {
-  window.location.href = "../Main_page/index.html";
+window.location.href = "../Main_page/index.html";
 }
 var userType = getQueryVariable("type");
 if (userType === "donor") {
-  Organization.style.display = "none";
+Organization.style.display = "none";
 } else {
-  donor.style.display = "none";
+    donor.style.display = "none";
 }
 function getQueryVariable(variable) {
-  var query = window.location.search.substring(1);
-  var vars = query.split("&");
-  for (var i = 0; i < vars.length; i++) {
-    var pair = vars[i].split("=");
-    if (pair[0] === variable) {
-      return pair[1];
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] === variable) {
+        return pair[1];
+        }
     }
-  }
-  return null;
+    return null;
 }
 function check_empty(...args) {
-  error.textContent = "";
-  if (userType === "donor") {
-    for (let item of args) {
-      item.style.border = "";
+    error.textContent = "";
+    if (userType === "donor") {
+        for (let item of args) {
+        item.style.border = "";
     }
-    for (let input_field of args) {
-      if (input_field.value === "") {
-        input_field.style.border = "2px solid red";
-        error.textContent = "The highlighted field(s) is empty";
-      }
+        for (let input_field of args) {
+        if (input_field.value === "") {
+            input_field.style.border = "2px solid red";
+            error.textContent = "The highlighted field(s) is empty";
+        }
+        }
+    } else {
+        for (let item of args) {
+        item.style.border = "";
+        }
+        for (let input_field of args) {
+        if (input_field.value === "") {
+            input_field.style.border = "2px solid red";
+            error2.textContent = "The highlighted field(s) is empty";
+        }
+        }
     }
-  } else {
-    for (let item of args) {
-      item.style.border = "";
-    }
-    for (let input_field of args) {
-      if (input_field.value === "") {
-        input_field.style.border = "2px solid red";
-        error2.textContent = "The highlighted field(s) is empty";
-      }
-    }
-  }
 }
 option_regular.addEventListener("click", function () {
-  inputs_teacher.style.display = "none";
-  inputs_clinic.style.display = "none";
-  Upload.style.display = "none";
-});
-option_doctor.addEventListener("click", function () {
-  inputs_teacher.style.display = "none";
-  inputs_clinic.style.display = "flex";
-  Upload.style.display = "block";
-});
-option_teacher.addEventListener("click", function () {
-  inputs_teacher.style.display = "flex";
-  inputs_clinic.style.display = "none";
+    inputs_teacher.style.display = "none";
+    inputs_clinic.style.display = "none";
+    Upload.style.display = "none";
+    });
+    option_doctor.addEventListener("click", function () {
+    inputs_teacher.style.display = "none";
+    inputs_clinic.style.display = "flex";
+    Upload.style.display = "block";
+    });
+    option_teacher.addEventListener("click", function () {
+    inputs_teacher.style.display = "flex";
+    inputs_clinic.style.display = "none";
 });
 function validate(userType) {
-  email_error.textContent = "";
-  if (userType === "donor") {
-    check_empty(
-      donor_first,
-      donor_email,
-      donor_password,
-      donor_address,
-      donor_last,
-      donor_contact,
-      donor_area,
-      donor_governorate
-    );
+    email_error.textContent = "";
+    if (userType === "donor") {
+    check_empty(donor_first,donor_email,donor_password,donor_address,donor_last,donor_contact,donor_area,donor_governorate);
     if (option_doctor.checked) {
-      check_empty(
+        check_empty(
         clinic_address,
         clinic_area,
         clinic_governrate,
         Specialty,
         no_of_cases
-      );
+        );
     }
     if (option_teacher.checked) {
-      check_empty(teacher_subjects, teacher_classes);
+        check_empty(teacher_subjects, teacher_classes);
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(donor_email.value)) {
-      donor_email.style.border = "2px solid red";
-      email_error.textContent = "example: Ali@gmail.com";
-      email_error.style.color = "red";
-      email_error.style.fontWeight = "bold";
-      if (error.textContent != "") {
-        error.appendChild(document.createElement("br"));
-        error.appendChild(document.createTextNode("Invalid email format"));
-      } else {
-        error.appendChild(document.createTextNode("Invalid email format"));
-      }
+        donor_email.style.border = "2px solid red";
+        email_error.textContent = "example: Ali@gmail.com";
+        email_error.style.color = "red";
+        email_error.style.fontWeight = "bold";
+        if (error.textContent != "") {
+            error.appendChild(document.createElement("br"));
+            error.appendChild(document.createTextNode("Invalid email format"));
+        } else {
+            error.appendChild(document.createTextNode("Invalid email format"));
+        }
     }
-  } else {
-    check_empty(
-      org_first_name,
-      org_email,
-      org_password,
-      org_address,
-      org_name,
-      org_last_name,
-      org_contact,
-      org_area,
-      org_governorate,
-      org_type
-    );
+    } else {
+    check_empty(org_first_name,org_email,org_password,org_address,org_name,org_last_name,org_contact,org_area,org_governorate,org_type);
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(org_email.value)) {
-      org_email.style.border = "2px solid red";
-      email_error2.textContent = "example: Ali@gmail.com";
-      email_error2.style.color = "red";
-      email_error2.style.fontWeight = "bold";
-      if (error2.textContent != "") {
-        error2.appendChild(document.createElement("br"));
-        error2.appendChild(document.createTextNode("Invalid email format"));
-      } else {
-        error2.appendChild(document.createTextNode("Invalid email format"));
-      }
+        org_email.style.border = "2px solid red";
+        email_error2.textContent = "example: Ali@gmail.com";
+        email_error2.style.color = "red";
+        email_error2.style.fontWeight = "bold";
+        if (error2.textContent != "") {
+            error2.appendChild(document.createElement("br"));
+            error2.appendChild(document.createTextNode("Invalid email format"));
+        } else {
+            error2.appendChild(document.createTextNode("Invalid email format"));
+        }
+        }
     }
-  }
 }
 function buttonClickHandler() {
-  validate(userType);
+    validate(userType);
 }
 function initMap() {
-  const center = { lat: 30.0444, lng: 31.2357 };
+    const center = { lat: 30.0444, lng: 31.2357 };
 
-  const map = new google.maps.Map(document.getElementById("map"), {
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: center,
+});
+
+    const marker = new google.maps.Marker({
+        position: center,
+        map: map,
+        title: "Marker Title",
+});
+
+function updateMap(markerPosition) {
+        map.setCenter(markerPosition);
+}
+    google.maps.event.addListener(map, "click", function (event) {
+        const newMarkerPosition = event.latLng;
+        marker.setPosition(newMarkerPosition);
+        updateMap(newMarkerPosition);
+});
+
+    const map2 = new google.maps.Map(document.getElementById("map2"), {
     zoom: 12,
     center: center,
-  });
+    });
 
-  const marker = new google.maps.Marker({
-    position: center,
-    map: map,
-    title: "Marker Title",
-  });
-
-  function updateMap(markerPosition) {
-    map.setCenter(markerPosition);
-  }
-  google.maps.event.addListener(map, "click", function (event) {
-    const newMarkerPosition = event.latLng;
-    marker.setPosition(newMarkerPosition);
-    updateMap(newMarkerPosition);
-  });
-
-  const map2 = new google.maps.Map(document.getElementById("map2"), {
-    zoom: 12,
-    center: center,
-  });
-
-  const marker2 = new google.maps.Marker({
+    const marker2 = new google.maps.Marker({
     position: center,
     map: map2,
     title: "Marker Title",
-  });
+    });
 
-  function updateMap2(markerPosition) {
+    function updateMap2(markerPosition) {
     map2.setCenter(markerPosition);
-  }
+    }
 
-  google.maps.event.addListener(map2, "click", function (event) {
+    google.maps.event.addListener(map2, "click", function (event) {
     const newMarkerPosition = event.latLng;
     marker2.setPosition(newMarkerPosition);
     updateMap2(newMarkerPosition);
-  });
+    });
 }

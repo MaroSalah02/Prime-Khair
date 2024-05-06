@@ -14,7 +14,7 @@ show_password.addEventListener('click',function() {
     }
 });
 function return_back(){
-    window.location.href = "../Main_page/index.html";
+    window.location.href = "../main/main.html";
 }
 function check_empty(...args){
     error.textContent = "";
