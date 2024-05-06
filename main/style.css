@@ -20,7 +20,7 @@ header {
     background-color: #2a3e36;
     padding: 25px;
     padding-right: 40px;
-    transition: transform 0.3s; /* Add transition for smooth movement */
+    transition: transform 0.3s;
 }
 header img {
     width: 300px;
@@ -120,9 +120,9 @@ header img {
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
-.section1 button:hover {
-    scale: 1.1;
-}
+    .section1 button:hover {
+        scale: 1.1;
+    }
 /* .section2 {
     background: url('') no-repeat center center fixed;
     background-size: contain;
