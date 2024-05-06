@@ -10,7 +10,7 @@
             rgb(9, 90, 151),
             rgb(42, 83, 136)); */
   background-color: #243e36;
-  padding: 10px 0;
+  padding: 10px 0px;
   /* border-radius: 10px; */
   z-index: 30;
   transition: width 0.5s ease;
@@ -29,14 +29,17 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  
 }
 
 .sidebar-nav ul li {
-  margin: 10px;
-  border: #106fe3;
-  border-radius: 10px;
+  margin: 0 10px 10px 10px;
+  border: white;
+  border-width: 1px;
+  border-radius: 0px;
   border-style: solid;
   overflow: hidden;
+  width: 95%;
 }
 
 .sidebar-nav ul li a {
