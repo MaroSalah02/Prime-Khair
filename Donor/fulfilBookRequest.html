@@ -173,7 +173,7 @@
                     </p>
                 </div>
 
-                <form id="fulfil-form">
+                <form id="fulfil-form" action="/Donor/fulfilBookRequest.html">
 
                     <div style="display: flex; flex-direction: row; width: 100%; justify-content: center;">
                         <div style="margin-right: 20%;">
@@ -207,7 +207,7 @@
 
 
 
-                    <button type="submit" style="align-self: center;" onclick="passValues()">
+                    <button onclick="getData()">
                         Confirm
                     </button>
                 </form>
@@ -227,6 +227,10 @@
 
 </body>
 
-
+<script>
+    function getData() {
+        console.log(document.getElementById('quantity-input').value);
+    }
+</script>
 
 </html>

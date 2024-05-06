@@ -112,8 +112,23 @@
   min-height: 4vw;
   max-height: 4vw;
   z-index: 1;
+  display: flex;
+  flex-direction: row;
 
   align-content: center;
+}
+/* .topbar > * {
+  margin-right: 2vw;
+} */
+
+.topbar select {
+  border-radius: 0px;
+  background-color: white;
+}
+
+.topbar input {
+  border-radius: 0px;
+  background-color: white;
 }
 
 .topbar ul {
