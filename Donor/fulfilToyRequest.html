@@ -60,12 +60,11 @@
         }
 
         #header-bg {
-            width: 100%;
+            width: 97%;
             height: 14%;
-            position: fixed;
+            position: absolute;
             background-image: url(/icons/banner-toy.jpg);
-            background-clip: border-box;
-            filter: brightness(0.5);
+            filter: brightness(0.5) hue-rotate(230deg);
             z-index: -1;
             background-size: 12%;
         }
@@ -115,7 +114,7 @@
     <!-- HENA MATDAWWARSH KTEER -->
 
     <div id="page">
-        <div class="full-row-item" style="max-height: 200px;">
+        <div class="full-row-item">
             <div id="header-bg">
 
             </div>
@@ -163,28 +162,59 @@
                     <p id="category-label" class="label category">Category: </p>
                     <p id="category-value" class="value category">??</p>
                 </div>
-                <!-- <div class="info-field">
-                    <p id="summary-label" class="label summary">Summary:</p>
-                    <p id="summary-value" class="value summary">
-                        Calculus is designed for the typical two\- or three\-semester general calculus course,
-                        incorporating innovative features to enhance student learning. The book guides students through
-                        the core concepts of calculus and helps them understand how those concepts apply to their lives
-                        and the world around them. Due to the comprehensive nature of the material, we are offering the
-                        book in three volumes for flexibility and efficiency. Volume 3 covers parametric equations and
-                        polar coordinates, vectors, functions of several variables, multiple integration, and
-                        second\-order differential equations.
-                    </p>
-                </div> -->
+
+                <form id="fulfil-form">
+
+                    <div style="display: flex; flex-direction: row; width: 100%; justify-content: center;">
+                        <div style="margin-right: 20%;">
+                            <label>Quantity: </label>
+                            <input id="quantity-input" type="number" min="1" placeholder="1">
+                        </div>
+                        <div>
+                            <label>Method of Transportation: </label>
+                            <select id="transportation-input">
+                                <option value="" disabled selected>
+                                    Select an Option
+                                </option>
+                                <option value="car">
+                                    Car
+                                </option>
+                                <option value="motorbike">
+                                    Motorbike
+                                </option>
+                                <option value="Truck">
+                                    Truck
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label>
+                        Pickup Location
+                    </label>
+
+                    <div id="map" style="width: 100%; min-height: 300px; max-height: 300px; border-radius: 10px;"></div>
+
+
+                    <button type="submit" style="align-self: center;" onclick="passValues()">
+                        Confirm
+                    </button>
+                </form>
             </div>
 
         </div>
     </div>
 
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1IETOWKceQ_gRqH-8Tdq18qzMRqmJebo&callback=initMap"
+        async defer></script>
+    <script src="/Scripts/map.js"></script>
 
     <script src="/Scripts/fulfilBookRequestScript.js"></script>
     <script src="/Scripts/sidebar.js"></script>
     <script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
+
+
 </body>
 
 

@@ -58,6 +58,7 @@
   flex-wrap: wrap;
   align-items: center;
   color: var(--secondary-color);
+  max-height: 100px;
 }
 
 .back-arrow i {
@@ -78,4 +79,38 @@
 #info-table {
   justify-content: left;
   flex-grow: 1;
+}
+
+#fulfil-form {
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+#fulfil-form > * {
+  flex-basis: 100%;
+  margin-bottom: 4vh;
+}
+
+button {
+  background-color: rgba(
+    var(--button-red),
+    var(--button-green),
+    var(--button-blue),
+    0.5
+  );
+  width: 25%;
+  border-radius: 100vh;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--button-color);
+}
+
+button:active {
+  /* transform: translateX(2px) translateY(2px); */
+  filter: brightness(0.8);
 }
