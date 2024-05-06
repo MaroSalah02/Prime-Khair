@@ -34,9 +34,9 @@ body {
 .profile-user-photo img {
   width: 60px;
   height: 60px;
-  border-radius: 50%; /* Makes the image round */
+  border-radius: 50%;
   display: block;
-  margin: 20px auto 10px; /* Centers the image in the sidebar */
+  margin: 20px auto 10px;
 }
 .profile-user-photo p {
   color: #fff;
