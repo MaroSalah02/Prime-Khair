@@ -58,6 +58,17 @@
             margin-top: 4.5vh;
             font-size: 20px;
         }
+
+        #header-bg {
+            width: 100%;
+            height: 14%;
+            position: fixed;
+            background-image: url(/icons/banner-toy.jpg);
+            background-clip: border-box;
+            filter: brightness(0.5);
+            z-index: -1;
+            background-size: 12%;
+        }
     </style>
 
     <link rel="stylesheet" type="text/css" href="/Styles/navElements.css">
@@ -104,20 +115,24 @@
     <!-- HENA MATDAWWARSH KTEER -->
 
     <div id="page">
+        <div class="full-row-item" style="max-height: 200px;">
+            <div id="header-bg">
 
-        <div id="container-header" class="full-row-item">
-
-            <div class="back-arrow" onclick="goBack()">
-                <i class="fa-solid fa-arrow-left"></i>
             </div>
+            <div id="container-header" class="full-row-item">
+
+                <div class="back-arrow" onclick="goBack()">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
 
 
-            <h1 style=" flex-basis: 90%;">
-                Request Details
-            </h1>
+                <h1 style=" flex-basis: 90%;">
+                    Request Details
+                </h1>
 
 
-            <hr class="full-row-item">
+                <hr class="full-row-item">
+            </div>
         </div>
         <div id="info-panel">
             <div id="toy-image">
