@@ -47,7 +47,7 @@ inputs_teacher.style.display = "none";
 Upload.style.display = "none";
 
 function return_back() {
-window.location.href = "../Main_page/index.html";
+window.location.href = "../main/main.html";
 }
 var userType = getQueryVariable("type");
 if (userType === "donor") {
