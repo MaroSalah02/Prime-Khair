@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Supplies</title>
+    <link rel="stylesheet" href="CSS/organizationMoreDetails.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/navElements.css" />
+  </head>
+  <body>
+    <div class="sidebar-container">
+      <div class="sidebar">
+        <div id="sidebar-top">
+          <div
+            style="cursor: pointer"
+            class="sidebar-button"
+            id="3-bars"
+            onclick="expand()"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div id="logo-img" class="visible fade logo">
+            <img
+              src="../icons/prime-khair-high-resolution-logo-transparent.png"
+            />
+          </div>
+        </div>
+        <hr class="visible fade" />
+        <div class="profile-user-photo visible fade">
+          <img src="profile.jpg" alt="user" />
+          <p>Organization name</p>
+        </div>
+      </div>
+      <a class="topbar" href="../main/main.html">Home</a>
+    </div>
+
+    <!-- start --  code part -->
+    <!--my first name, last name, gender, email, password, contact number, organization name, organization type, and organization address, area, governorate,-->
+    <div class="card">
+        
+        
+        <div id="info-table">
+            <section id="info">
+                <h2>Green Thumb Project: Planting Futures</h2>
+                <p><strong>Organization Type:</strong> Environmental Advocacy</p>
+                <p><strong>Representative:</strong> Laila Ghanem</p>
+                <p><strong>Governorate:</strong> Alexandria</p>
+                <p><strong>Mission:</strong> To green community spaces and educate about environmental stewardship.</p>
+            </section>
+            <section id="contact">
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> contact@greenthumb.org</p>
+                <p><strong>Phone:</strong> +20 123 456 7890</p>
+                <p><strong>Address:</strong> 123 Eco Road, Alexandria, Egypt</p>
+            </section>
+            <section id="review">
+                <h2>Review Form</h2>
+                <form action="#" method="POST">
+                    <label for="approval" >Approve Request:</label>
+                    <select id="approval" name="approval">
+                        <option value="approve">Approve</option>
+                        <option value="decline">Decline</option>
+                    </select>
+                    <label for="comments">Comments:</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                    <button type="submit">Submit Review</button>
+                </form>
+            </section>
+    
+            
+
+            <label> Company Location </label>
+
+            <div
+              id="map"
+              style="
+                width: 100%;
+                min-height: 10vh;
+                max-height: 100vw;
+                border-radius: 10px;
+              "
+            ></div>
+          </form>
+        </div>
+      </div>
+      <div class="requests-buttons">
+        <button class="post-button accept">Accept</button>
+        <button class="post-button decline">Decline</button>
+      </div>
+    </div>
+
+    <script src="../Scripts/sidebar.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7e3bb74f76.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1IETOWKceQ_gRqH-8Tdq18qzMRqmJebo&callback=initMap"
+      async
+      defer
+    ></script>
+    <script src="/Scripts/map.js"></script>
+    <script src="/Scripts/fulfilBookRequestScript.js"></script>
+    <script src="/Scripts/sidebar.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7e3bb74f76.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

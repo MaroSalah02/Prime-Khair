@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="/Styles/navElements.css" />
+
+    <script src="JS/script.js"></script>
+    <script src="/Scripts/sidebar.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7e3bb74f76.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="probar">
+      <div class="filled" id="myelement"></div>
+    </div>
+    <!-- start -- Side bar code -->
+    <div class="sidebar">
+      <div id="sidebar-top">
+        <div class="sidebar-button" id="3-bars" onclick="expand()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div id="logo-img" class="visible fade logo">
+          <img src="/icons/prime-khair-high-resolution-logo-transparent.png" />
+        </div>
+      </div>
+      <hr class="visible fade" />
+      <div class="profile-user-photo visible fade">
+        <img src="profile.jpg" alt="user" />
+        <p>Organization name</p>
+      </div>
+      <nav class="sidebar-nav visible fade">
+        <ul>
+          <li><a href="donor.html">Explore Requests</a></li>
+          <li><a href="#">Profie Managment</a></li>
+          <li><a href="#">Create new Donation Post</a></li>
+          <li><a href="#">Donation History</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- end -- Side bar code -->
+
+    <!-- start -- top bar code -->
+    <header class="topbar">
+      <h1 id="title">Review Organizations Requests</h1>
+    </header>
+    <!-- end -- top bar code -->
+    <div class="posts">
+      <div class="post">
+        <h2 class="title">Pages of Hope: Books for Brilliance</h2>
+        <h5>Organization Represensitive Name: Omar Riad</h5>
+        <h5>Organization Type: Books</h5>
+        <h5>Governorate: Cairo</h5>
+
+        <div class="requests-buttons">
+          <button class="post-button accept">Accept</button>
+          <button class="post-button decline">Decline</button>
+          <button class="post-button" onclick="goToMoreDetailsOrganization();">
+            More Details
+          </button>
+        </div>
+      </div>
+
+      <div class="post">
+        <h1 class="title">Green Thumb Project: Planting Futures</h1>
+        <h5>Organization Representative Name: Laila Ghanem</h5>
+        <h5>Organization Type: Environmental Advocacy</h5>
+        <h5>Governorate: Alexandria</h5>
+        <div class="requests-buttons">
+          <button class="post-button accept">Accept</button>
+          <button class="post-button decline">Decline</button>
+          <button class="post-button">More Details</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <h1 class="title">Tech for Tomorrow: Bridging the Digital Divide</h1>
+        <h5>Organization Representative Name: Ahmed Fouad</h5>
+        <h5>Organization Type: Educational</h5>
+        <h5>Governorate: Giza</h5>
+        <div class="requests-buttons">
+          <button class="post-button accept">Accept</button>
+          <button class="post-button decline">Decline</button>
+          <button class="post-button">More Details</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <h1 class="title">Artists Unite: Crafting Community Connections</h1>
+    <h5>Organization Representative Name: Sarah Tarek</h5>
+    <h5>Organization Type: Arts Education</h5>
+    <h5>Governorate: Ismailia</h5>
+        <div class="requests-buttons">
+          <button class="post-button accept">Accept</button>
+          <button class="post-button decline">Decline</button>
+          <button class="post-button">More Details</button>
+        </div>
+      </div>
+
+      <div class="post">
+        <h1 class="title">Harmony Homes: Building Dreams</h1>
+    <h5>Organization Representative Name: Mona Al-Sayed</h5>
+    <h5>Organization Type: Housing Development</h5>
+    <h5>Governorate: Minya</h5>
+        <div class="requests-buttons">
+          <button class="post-button accept">Accept</button>
+          <button class="post-button decline">Decline</button>
+          <button class="post-button">More Details</button>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </body>
+</html>
