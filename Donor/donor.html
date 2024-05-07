@@ -1,335 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DonorPage</title>
+    <!-- <link rel="stylesheet" href="/Styles/general.css" /> -->
+    <link rel="stylesheet" href="/Styles/navElements.css" />
+    <link rel="stylesheet" href="/Styles/donor.css" />
+    <script src="/Scripts/donor.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DonorPage</title>
-  <link rel="stylesheet" href="/Styles/general.css" />
-  <link rel="stylesheet" href="/Styles/navElements.css">
-
-</head>
-
-
-<!-- <div class="probar">
-  <div class="filled" id="myelement"></div>
-</div> -->
-
-<body>
-  <!-- Navigation Element -->
-
-  <div class="sidebar">
-    <div id="sidebar-top">
-      <div class="sidebar-button" id="3-bars" onclick="expand()">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-      <div id="logo-img" class="visible fade logo">
-        <img src="/icons/prime-khair-high-resolution-logo-transparent.png">
-      </div>
-    </div>
-    <hr class="visible fade">
-    <div class="profile-user-photo visible fade">
-      <img src="profile.jpg" alt="user" />
-      <p>Organization name</p>
-    </div>
-    <nav class="sidebar-nav visible fade">
-      <ul>
-        <li><a href="#">Profie Managment</a></li>
-        <li><a href="#">Create new Donation Post</a></li>
-        <li><a href="#">Donation History</a></li>
-        <li><a href="#">Settings</a></li>
-      </ul>
-    </nav>
+  <div class="probar">
+    <div class="filled" id="myelement"></div>
   </div>
 
-  <header class="topbar">
-    <h1 style="margin-top: 0px; margin-bottom: 0px; align-self: center; color: var(--secondary-color);">Explore Requests
-    </h1>
+  <body>
+    <!-- Navigation Element -->
 
-  </header>
-
-  <!-- Navigation Element -->
-
-  <div id="page">
-
-    <!-- Filtration Fields -->
-    <div id="filtration-fields">
-      <select id="typeSelector" onchange="filterSelection()">
-        <option selected value="all">
-          All
-        </option>
-        <option value="clothes">
-          Clothes
-        </option>
-        <option value="toys">
-          Toys
-        </option>
-        <option value="food">
-          Food
-        </option>
-        <optgroup label="Medical Requests">
-          <option value="medical-supplies">
-            Medical Supplies
-          </option>
-          <option value="medication">
-            Medication
-          </option>
-        </optgroup>
-        <optgroup label="School Supplies">
-          <option value="books">
-            Books
-          </option>
-          <option value="stationery">
-            Stationery
-          </option>
-        </optgroup>
-        <optgroup label="Pro-bono">
-          <option value="teaching">
-            Teaching
-          </option>
-          <option value="doctoring">
-            Doctor
-          </option>
-        </optgroup>
-      </select>
-
-
-      <input id="searchbar" oninput="filter()" placeholder="Search for Keywords" style="margin-top: 3vh;">
-
-
-      <div id="clothes-filter" class="filter-group">
-        <div style="display: flex; flex-direction: row; justify-content: center; width: 100%; margin-top: 3vh;">
-          <input oninput="filter()" id="clothes-min" type="number" min="1" style="width: 20%;" placeholder="Min">
-          <input oninput="filter()" id="clothes-max" type="number" style="width: 20%; margin-left: 14%;"
-            placeholder="Max">
+    <div class="sidebar">
+      <div id="sidebar-top">
+        <div class="sidebar-button" id="3-bars" onclick="expand()">
+          <i class="fa-solid fa-bars"></i>
         </div>
-        <div style="display: flex; flex-direction: row; justify-content: center; width: 100%; margin-top: 3vh;">
-          <label style="margin-right: 10%;">
-            <input oninput="filter()" id="clothes-male" type="checkbox" name="gender" value="male">
-            Male
-          </label>
-          <label>
-            <input oninput="filter()" id="clothes-female" type="checkbox" name="gender" value="female">
-            Female
-          </label>
-        </div>
-
-        <div
-          style="display: flex; flex-direction: row; justify-content: center; width: 100%; margin-top: 3vh; flex-wrap: wrap;">
-          <label style="margin-right: 10%;;">
-            <input oninput="filter()" id="clothes-spring" type="checkbox" name="gender" value="male">
-            Spring
-          </label>
-          <label>
-            <input oninput="filter()" id="clothes-summer" type="checkbox" name="gender" value="female">
-            Summer
-          </label>
-          <label style="margin-right: 10%">
-            <input oninput="filter()" id="clothes-autumn" type="checkbox" name="gender" value="male">
-            Autumn
-          </label>
-          <label>
-            <input oninput="filter()" id="clothes-winter" type="checkbox" name="gender" value="female">
-            Winter
-          </label>
+        <div id="logo-img" class="visible fade logo">
+          <img src="/icons/prime-khair-high-resolution-logo-transparent.png" />
         </div>
       </div>
-
-
-      <div id="books-filter" class="filter-group">
-        <input oninput="filter()" id="book-title" placeholder="Book Title">
-        <input oninput="filter()" id="book-author" placeholder="Book Author">
-        <input oninput="filter()" id="book-language" placeholder="Book Language">
+      <hr class="visible fade" />
+      <div class="profile-user-photo visible fade">
+        <h1 id="orgname">Donor#1298</h1>
       </div>
+      <nav class="sidebar-nav visible fade">
+        <ul>
+          <li>
+            <a href="#"><h5>Profie Managment</h5></a>
+          </li>
+          <li>
+            <a href="#"><h5>Create new Donation Post</h5></a>
+          </li>
+          <li>
+            <a href="#"><h5>Donation History</h5></a>
+          </li>
+          <li>
+            <a href="#"><h5>Settings</h5></a>
+          </li>
+          <li>
+            <a href="organizations.html"><h5>View Organizations</h5></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
-
-      <div id="stationery-filter" class="filter-group">
-        <input oninput="filter()" id="stationery-type" placeholder="Stationery Type">
-      </div>
-
-
-      <div id="toys-filter" class="filter-group">
-        <input oninput="filter()" id="toy-type" placeholder="Toy Type">
-        <div style="display: flex; flex-direction: row; justify-content: center; width: 100%; margin-top: 3vh;">
-          <input oninput="filter()" id="toys-min" type="number" min="1" style="width: 20%;" placeholder="Min">
-          <input oninput="filter()" id="toys-max" type="number" style="width: 20%; margin-left: 14%;" placeholder="Max">
+    <header class="topbar">
+      <h1 id="title">Explore Requests</h1>
+      <div class="links">
+        <a href="/main/main.html"><h5>About</h5></a>
+        <a href=""><h5>Contact</h5></a>
+          </div>
         </div>
-        <div style="display: flex; flex-direction: row; justify-content: center; width: 100%; margin-top: 3vh;">
-          <label style="margin-right: 10%;">
-            <input oninput="filter()" id="toys-male" type="checkbox" name="gender" value="male">
-            Male
-          </label>
-          <label>
-            <input oninput="filter()" id="toys-female" type="checkbox" name="gender" value="female">
-            Female
-          </label>
+      </div>
+    </header>
+
+    <!-- Navigation Element -->
+
+    <div class="page">
+      <!-- Filtration Fields -->
+      <div id="filtration-fields">
+        <div class="searchengine">
+          <input
+            id="searchbar"
+            oninput="filter()"
+            placeholder="Search...."
+            style="margin-top: 3vh"
+          />
+          <select id="typeSelector" onchange="filterSelection()">
+            <option selected value="all">All</option>
+            <option value="clothes">Clothes</option>
+            <option value="toys">Toys</option>
+            <option value="food">Food</option>
+            <optgroup label="Medical Requests">
+              <option value="medical-supplies">Medical Supplies</option>
+              <option value="medication">Medication</option>
+            </optgroup>
+            <optgroup label="School Supplies">
+              <option value="books">Books</option>
+              <option value="stationery">Stationery</option>
+            </optgroup>
+            <optgroup label="Pro-bono">
+              <option value="teaching">Teaching</option>
+              <option value="doctoring">Doctor</option>
+            </optgroup>
+          </select>
         </div>
-        <select id="toy-category" onchange="filter()">
-          <option value="all">All</option>
-          <option value="board games">Board Games</option>
-          <option value="stuffed toys">Stuffed Toys</option>
-          <option value="dolls">Dolls</option>
-          <option value="sports">Sports</option>
-          <option value="cars">Cars</option>
-          <option value="outdoor">Outdoor</option>
-        </select>
 
+        <div id="clothes-filter" class="filter-group">
+          <div>
+            <input
+              oninput="filter()"
+              id="clothes-min"
+              type="number"
+              min="1"
+              style="width: 20%"
+              placeholder="Min"
+            />
+            <input
+              oninput="filter()"
+              id="clothes-max"
+              type="number"
+              style="width: 20%; margin-left: 14%"
+              placeholder="Max"
+            />
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              width: 100%;
+              margin-top: 3vh;
+            "
+          >
+            <label style="margin-right: 10%">
+              <input
+                oninput="filter()"
+                id="clothes-male"
+                type="checkbox"
+                name="gender"
+                value="male"
+              />
+              Male
+            </label>
+            <label>
+              <input
+                oninput="filter()"
+                id="clothes-female"
+                type="checkbox"
+                name="gender"
+                value="female"
+              />
+              Female
+            </label>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              width: 100%;
+              margin-top: 3vh;
+              flex-wrap: wrap;
+            "
+          >
+            <label style="margin-right: 10%">
+              <input
+                oninput="filter()"
+                id="clothes-spring"
+                type="checkbox"
+                name="gender"
+                value="male"
+              />
+              Spring
+            </label>
+            <label>
+              <input
+                oninput="filter()"
+                id="clothes-summer"
+                type="checkbox"
+                name="gender"
+                value="female"
+              />
+              Summer
+            </label>
+            <label style="margin-right: 10%">
+              <input
+                oninput="filter()"
+                id="clothes-autumn"
+                type="checkbox"
+                name="gender"
+                value="male"
+              />
+              Autumn
+            </label>
+            <label>
+              <input
+                oninput="filter()"
+                id="clothes-winter"
+                type="checkbox"
+                name="gender"
+                value="female"
+              />
+              Winter
+            </label>
+          </div>
+        </div>
+
+        <div id="books-filter" class="filter-group">
+          <input oninput="filter()" id="book-title" placeholder="Book Title" />
+          <input
+            oninput="filter()"
+            id="book-author"
+            placeholder="Book Author"
+          />
+          <input
+            oninput="filter()"
+            id="book-language"
+            placeholder="Book Language"
+          />
+        </div>
+
+        <div id="stationery-filter" class="filter-group">
+          <input
+            oninput="filter()"
+            id="stationery-type"
+            placeholder="Stationery Type"
+          />
+        </div>
+
+        <div id="toys-filter" class="filter-group">
+          <input oninput="filter()" id="toy-type" placeholder="Toy Type" />
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              width: 100%;
+              margin-top: 3vh;
+            "
+          >
+            <input
+              oninput="filter()"
+              id="toys-min"
+              type="number"
+              min="1"
+              style="width: 20%"
+              placeholder="Min"
+            />
+            <input
+              oninput="filter()"
+              id="toys-max"
+              type="number"
+              style="width: 20%; margin-left: 14%"
+              placeholder="Max"
+            />
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              width: 100%;
+              margin-top: 3vh;
+            "
+          >
+            <label style="margin-right: 10%">
+              <input
+                oninput="filter()"
+                id="toys-male"
+                type="checkbox"
+                name="gender"
+                value="male"
+              />
+              Male
+            </label>
+            <label>
+              <input
+                oninput="filter()"
+                id="toys-female"
+                type="checkbox"
+                name="gender"
+                value="female"
+              />
+              Female
+            </label>
+          </div>
+          <select id="toy-category" onchange="filter()">
+            <option value="all">All</option>
+            <option value="board games">Board Games</option>
+            <option value="stuffed toys">Stuffed Toys</option>
+            <option value="dolls">Dolls</option>
+            <option value="sports">Sports</option>
+            <option value="cars">Cars</option>
+            <option value="outdoor">Outdoor</option>
+          </select>
+        </div>
+
+        <div id="medical-supplies-filter" class="filter-group"></div>
+        <div id="medication-filter" class="filter-group"></div>
+        <div id="food-filter" class="filter-group"></div>
       </div>
+      <!-- Filtration Fields -->
+      <!-- Dummy Data Posts -->
+      <div id="posts">
+        <div class="post stationery">
+          <h1 class="title">School Supplies Drive: Donate Today!</h1>
+          <p class="description">
+            Support local students by donating essential school supplies. Your
+            contribution helps kids thrive academically. Thank you for making a
+            difference!
+          </p>
+          <h3 class="type">Type: Ruler</h3>
 
+          <p hidden class="quantity">500</p>
+          <button>Donate</button>
+        </div>
 
-      <div id="medical-supplies-filter" class="filter-group">
+        <div class="post books">
+          <h1 class="title">Library Expansion Project: Donate Books Now!</h1>
+          <p class="description">
+            Help enrich our library collection by donating your favorite books.
+            Your contribution will open new worlds for readers of all ages.
+            Thank you for fostering a love of reading!
+          </p>
+          <h3 class="name">Title: To Kill a Mockingbird</h3>
+          <h3 class="author">Author: Harper Lee</h3>
+          <h3 class="Language">Language: English</h3>
+          <h3 class="edition" hidden>Edition: Revised Edition</h3>
+          <p class="summary" hidden>
+            Short Summary: A powerful story of racial injustice and moral growth
+            in the American South.
+          </p>
+          <img
+            hidden
+            src="to_kill_a_mockingbird.jpg"
+            alt="To Kill a Mockingbird alt text"
+          />
+          <h3 class="quantity" hidden>Quantity Required: 100</h3>
+          <button style="flex-basis: 100%">Donate</button>
+        </div>
 
-      </div>
-      <div id="medication-filter" class="filter-group">
+        <div class="post toys">
+          <h1 class="title">
+            Holiday Toy Drive: Spread Joy to Children in Need!
+          </h1>
+          <p class="description">
+            Brighten a child's day by donating toys to our annual toy drive.
+            Your generosity brings smiles to little faces. Thank you for your
+            kindness!
+          </p>
+          <h3 class="type">Type: Stuffed Animal</h3>
+          <h3 class="age">Age: 3-6</h3>
+          <h3 class="gender">Gender: Unisex</h3>
+          <h3 class="category">Category: Stuffed Toys</h3>
+          <img hidden src="stuffed_animal.jpg" alt="Stuffed Animal" />
+          <h3 class="quantity" hidden>Quantity Requested: 200</h3>
+          <button>Donate</button>
+        </div>
 
-      </div>
-      <div id="food-filter" class="filter-group">
+        <div class="post food">
+          <h1 class="title">Food Drive: Help Fight Hunger in Our Community!</h1>
+          <p class="description">
+            Join us in the fight against hunger by donating nutritious food
+            items. Your contribution makes a real difference in the lives of
+            those in need. Thank you for your compassion!
+          </p>
+          <h3>Item Name: Rice</h3>
+          <h3>Quantity Required: 500 KG</h3>
+          <button>Donate</button>
+        </div>
 
+        <div class="post medical-supplies">
+          <h1 class="title">
+            Medical Equipment Drive: Support Healthcare Providers!
+          </h1>
+          <p class="description">
+            Help equip medical facilities with essential supplies. Your donation
+            ensures quality care for patients in need. Thank you for your
+            support!
+          </p>
+          <h3>Device Type: Blood Pressure Monitor</h3>
+          <h3>Use: Monitoring Patients' Blood Pressure</h3>
+          <img src="blood_pressure_monitor.jpg" alt="Blood Pressure Monitor" />
+          <h3>Quantity: 50</h3>
+          <button>Donate</button>
+        </div>
+
+        <div class="post blood">
+          <h1 class="title">Emergency Blood Drive: Save Lives Today!</h1>
+          <p class="description">
+            Your blood donation can mean the difference between life and death
+            for patients in critical condition. Join us in this life-saving
+            effort. Thank you for your compassion!
+          </p>
+          <h3>Name of Patient: John Smith</h3>
+          <h3>Blood Type: A+</h3>
+          <h3>Hospital Name: Mercy Hospital</h3>
+          <h3>Hospital Area: Downtown</h3>
+          <h3>Governorate: New York</h3>
+          <h3>Hospital Address: 123 Main Street, New York, NY</h3>
+          <button>Donate</button>
+        </div>
+
+        <div class="post teaching">
+          <h1 class="title">Education Initiative: Volunteer to Teach!</h1>
+          <p class="description">
+            Make a difference in the lives of students by volunteering to teach.
+            Your expertise can shape the next generation. Thank you for your
+            commitment to education!
+          </p>
+          <h3>Number of Students: 20</h3>
+          <h3>Address: 456 Elm Street</h3>
+          <img src="google_map_marker.png" alt="Google Map Marker" />
+          <h3>Subjects to be Taught: Mathematics, Science</h3>
+          <button>Volunteer</button>
+        </div>
+
+        <div class="post doctoring">
+          <h1 class="title">Medical Assistance Needed: Urgent Case!</h1>
+          <p class="description">
+            Your medical expertise can save a life. Please lend your support to
+            this critical case. Thank you for your dedication to healing!
+          </p>
+          <h3>Patient Name: Emily Johnson</h3>
+          <h3>Age: 45</h3>
+          <h3>Gender: Female</h3>
+          <h3>Weight: 60 kg</h3>
+          <h3>Location: 789 Oak Avenue</h3>
+          <img src="google_map_marker.png" alt="Google Map Marker" />
+          <h3>Address: 789 Oak Avenue</h3>
+          <h3>Organization Name: Mercy Medical Center</h3>
+          <h3>Medical Specialty: Cardiology</h3>
+          <p>
+            Case Description: Emily is experiencing severe chest pain and
+            shortness of breath. Immediate intervention is necessary.
+          </p>
+          <button>Assist</button>
+        </div>
       </div>
     </div>
-    <!-- Filtration Fields -->
     <!-- Dummy Data Posts -->
-    <div id="posts">
+  </body>
 
-      <div class="post stationery">
-        <h1 class="title">School Supplies Drive: Donate Today!</h1>
-        <p class="description">
-          Support local students by donating essential school supplies. Your
-          contribution helps kids thrive academically. Thank you for making a
-          difference!
-        </p>
-        <h3 class="type">Type: Ruler</h3>
+  <script src="script.js"></script>
+  <script src="/Scripts/sidebar.js"></script>
+  <script
+    src="https://kit.fontawesome.com/7e3bb74f76.js"
+    crossorigin="anonymous"
+  ></script>
 
-        <p hidden class="quantity">500</p>
-        <button>Donate</button>
-      </div>
-
-      <div class="post books">
-        <h1 class="title">Library Expansion Project: Donate Books Now!</h1>
-        <p class="description">
-          Help enrich our library collection by donating your favorite books. Your
-          contribution will open new worlds for readers of all ages. Thank you for
-          fostering a love of reading!
-        </p>
-        <h3 class="name">Title: To Kill a Mockingbird</h3>
-        <h3 class="author">Author: Harper Lee</h3>
-        <h3 class="Language">Language: English</h3>
-        <h3 class="edition" hidden>Edition: Revised Edition</h3>
-        <p class="summary" hidden>
-          Short Summary: A powerful story of racial injustice and moral growth in
-          the American South.
-        </p>
-        <img hidden src="to_kill_a_mockingbird.jpg" alt="To Kill a Mockingbird alt text" />
-        <h3 class="quantity" hidden>Quantity Required: 100</h3>
-        <button style="flex-basis: 100%;">Donate</button>
-      </div>
-
-      <div class="post toys">
-        <h1 class="title">Holiday Toy Drive: Spread Joy to Children in Need!</h1>
-        <p class="description">
-          Brighten a child's day by donating toys to our annual toy drive. Your
-          generosity brings smiles to little faces. Thank you for your kindness!
-        </p>
-        <h3 class="type">Type: Stuffed Animal</h3>
-        <h3 class="age">Age: 3-6</h3>
-        <h3 class="gender">Gender: Unisex</h3>
-        <h3 class="category">Category: Stuffed Toys</h3>
-        <img hidden src="stuffed_animal.jpg" alt="Stuffed Animal" />
-        <h3 class="quantity" hidden>Quantity Requested: 200</h3>
-        <button>Donate</button>
-      </div>
-
-      <div class="post food">
-        <h1 class="title">Food Drive: Help Fight Hunger in Our Community!</h1>
-        <p class="description">
-          Join us in the fight against hunger by donating nutritious food items.
-          Your contribution makes a real difference in the lives of those in need.
-          Thank you for your compassion!
-        </p>
-        <h3>Item Name: Rice</h3>
-        <h3>Quantity Required: 500 KG</h3>
-        <button>Donate</button>
-      </div>
-
-      <div class="post medical-supplies">
-        <h1 class="title">
-          Medical Equipment Drive: Support Healthcare Providers!
-        </h1>
-        <p class="description">
-          Help equip medical facilities with essential supplies. Your donation
-          ensures quality care for patients in need. Thank you for your support!
-        </p>
-        <h3>Device Type: Blood Pressure Monitor</h3>
-        <h3>Use: Monitoring Patients' Blood Pressure</h3>
-        <img src="blood_pressure_monitor.jpg" alt="Blood Pressure Monitor" />
-        <h3>Quantity: 50</h3>
-        <button>Donate</button>
-      </div>
-
-      <div class="post blood">
-        <h1 class="title">Emergency Blood Drive: Save Lives Today!</h1>
-        <p class="description">
-          Your blood donation can mean the difference between life and death for
-          patients in critical condition. Join us in this life-saving effort.
-          Thank you for your compassion!
-        </p>
-        <h3>Name of Patient: John Smith</h3>
-        <h3>Blood Type: A+</h3>
-        <h3>Hospital Name: Mercy Hospital</h3>
-        <h3>Hospital Area: Downtown</h3>
-        <h3>Governorate: New York</h3>
-        <h3>Hospital Address: 123 Main Street, New York, NY</h3>
-        <button>Donate</button>
-      </div>
-
-      <div class="post teaching">
-        <h1 class="title">Education Initiative: Volunteer to Teach!</h1>
-        <p class="description">
-          Make a difference in the lives of students by volunteering to teach.
-          Your expertise can shape the next generation. Thank you for your
-          commitment to education!
-        </p>
-        <h3>Number of Students: 20</h3>
-        <h3>Address: 456 Elm Street</h3>
-        <img src="google_map_marker.png" alt="Google Map Marker" />
-        <h3>Subjects to be Taught: Mathematics, Science</h3>
-        <button>Volunteer</button>
-      </div>
-
-      <div class="post doctoring">
-        <h1 class="title">Medical Assistance Needed: Urgent Case!</h1>
-        <p class="description">
-          Your medical expertise can save a life. Please lend your support to this
-          critical case. Thank you for your dedication to healing!
-        </p>
-        <h3>Patient Name: Emily Johnson</h3>
-        <h3>Age: 45</h3>
-        <h3>Gender: Female</h3>
-        <h3>Weight: 60 kg</h3>
-        <h3>Location: 789 Oak Avenue</h3>
-        <img src="google_map_marker.png" alt="Google Map Marker" />
-        <h3>Address: 789 Oak Avenue</h3>
-        <h3>Organization Name: Mercy Medical Center</h3>
-        <h3>Medical Specialty: Cardiology</h3>
-        <p>
-          Case Description: Emily is experiencing severe chest pain and shortness
-          of breath. Immediate intervention is necessary.
-        </p>
-        <button>Assist</button>
-      </div>
-
-    </div>
-  </div>
-  <!-- Dummy Data Posts -->
-
-
-
-</body>
-
-<script src="script.js"></script>
-<script src="/Scripts/sidebar.js"></script>
-<script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
-
-<script src="/Scripts/filtration.js"></script>
-
+  <script src="/Scripts/filtration.js"></script>
 </html>

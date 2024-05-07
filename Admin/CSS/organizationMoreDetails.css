@@ -27,19 +27,6 @@ span {
   width: 200px;
   background-color: white;
 }
-.topbar {
-  width: 100%;
-  padding-top: 18px;
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
-  padding-left: 10px;
-  transition: 0.3s ease-in-out;
-}
-.topbar:hover {
-  color: #c2a83e;
-}
 #info-table {
   justify-content: left;
   flex-grow: 1;

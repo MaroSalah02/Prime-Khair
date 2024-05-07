@@ -29,7 +29,6 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  
 }
 
 .sidebar-nav ul li {
@@ -112,8 +111,8 @@
             rgb(42, 83, 136)); */
   margin-left: 3%;
   background-color: var(--menu-color);
-  min-height: 4vw;
-  max-height: 4vw;
+  min-height: 5vw;
+  max-height: 5vw;
   z-index: 1;
   display: flex;
   flex-direction: row;

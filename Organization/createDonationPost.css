@@ -10,12 +10,9 @@ body {
   background: url("../icons/org_background.jpg") no-repeat center center fixed;
   background-size: cover;
 }
-.page {
-  display: flex;
-  padding-left: 350px;
-  padding-top: 50px;
-}
+
 .sidebar {
+  border: 10px solid black;
   height: 70%;
   width: 250px;
   position: fixed;
@@ -29,6 +26,7 @@ body {
   padding: 10px 0;
   box-shadow: 2px 0 5px rgb(105, 42, 136, 0.5);
   border-radius: 10px;
+  margin: 20px;
 }
 
 .profile-user-photo img {
