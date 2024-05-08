@@ -5,7 +5,9 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  padding-top: 10vh;
 }
+
 .links a {
   color: #fff;
   text-decoration: none;
@@ -23,6 +25,7 @@
 }
 .searchengine {
   margin: auto;
+  margin-top: 0px;
   align-items: center;
 }
 .searchengine input {
@@ -32,17 +35,21 @@
   width: 3000px;
 }
 
-.page {
+#page {
   justify-content: start;
-  height: 100%;
-  background-color: #e0eec6; /* border-radius: 20px; */
+  background-color: #e0eec6;
   width: 100%;
   margin-left: 3%;
   z-index: 0;
+  flex-wrap: wrap;
+  /* border-radius: 20px; */
+  width: 97%;
+  margin-left: 3%;
 }
 #orgname {
   margin-bottom: 10px;
 }
+
 #Filter {
   text-align: center;
   align-content: center;
@@ -73,18 +80,22 @@ a {
   margin: 5px;
 }
 .post {
-  margin: auto;
-  width: 50%;
+  flex-grow: 0;
+  width: 40%;
+  margin-right: 0%;
+  margin-left: 0%;
+  height: 500px;
   align-items: center;
-  border: 2px solid black;
+  border: 2px solid gray;
   background-color: #f0f0f0; /* Optional: add a background color */
   border-radius: 20px;
-  padding: 1%;
-  margin-bottom: 15px;
+  padding: 3%;
+  margin-top: 15px;
   transition: transform 0.1s;
 }
 .post:hover {
-  transform: translateX(-5px);
+  transform: scaleX(1.015) scaleY(1.015);
+
   background-color: #ffffff;
 }
 .post h1 {
@@ -109,7 +120,7 @@ a {
 }
 #typeSelector {
   height: 50px;
-  width: 50px;
+  width: auto;
   border-radius: 50px;
   border: 3px solid #c2a83e;
 }
@@ -215,13 +226,17 @@ a {
   height: 40px;
 }
 
-.posts {
+#posts {
   perspective: 1000px;
   perspective-origin: center center;
-  width: 60%; /* Adjust the width as needed */
-  margin: auto; /* This centers the div horizontally */
+  width: 97%; /* Adjust the width as needed */
+  margin-left: 3%;
   padding: 20px; /* Optional: add padding for better spacing */
   border-radius: 10px; /* Optional: add rounded corners */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .searchbutton {
   background-color: #7ca982;
@@ -8967,9 +8982,9 @@ fieldset:disabled .btn {
   visibility: visible !important;
 }
 
-.invisible {
+/* .invisible {
   visibility: hidden !important;
-}
+} */
 
 @media (min-width: 576px) {
   .float-sm-start {
@@ -11715,11 +11730,7 @@ body {
   letter-spacing: 0.15rem;
   border: 0;
 }
-.probar {
-  position: fixed;
-  width: 100%;
-  height: 0.5vh;
-}
+
 .filled {
   width: 0%;
   height: 100%;
