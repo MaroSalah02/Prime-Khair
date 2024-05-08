@@ -7,7 +7,11 @@
     <title>School Supplies</title>
     <link rel="stylesheet" type="text/css" href="/Styles/requestDetails.css">
     <link rel="stylesheet" type="text/css" href="/Styles/navElements.css">
-
+    <style>
+        #background-image-container {
+            background-image: url("/icons/stationeryBackground.jpg");
+        }
+    </style>
 </head>
 
 <body>
@@ -33,6 +37,11 @@
             <a href="/main/main.html">Home</a>
         </header>
     </div>
+
+    <div id="background-image-container">
+
+    </div>
+
     <div id="page">
         <div class="card" style="max-height: 80vh;">
 
@@ -61,7 +70,7 @@
             </div>
             <h3>Donation Quantity & Pickup Time</h3>
 
-            <div style="display: flex; flex-direction: row; justify-content: space-evenly; margin: 3%;">
+            <div class="horizontalFlex" style="margin: 3%;">
                 <input id="quantity-input" style="width: 20%; text-align: center;" type="number" min="1"
                     placeholder="Quantity">
                 <input id="time-input" type="datetime-local">
