@@ -9,7 +9,7 @@ function filterSelection() {
     filterGroups.item(i).classList.add("invisible");
   }
 
-  //console.log(selectorVal);
+  console.log(selectorVal);
 
   switch (selectorVal) {
     case "clothes":
@@ -46,7 +46,9 @@ function filterSelection() {
 
 function filter() {
   var selectorVal = document.getElementById("typeSelector").value;
-
+  if (selectorVal == "") {
+    selectorVal = "all";
+  }
   var fieldList;
 
   var postList = document.getElementsByClassName("post");

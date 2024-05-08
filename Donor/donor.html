@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DonorPage</title>
   <link rel="stylesheet" href="/Styles/general.css" />
-
+  
   <link rel="stylesheet" href="/Styles/navElements.css" />
   <link rel="stylesheet" href="/Styles/donor.css" />
-
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="/Scripts/donor.js"></script>
 </head>
 
@@ -46,14 +47,14 @@
     </nav>
   </div>
 
-  <header class="topbar">
+  <header class="topbar"> 
     <h3 id="title">Explore Requests</h3>
     <div class="links">
       <a href="/main/main.html">
-        <h5>About</h5>
+        <h5 class="extraMenu">About</h5>
       </a>
       <a href="">
-        <h5>Contact</h5>
+        <h5 class="extraMenu">Contact</h5>
       </a>
     </div>
     </div>
@@ -68,40 +69,32 @@
     <div id="filtration-fields">
       <div class="searchengine">
         <input id="searchbar" oninput="filter()" placeholder="Search...." style="margin-top: 3vh" />
-        <select id="typeSelector" onchange="filterSelection()">
-          <option selected value="all">All</option>
-          <option value="clothes">Clothes</option>
-          <option value="toys">Toys</option>
-          <option value="food">Food</option>
+        <input type="text" id="typeSelector" onchange="filterSelection()" list="options" placeholder="Search category">
+          <datalist id="options">
+          <option selected value="all"></option>
+          <option value="clothes"></option>
+          <option value="toys"></option>
+          <option value="food"></option>
           <optgroup label="Medical Requests">
-            <option value="medical-supplies">Medical Supplies</option>
-            <option value="medication">Medication</option>
+            <option value="medical-supplies"></option>
+            <option value="medication"></option>
           </optgroup>
           <optgroup label="School Supplies">
-            <option value="books">Books</option>
-            <option value="stationery">Stationery</option>
+            <option value="books"></option>
+            <option value="stationery"></option>
           </optgroup>
           <optgroup label="Pro-bono">
-            <option value="teaching">Teaching</option>
-            <option value="doctoring">Doctor</option>
+            <option value="teaching"></option>
+            <option value="doctoring"></option>
           </optgroup>
-        </select>
+        </datalist>
+      
       </div>
 
       <div id="clothes-filter" class="filter-group">
-        <div>
-          <input oninput="filter()" id="clothes-min" type="number" min="1" style="width: 20%" placeholder="Min" />
-          <input oninput="filter()" id="clothes-max" type="number" style="width: 20%; margin-left: 14%"
-            placeholder="Max" />
-        </div>
-        <div style="
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              width: 100%;
-              margin-top: 3vh;
-            ">
-          <label style="margin-right: 10%">
+          <input oninput="filter()" id="clothes-min" type="number" min="1"placeholder="Min" />
+          <input oninput="filter()" id="clothes-max" type="number"placeholder="Max" />
+          <label>
             <input oninput="filter()" id="clothes-male" type="checkbox" name="gender" value="male" />
             Male
           </label>
@@ -109,17 +102,9 @@
             <input oninput="filter()" id="clothes-female" type="checkbox" name="gender" value="female" />
             Female
           </label>
-        </div>
 
-        <div style="
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              width: 100%;
-              margin-top: 3vh;
-              flex-wrap: wrap;
-            ">
-          <label style="margin-right: 10%">
+
+          <label>
             <input oninput="filter()" id="clothes-spring" type="checkbox" name="gender" value="male" />
             Spring
           </label>
@@ -127,7 +112,7 @@
             <input oninput="filter()" id="clothes-summer" type="checkbox" name="gender" value="female" />
             Summer
           </label>
-          <label style="margin-right: 10%">
+          <label>
             <input oninput="filter()" id="clothes-autumn" type="checkbox" name="gender" value="male" />
             Autumn
           </label>
@@ -135,7 +120,6 @@
             <input oninput="filter()" id="clothes-winter" type="checkbox" name="gender" value="female" />
             Winter
           </label>
-        </div>
       </div>
 
       <div id="books-filter" class="filter-group">
