@@ -91,8 +91,46 @@
   display: block;
 }
 
+.back-arrow {
+  width: 6vh;
+  height: 6vh;
+  background-color: rgba(
+    var(--button-red),
+    var(--button-green),
+    var(--button-blue),
+    0.5
+  );
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 30vh;
+  margin: 2vh;
+  color: black;
+  position: absolute;
+}
+
+.back-arrow:hover {
+  background-color: var(--button-color);
+}
+
+.back-arrow:active > i {
+  margin-left: -15%;
+}
+
+.back-arrow i {
+  font-size: 4vh;
+}
+
 :root {
   --menu-color: #243e36;
+  --button-color: rgb(194, 168, 62);
+  --button-red: 194;
+  --button-green: 168;
+  --button-blue: 62;
+  --secondary-color: rgb(124, 169, 130);
+  --secondary-red: 124;
+  --secondary-green: 169;
+  --secondary-blue: 130;
 }
 
 #sidebar-top {
@@ -119,8 +157,7 @@
             rgb(42, 83, 136)); */
   margin-left: 3%;
   background-color: var(--menu-color);
-  min-height: 5vw;
-  max-height: 5vw;
+  min-height: 10.7vh;
   z-index: 1;
   display: flex;
   flex-direction: row;

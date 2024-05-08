@@ -41,6 +41,17 @@
   padding-top: 10vh;
 }
 
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.filter-group > * {
+  margin-top: 3vh;
+}
+
 .links a {
   color: #fff;
   text-decoration: none;
@@ -50,6 +61,11 @@
 .links a:hover {
   scale: 1.1;
 }
+
+.description {
+  white-space: normal;
+}
+
 .links {
   display: flex;
   flex-wrap: wrap;
@@ -69,17 +85,7 @@
   width: 3000px;
 }
 
-#page {
-  justify-content: start;
-  background-color: #e0eec6;
-  width: 100%;
-  margin-left: 3%;
-  z-index: 0;
-  flex-wrap: wrap;
-  /* border-radius: 20px; */
-  width: 97%;
-  margin-left: 3%;
-}
+
 #orgname {
   margin-bottom: 10px;
 }

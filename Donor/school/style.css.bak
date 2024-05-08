@@ -49,9 +49,10 @@ span {
   font-weight: bold;
   text-decoration: none;
   color: #fff;
-
-  /* margin: auto; */
-
+<<<<<<< Updated upstream
+  margin: auto;
+=======
+>>>>>>> Stashed changes
   transition: 0.3s ease-in-out;
   width: auto;
 }
@@ -107,7 +108,6 @@ span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* transition: 0.5s ease-in; */
 }
 
 body {
