@@ -4,13 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Supplies</title>
+    <title>Prime Khair: Clothes Donation</title>
     <link rel="stylesheet" type="text/css" href="/Styles/requestDetails.css">
     <link rel="stylesheet" type="text/css" href="/Styles/navElements.css">
+
+
     <style>
         #background-image-container {
-            background-image: url("/icons/stationeryBackground.jpg");
+            background-image: url("/icons/clothesBackground.avif");
+            filter: brightness(0.5);
         }
+
+        /* #page {
+            padding-top: 2%;
+        }
+
+        .card {
+            width: 70%;
+            padding-bottom: 3%;
+            min-height: auto;
+            /* transform: scale3d(0.9, 0.9, 1); */
+        /*
+        margin-bottom: 5%;
+        }
+
+        #toy-img {
+            width: 25%;
+            box-shadow: 12px 12px 2xp rgba(0, 0, 0, 0.5);
+            border: solid gray 3px;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        #toy-img img {
+            height: auto;
+            width: 100%;
+        }
+
+        */
+
+        .horizontalFlex h3 {
+            padding-bottom: 12px;
+            min-width: 33%;
+        }
+
+        /* .card button:hover {
+            scale: 1.035;
+            transition: ease-in-out 0.5s;
+        } */
+        /*
+        */
     </style>
 </head>
 
@@ -33,7 +76,7 @@
         </div>
 
         <header class="topbar">
-            <p id="page-header">Statoinery Request Details</p>
+            <p id="page-header">Clothes Request Details</p>
             <a href="/main/main.html">Home</a>
         </header>
     </div>
@@ -43,22 +86,46 @@
     </div>
 
     <div id="page">
-        <div class="card" style="max-height: 80vh;">
+        <div class="card">
 
             <div class="back-arrow" onclick="goBack()">
                 <i class="fa-solid fa-arrow-left"></i>
             </div>
 
             <div class="details">
-                <h1>Post Title Unavailbe</h1>
+                <h1 id="post-title">Post Title Unavailbe</h1>
                 <hr>
-                <h2>Post Description unavailable</h2>
-                <h3>The type of the item is:<span id="type-value"
-                        style="margin-left: 5px; font-weight: bold;">Pencil</span></h3>
-                <h3>The amount of the item is:<span id="quantity-value"
-                        style="margin-left: 5px;font-weight: bold;">5</span></h3>
+                <h2 id="post-description">Post Description Unavailbe</h2>
+                <!-- <div class="horizontalFlex"> -->
+
+
+                <div class="horizontalFlex" style="padding-top: 3%;">
+                    <h3>Clothing Type:<span id="type-value" style="margin-left: 5px; font-weight: bold;">TYPE</span>
+                    </h3>
+                    <h3>Intended Age:<span id="age-value" style="margin-left: 5px;font-weight: bold;">3-5</span>
+                    </h3>
+                </div>
+
+                <h3>Colthes for:<span id="gender-value" style="margin-left: 5px;font-weight: bold;">Boys and
+                        Girls</span>
+                </h3>
+                <h3>Clothes Season:<span id="season-value" style="margin-left: 5px;font-weight: bold;">Summer</span>
+                </h3>
+                <h3>Clothes Material:<span id="material-value" style="margin-left: 5px;font-weight: bold;">Cotton</span>
+                </h3>
+
+
+                <h3>Quantity:<span id="quantity-value"
+                        style="margin-left: 5px;font-weight: bold; width: 100%;">12</span>
+                </h3>
+
+                <div class="button-container" style="flex-basis: 100%; margin-top: 3%; margin-bottom: -4%;">
+                    <button onclick="showForm()">Donate</button>
+
+                </div>
+
+                <!-- </div> -->
             </div>
-            <button onclick="showForm()">Donate</button>
         </div>
 
         <div id="confirmation-form" class="card invisible">
