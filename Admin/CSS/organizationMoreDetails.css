@@ -7,9 +7,10 @@
   font-size: 16px;
 }
 body {
-  background: url("../../icons/school\ supplies.jpg") no-repeat center center
+  background: url("../../icons/background_green.jpg") no-repeat center center
     fixed;
   background-size: cover;
+  background-position: center;
 }
 h1,
 h2,
@@ -30,6 +31,14 @@ span {
 #info-table {
   justify-content: left;
   flex-grow: 1;
+  margin-left: 1vw;
+}
+#info-table h2{
+  margin-bottom: 3px;
+}
+#info{
+  display: flex;
+  flex-direction: row;
 }
 .card {
   display: flex;
@@ -42,7 +51,8 @@ span {
   margin-right: auto;
   background-color: #ddd;
   box-shadow: 0 14px 14px rgba(0, 0, 0, 0.9);
-  margin-top: 40px;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
   border-radius: 20px;
 }
 .details {
@@ -53,7 +63,7 @@ span {
 }
 .card button {
   color: black;
-  width: 10%;
+  width: 20vh;
   padding: 10px;
   border-radius: 5px;
   font-weight: bold;
@@ -69,6 +79,8 @@ span {
 
 .post-button {
   display: inline;
+  background-color: #c2a83e;
+
 }
 .accept {
   background-color: mediumblue;
@@ -79,4 +91,38 @@ span {
 .requests-buttons {
   align-items: center;
   display: flex;
+}
+section {
+  margin-top: 5vh;
+}
+
+.details {
+  text-align: center;
+}
+#review{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+}
+#comments{
+  border: 2px solid #c2a83e;
+  border-radius: 5px;
+  width: 40vw;
+  height: 40vh;
+}
+#approval{
+  border: 2px solid #c2a83e;
+}
+
+#review label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 5px; 
+  font-weight: bold; 
+}
+.hidden{
+  visibility: hidden;
 }

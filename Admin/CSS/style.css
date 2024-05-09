@@ -139,12 +139,16 @@ h1 {
   perspective-origin: center center;
   width: 60%; /* Adjust the width as needed */
   margin: auto; /* This centers the div horizontally */
-  padding: 20px; /* Optional: add padding for better spacing */
+  padding-top: 15vh;
   border-radius: 10px; /* Optional: add rounded corners */
 }
 
 body {
   margin: 0;
+  background: url("../../icons/background_green.jpg") no-repeat center center
+  fixed;
+  background-size: cover;
+  background-position: center;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
