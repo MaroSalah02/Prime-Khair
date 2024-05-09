@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="CSS/style_donor.css" />
+    <link rel="stylesheet" href="/Styles/navElements.css" />
+
+    <script src="JS/script.js"></script>
+    <script src="/Scripts/sidebar.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7e3bb74f76.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Review Donors Requests</title>
+  </head>
+  <body>
+    <div class="probar">
+      <div class="filled" id="myelement"></div>
+    </div>
+    <!-- start -- Side bar code -->
+    <div class="sidebar">
+      <div id="sidebar-top">
+        <div class="sidebar-button" id="3-bars" onclick="expand()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div id="logo-img" class="visible fade logo">
+          <img src="/icons/prime-khair-high-resolution-logo-transparent.png" />
+        </div>
+      </div>
+      <hr class="visible fade" />
+      <div class="profile-user-photo visible fade">
+        <img src="profile.jpg" alt="user" />
+        <p>Organization name</p>
+      </div>
+      <nav class="sidebar-nav visible fade">
+        <ul>
+          <li><a href="/Admin/organizationsRequestsReview.html">Organization Requests</a></li>
+          <li><a href="/Admin/donorsRequestsReview.html"">Donor Requests </a></li>
+          <li><a href="#">Create new Donation Post</a></li>
+          <li><a href="#">Donation History</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- end -- Side bar code -->
+
+    <!-- start -- top bar code -->
+    <header class="topbar">
+      <p id="page-header">Review Donors Requests</p>
+      <a href="/main/main.html">Home</a>
+    </header>
+
+    <section id="toggle-sec">
+        <button class="post-button" onclick="tableviewshow();">
+            Table View
+          </button>
+          <button class="post-button" onclick="cardviewshow();">
+            Card View
+          </button>
+
+    </section>
+    <!-- end -- top bar code name, gender, email, contact number, password, address, area, governorate -->
+    <!-- Start Card View-->
+    <div id = "container">
+    <div class="posts">
+
+        <div class="post">
+            <h5>user photo</h5>
+            <img src="/icons/maro_pick2.jpg">
+            <h5 class="title">Name:</h5>
+            <p>Omar Riad</p>
+            <h5>position:</h5>
+            <p>Doctor</p>
+            <h5>Gender:</h5>
+            <p>Male</p>
+            <h5>Email:</h5>
+            <p>LawBasYomKaman@gmail.com</p>
+            <h5>Contact Number:</h5>
+            <p>01234567891</p>
+            <h5>Address:</h5>
+            <p>GUC</p>
+            <h5>area:</h5>
+            <p>New Cairo</p>
+            <h5>governorate:</h5>
+            <p>Cairo</p>
+    
+            <div class="requests-buttons">
+              <button class="post-button accept">Accept</button>
+              <button class="post-button decline">Decline</button>
+              <button class="post-button" onclick="goToMoreDetailsOrganization();">
+                More Details
+              </button>
+            </div>
+          </div>
+
+
+      <div class="post">
+        <h5>user photo</h5>
+        <img src="/icons/maro_pick2.jpg">
+        <h5 class="title">Name:</h5>
+        <p>Marawan Salah</p>
+        <h5>position:</h5>
+        <p>Teacher</p>
+        <h5>Gender:</h5>
+        <p>Male</p>
+        <h5>Email:</h5>
+        <p>LawBasYomKaman@gmail.com</p>
+        <h5>Contact Number:</h5>
+        <p>01234567891</p>
+        <h5>Address:</h5>
+        <p>GUC</p>
+        <h5>area:</h5>
+        <p>New Cairo</p>
+        <h5>governorate:</h5>
+        <p>Cairo</p>
+
+        <div class="requests-buttons">
+          <button class="post-button accept">Accept</button>
+          <button class="post-button decline">Decline</button>
+          <button class="post-button" onclick="goToMoreDetailsOrganization();">
+            More Details
+          </button>
+        </div>
+      </div>
+
+      <div class="post">
+        <h5>user photo</h5>
+        <img src="/icons/maro_pick2.jpg">
+        <h5 class="title">Name:</h5>
+        <p>Mohamed Rageh</p>
+        <h5>position:</h5>
+        <p>Doctor</p>
+        <h5>Gender:</h5>
+        <p>Male</p>
+        <h5>Email:</h5>
+        <p>LawBasYomKaman@gmail.com</p>
+        <h5>Contact Number:</h5>
+        <p>01234567891</p>
+        <h5>Address:</h5>
+        <p>GUC</p>
+        <h5>area:</h5>
+        <p>New Cairo</p>
+        <h5>governorate:</h5>
+        <p>Cairo</p>
+
+        <div class="requests-buttons">
+          <button class="post-button accept">Accept</button>
+          <button class="post-button decline">Decline</button>
+          <button class="post-button" onclick="goToMoreDetailsOrganization();">
+            More Details
+          </button>
+        </div>
+      </div>
+
+      <div class="post">
+        <h5>user photo</h5>
+        <img src="/icons/maro_pick2.jpg">
+        <h5 class="title">Name:</h5>
+        <p>Omar Farouk</p>
+        <h5>position:</h5>
+        <p>Teacher</p>
+        <h5>Gender:</h5>
+        <p>Male</p>
+        <h5>Email:</h5>
+        <p>LawBasYomKaman@gmail.com</p>
+        <h5>Contact Number:</h5>
+        <p>01234567891</p>
+        <h5>Address:</h5>
+        <p>GUC</p>
+        <h5>area:</h5>
+        <p>New Cairo</p>
+        <h5>governorate:</h5>
+        <p>Cairo</p>
+
+        <div class="requests-buttons">
+          <button class="post-button accept">Accept</button>
+          <button class="post-button decline">Decline</button>
+          <button class="post-button" onclick="goToMoreDetailsOrganization();">
+            More Details
+          </button>
+        </div>
+      </div>
+
+
+      <div class="post">
+        <h5>user photo</h5>
+        <img src="/icons/maro_pick2.jpg">
+        <h5 class="title">Name:</h5>
+        <p>Khedr</p>
+        <h5>position:</h5>
+        <p>Doctor</p>
+        <h5>Gender:</h5>
+        <p>Male</p>
+        <h5>Email:</h5>
+        <p>LawBasYomKaman@gmail.com</p>
+        <h5>Contact Number:</h5>
+        <p>01234567891</p>
+        <h5>Address:</h5>
+        <p>GUC</p>
+        <h5>area:</h5>
+        <p>New Cairo</p>
+        <h5>governorate:</h5>
+        <p>Cairo</p>
+
+        <div class="requests-buttons">
+          <button class="post-button accept">Accept</button>
+          <button class="post-button decline">Decline</button>
+          <button class="post-button" onclick="goToMoreDetailsOrganization();">
+            More Details
+          </button>
+        </div>
+      </div>
+
+
+      </div>
+    <!-- End Card View-->
+
+    <!-- Start Table View-->
+    <!-- End Table View-->
+    </div>
+  </body>
+</html>

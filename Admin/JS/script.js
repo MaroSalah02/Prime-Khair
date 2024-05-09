@@ -30,3 +30,16 @@ function showForm() {
     behavior: "smooth",
   });
 }
+
+function tableviewshow(){
+  var table = document.getElementsByClassName("table")[0];
+  var cards = document.getElementsByClassName("posts")[0];
+  cards.classList.add("hidden");
+  table.classList.remove("hidden");
+}
+function cardviewshow(){
+  var table = document.getElementsByClassName("table")[0];
+  var cards = document.getElementsByClassName("posts")[0];
+  cards.classList.remove("hidden");
+  table.classList.add("hidden");
+}
