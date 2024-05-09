@@ -38,31 +38,7 @@ span {
   width: 200px;
   background-color: white;
 }
-.topbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 3%;
-  padding-right: 3%;
-}
 
-.topbar a {
-  /* width: 100%; */
-  padding-bottom: 0%;
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
-
-  /* margin: auto; */
-
-  transition: 0.3s ease-in-out;
-  width: auto;
-}
-.topbar a:hover {
-  color: #c2a83e;
-}
 .card {
   display: flex;
   flex-direction: column;
@@ -117,12 +93,6 @@ span {
 
 body {
   min-height: 100vh;
-}
-
-#page-header {
-  color: #fff;
-  font-weight: bold;
-  font-size: 20px;
 }
 
 #confirmation-form {
