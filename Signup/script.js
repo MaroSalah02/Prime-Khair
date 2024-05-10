@@ -34,6 +34,9 @@ const org_contact = document.getElementById("org_contact");
 const org_area = document.getElementById("org_area");
 const org_governorate = document.getElementById("org_governorate");
 const org_type = document.getElementById("org_type");
+const org_male = document.getElementById("org_male");
+const org_female = document.getElementById("org_female");
+const org_other = document.getElementById("org_other");
 
 const error = document.getElementById("error");
 const error2 = document.getElementById("error2");
@@ -255,6 +258,41 @@ function Donor(){
         additional;
     }
 }
+function Organization(){
+    this.org_first_name = org_first_name.value;
+    this.org_last_name = org_last_name.value;
+    this.org_email = org_email.value;
+    this.org_contact = org_contact.value;
+    this.org_password = org_password.value;
+    this.org_area = org_area.value;
+    this.org_address = org_address.value;
+    this.org_name = org_name.value;
+    this.org_area = org_area.value;
+    this.org_governorate = org_governorate.value;
+    this.org_type = org_type.value;
+    this.gender = "";
+    if(org_male.checked){
+        this.gender = "Male" ;
+    }
+    else if(org_female.checked){
+        this.gender = "Female" ;
+    }
+    else if(org_other.checked){
+        this.gender = "Other" ;
+    }
+    this.full_info = function(){
+        return "The Organization representative name: " + this.org_first_name + " " + this.org_last_name + "\n" +
+        "The organization gender: " + this.gender + "\n" +
+        "The organization email: " + this.org_email +"\n" +
+        "The organization contact: " + this.org_contact + "\n" +
+        "The organization password: " + this.org_password + "\n" +
+        "The organization name: " + this.org_name + "\n" +
+        "The organization type: " + this.org_type + "\n" +
+        "The organization governorate: " + this.org_governorate + "\n" +
+        "The organization area: " + this.org_area + "\n" +
+        "The organization address: " + this.org_address + "\n";
+    }
+}
 function buttonClickHandler() {
     validate(userType);
     if(userType == 'donor'){
@@ -262,7 +300,8 @@ function buttonClickHandler() {
         console.log(donor.full_info());
     }
     else{
-
+        let organization = new Organization();
+        console.log(organization.full_info());
     }
 
 }
