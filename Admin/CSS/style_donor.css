@@ -149,14 +149,14 @@ h1 {
   perspective-origin: center center;
   width: 80%; /* Adjust the width as needed */
   margin: auto; /* This centers the div horizontally */
-  padding-top: 5vh;
+  padding-top: 0;
   border-radius: 10px; /* Optional: add rounded corners */
 }
 
 body {
   margin: 0;
   background: url("../../icons/background_green.jpg") no-repeat center center
-  fixed;
+    fixed;
   background-size: cover;
   background-position: center;
   font-family: var(--bs-body-font-family);
@@ -362,7 +362,6 @@ button:not(:disabled),
 
 .post-button {
   display: inline;
-  
 }
 .accept {
   background-color: mediumblue;
@@ -376,12 +375,12 @@ button:not(:disabled),
   display: flex;
   flex-wrap: wrap;
 }
-#toggle-sec{
+#toggle-sec {
   padding-top: 15vh;
   padding-left: 10vw;
   align-items: left;
   display: flex;
 }
-.hidden{
+.hidden {
   visibility: hidden;
 }
