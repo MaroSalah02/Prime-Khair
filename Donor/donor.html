@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DonorPage</title>
-  <link rel="icon" href="/icons/Main_icon.png" type="image/x-icon"/>
+  <link rel="icon" href="/icons/Main_icon.png" type="image/x-icon" />
   <link rel="stylesheet" href="/Styles/general.css" />
   <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="/Styles/navElements.css" />
@@ -78,29 +78,31 @@
         <input id="searchbar" oninput="filter()" placeholder="Search...." style="margin-top: 3vh" />
         <input type="text" id="typeSelector" oninput="filterSelection()" list="options" placeholder="Search category">
         <datalist id="options">
-          <option selected value="all"></option>
-          <option value="clothes"></option>
-          <option value="toys"></option>
-          <option value="food"></option>
-          <optgroup label="Medical Requests">
-            <option value="medical-supplies"></option>
-            <option value="medication"></option>
-          </optgroup>
-          <optgroup label="School Supplies">
-            <option value="books"></option>
-            <option value="stationery"></option>
-          </optgroup>
-          <optgroup label="Pro-bono">
+          <option selected value="All"></option>
+          <option value="Clothes"></option>
+          <option value="Toys"></option>
+          <option value="Food"></option>
+          <!-- <optgroup label="Medical Requests"> -->
+          <option value="Medical Supplies"></option>
+          <option value="Medication"></option>
+          <!-- </optgroup> -->
+          <!-- <optgroup label="School Supplies"> -->
+          <option value="Books"></option>
+          <option value="Sationery"></option>
+          <option value="Blood"></option>
+
+          <!-- </optgroup> -->
+          <!-- <optgroup label="Pro-bono">
             <option value="teaching"></option>
             <option value="doctoring"></option>
-          </optgroup>
+          </optgroup> -->
         </datalist>
 
       </div>
 
       <div id="clothes-filter" class="filter-group">
         <input oninput="filter()" id="clothes-min" type="number" min="1" placeholder="Min" />
-        <input oninput="filter()" id="clothes-max" type="number" placeholder="Max" />
+        <input oninput="filter()" id="clothes-max" type="number" min="1" placeholder="Max" />
         <div class="wrap">
           <input oninput="filter()" id="clothes-male" type="checkbox" name="gender" value="male" />
           <label for="clothes-male">Male</label>
@@ -182,21 +184,33 @@
 
       <div class="post books">
         <h3 class="title">Library Expansion Project: Donate Books Now!</h3>
-        <p class="description">
-          Help enrich our library collection by donating your favorite books.
-          Your contribution will open new worlds for readers of all ages.
-          Thank you for fostering a love of reading!
+        <p>
+          <span class="book-description">Help enrich our library collection by donating your favorite books.
+            Your contribution will open new worlds for readers of all ages.
+            Thank you for fostering a love of reading!</span>
         </p>
-        <p class="name">Title: To Kill a Mockingbird</p>
-        <p class="author">Author: Harper Lee</p>
-        <p class="Language">Language: English</p>
-        <p class="edition" hidden>Edition: Revised Edition</p>
-        <p class="summary" hidden>
-          Short Summary: A powerful story of racial injustice and moral growth
-          in the American South.
-        </p>
+        <h5>
+          Title: <span class="book-name">Title: To Kill a Mockingbird</span>
+        </h5>
+        <h5>
+          Author: <span class="book-author">Author: Harper Lee</span>
+        </h5>
+        <h5>
+          Language: <span class="book-language">Language: English</span>
+        </h5>
+        <h5 hidden>
+          Edition: <span class="book-edition" hidden>Edition: Revised Edition</span>
+        </h5>
+        <h5 hidden>
+          Short Summary: <span class="book-summary" hidden>A powerful story of racial injustice and moral growth in the
+            American South.</span>
+        </h5>
         <img hidden src="to_kill_a_mockingbird.jpg" alt="To Kill a Mockingbird alt text" />
-        <p class="quantity" hidden>Quantity Required: 100</p>
+        <h5 hidden>
+          Quantity Required: <span class="book-quantity" hidden>100</span>
+        </h5>
+
+
         <button style="flex-basis: 100%">Donate</button>
       </div>
 
@@ -204,17 +218,26 @@
         <h3 class="title">
           Holiday Toy Drive: Spread Joy to Children in Need!
         </h3>
-        <p class="description">
-          Brighten a child's day by donating toys to our annual toy drive.
-          Your generosity brings smiles to little faces. Thank you for your
-          kindness!
+        <p>
+          <span class="description">Description: Brighten a child's day by donating toys to our annual toy drive.
+            Your generosity brings smiles to little faces. Thank you for your kindness!</span>
         </p>
-        <p class="type">Type: Stuffed Animal</p>
-        <p class="age">Age: 3-6</p>
-        <p class="gender">Gender: Unisex</p>
-        <p class="category">Category: Stuffed Toys</p>
+        <h5>Type:
+          <span class="type"> Stuffed Animal</span>
+        </h5>
+        <h5>Age:
+          <span class="age">3-6</span>
+        </h5>
+        <h5>Gender:
+          <span class="gender">Any</span>
+        </h5>
+        <h5>Category:
+          <span class="category">Stuffed Toys</span>
+        </h5>
         <img hidden src="stuffed_animal.jpg" alt="Stuffed Animal" />
-        <p class="quantity" hidden>Quantity Requested: 200</p>
+        <h5 hidden>
+          <span class="quantity">Quantity Requested: 200</span>
+        </h5>
         <button>Donate</button>
       </div>
 
@@ -230,7 +253,7 @@
         <button>Donate</button>
       </div>
 
-      <div class="post medical-supplies">
+      <!-- <div class="post medical-supplies">
         <h3 class="title">
           Medical Equipment Drive: Support Healthcare Providers!
         </h3>
@@ -244,25 +267,9 @@
         <img src="blood_pressure_monitor.jpg" alt="Blood Pressure Monitor" />
         <p>Quantity: 50</p>
         <button>Donate</button>
-      </div>
+      </div> -->
 
-      <div class="post blood">
-        <h3 class="title">Emergency Blood Drive: Save Lives Today!</h3>
-        <p class="description">
-          Your blood donation can mean the difference between life and death
-          for patients in critical condition. Join us in this life-saving
-          effort. Thank you for your compassion!
-        </p>
-        <p>Name of Patient: John Smith</p>
-        <p>Blood Type: A+</p>
-        <p>Hospital Name: Mercy Hospital</p>
-        <p>Hospital Area: Downtown</p>
-        <p>Governorate: New York</p>
-        <p>Hospital Address: 123 Main Street, New York, NY</p>
-        <button>Donate</button>
-      </div>
-
-      <div class="post teaching">
+      <!-- <div class="post teaching">
         <h3 class="title">Education Initiative: Volunteer to Teach!</h3>
         <p class="description">
           Make a difference in the lives of students by volunteering to teach.
@@ -296,6 +303,22 @@
           shortness of breath. Immediate intervention is necessary.
         </p>
         <button>Assist</button>
+      </div> -->
+
+      <div class="post clothes">
+        <h3 class="title">
+          Summer Shirt Fest: Spread Joy to Children in Need!
+        </h3>
+        <p class="description">
+          FILL LATER
+        </p>
+        <h5>Type: <span class="type">T-shirt</span></h5>
+        <h5>Age: <span class="age">10-12</span></h5>
+        <h5>Gender: <span class="gender">Male</span></h5>
+        <h5>Season: <span class="season">Spring/Summer/Fall</span> </h5>
+        <img hidden src="stuffed_animal.jpg" alt="Stuffed Animal" />
+        <h5 class="quantity" hidden>Quantity Requested: 200</h5>
+        <button>Donate</button>
       </div>
     </div>
   </div>

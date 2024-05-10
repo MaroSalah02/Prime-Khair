@@ -18,6 +18,10 @@
 }
 #clothes-min {
 }
+.post h5 {
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+}
 #clothes-filter {
   margin: auto;
   display: flex;

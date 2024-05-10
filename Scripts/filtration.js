@@ -11,7 +11,7 @@ function filterSelection() {
     filterGroups.item(i).classList.add("invisible");
   }
 
-  console.log(selectorVal);
+  // console.log(selectorVal);
 
   switch (selectorVal) {
     case "clothes":
@@ -23,7 +23,7 @@ function filterSelection() {
     case "food":
       document.getElementById("food-filter").classList.remove("invisible");
       break;
-    case "medical-supplies":
+    case "medical mupplies":
       document
         .getElementById("medical-suppies-filter")
         .classList.remove("invisible");
@@ -42,7 +42,6 @@ function filterSelection() {
         .classList.remove("invisible");
       break;
     default:
-      selectorVal = "all";
   }
 
   filter();
@@ -50,6 +49,7 @@ function filterSelection() {
 
 function filter() {
   // var selectorVal = document.getElementById("typeSelector").value;
+  selectorVal = document.getElementById("typeSelector").value.toLowerCase();
   if (selectorVal == "") {
     selectorVal = "all";
   }
@@ -65,7 +65,7 @@ function filter() {
   for (var i = 0; i < postList.length; i++) {
     postList.item(i).classList.add("invisible");
   }
-  //   console.log(selectorVal == "all");
+  // console.log(selectorVal == "all");
 
   for (var i = 0; i < postList.length; i++) {
     if (
@@ -112,11 +112,105 @@ function filter() {
   //console.log(selectedList[0].children);
 
   switch (selectorVal) {
-    case "clothes":
-      fieldList = document.getElementById("clothes-filter").children;
+    case "clothes": // DONE
+      var clothesMin = document.getElementById("clothes-min").value;
+      var clothesMax = document.getElementById("clothes-max").value;
+      var minClothesDefault = clothesMin == "" ? 1 : clothesMin;
+      var maxClothesDefault = clothesMax == "" ? 900 : clothesMax;
+      var clothesMale = document.getElementById("clothes-male").checked;
+      var clothesFemale = document.getElementById("clothes-female").checked;
+      var clothesSpring = document.getElementById("clothes-spring").checked;
+      var clothesSummer = document.getElementById("clothes-summer").checked;
+      var clothesAutumn = document.getElementById("clothes-autumn").checked;
+      var clothesWinter = document.getElementById("clothes-winter").checked;
+
+      console.log(selectedList);
+
+      selectedList.forEach((post) => {
+        var flag = true;
+
+        // var typeStrings = generateSubstrings(
+        //   post.getElementsByClassName("type").item(0).value
+        // );
+
+        var ageString = post.getElementsByClassName("age").item(0).innerHTML;
+        var genderString = post
+          .getElementsByClassName("gender")
+          .item(0)
+          .innerHTML.toLowerCase();
+        var seaosnStrings = post
+          .getElementsByClassName("season")
+          .item(0)
+          .innerHTML.toLowerCase()
+          .split("/");
+
+        var minPost = getMin(ageString);
+        var maxPost = getMax(ageString);
+        console.log(ageString);
+        console.log(minClothesDefault);
+        console.log(minPost);
+        console.log(maxClothesDefault);
+        console.log(maxPost);
+        if (
+          parseInt(minClothesDefault) > parseInt(minPost) ||
+          parseInt(maxClothesDefault) < parseInt(maxPost)
+        ) {
+          flag = false;
+        }
+        // console.log(flag);
+
+        if (genderString.includes("any") || (!clothesMale && !clothesFemale)) {
+          //do nothing
+        } else {
+          if (genderString.includes("female") && !clothesFemale) {
+            flag = false;
+          }
+          if (
+            genderString.includes("male") &&
+            !genderString.includes("female") &&
+            !clothesMale
+          ) {
+            flag = false;
+          }
+        }
+        if (
+          !clothesAutumn &&
+          !clothesSpring &&
+          !clothesSummer &&
+          !clothesWinter
+        ) {
+          //do nothing
+        } else {
+          flag = false;
+        }
+
+        if (
+          (seaosnStrings.includes("fall") ||
+            seaosnStrings.includes("autumn")) &&
+          clothesAutumn
+        ) {
+          flag = true;
+        }
+        if (seaosnStrings.includes("summer") && clothesSummer) {
+          flag = true;
+        }
+        if (seaosnStrings.includes("winter") && clothesWinter) {
+          flag = true;
+        }
+        if (seaosnStrings.includes("spring") && clothesSpring) {
+          flag = true;
+        }
+
+        if (!flag) {
+          post.classList.add("invisible");
+        } else {
+          post.classList.remove("invisible");
+        }
+      });
+
       break;
     case "toys": //DONE
-      fieldList = document.getElementById("toys-filter").children;
+      // fieldList = document.getElementById("toys-filter").children;
       var female = document.getElementById("toys-female").checked;
       var male = document.getElementById("toys-male").checked;
       //   console.log(male);
@@ -141,23 +235,23 @@ function filter() {
       var maxDefault = max == "" ? 900 : max;
       var minDefault = min == "" ? 1 : min;
 
-      var typeKeyword = fieldList.item(0).value.split(" ");
+      var typeKeyword = document.getElementById("toy-type").value.split(" ");
 
-      var category = fieldList.item(3).value;
+      var category = document.getElementById("toy-category").value;
 
       var flag = true;
 
       selectedList.forEach((card) => {
-        var children = card.children;
+        var typeToy = card.getElementsByClassName("type").item(0);
+        var age = card.getElementsByClassName("age").item(0);
+        var gender = card.getElementsByClassName("gender").item(0);
+        var categoryToy = card.getElementsByClassName("category").item(0);
 
         var type = [];
 
-        children
-          .item(2)
-          .innerHTML.split(" ")
-          .forEach((word) => {
-            type = type.concat(generateSubstrings(word.toLowerCase()));
-          });
+        typeToy.innerHTML.split(" ").forEach((word) => {
+          type = type.concat(generateSubstrings(word.toLowerCase()));
+        });
         //console.log(type);
         //console.log(typeKeyword);
         typeKeyword.forEach((keyword) => {
@@ -173,7 +267,7 @@ function filter() {
         });
         //console.log(flag);
 
-        var ageString = children.item(3).innerHTML;
+        var ageString = age.innerHTML;
         //console.log(ageString);
         //console.log(flag);
 
@@ -198,8 +292,8 @@ function filter() {
         //   flag = false;
         // }
 
-        var tmp = children.item(4).innerHTML;
-        if (tmp.includes("Unisex")) {
+        var tmp = gender.innerHTML;
+        if (tmp.includes("Any")) {
           //do nothing
         } else {
           if (tmp.includes("Female") && !female) {
@@ -212,7 +306,7 @@ function filter() {
         //console.log(flag);
 
         if (
-          !children.item(5).innerHTML.toLocaleLowerCase().includes(category) &&
+          !categoryToy.innerHTML.toLocaleLowerCase().includes(category) &&
           category != "all"
         ) {
           flag = false;
@@ -232,7 +326,7 @@ function filter() {
     case "food":
       fieldList = document.getElementById("food-filter").children;
       break;
-    case "medical-supplies":
+    case "medical supplies":
       fieldList = document.getElementById("medical-suppies-filter").children;
       break;
     case "medication":
@@ -241,9 +335,9 @@ function filter() {
     case "books": //DONE
       fieldList = document.getElementById("books-filter").children;
 
-      var nameKeyword = fieldList.item(0).value.split(" ");
-      var authorKeyword = fieldList.item(1).value.split(" ");
-      var languageKeyword = fieldList.item(2).value.split(" ");
+      var nameKeyword = fieldList.item(0).value.toLowerCase().split(" ");
+      var authorKeyword = fieldList.item(1).value.toLowerCase().split(" ");
+      var languageKeyword = fieldList.item(2).value.toLowerCase().split(" ");
 
       selectedList.forEach((card) => {
         var children = card.children;
@@ -254,7 +348,8 @@ function filter() {
 
         children
           .item(2)
-          .innerHTML.split(" ")
+          .innerHTML.toLowerCase()
+          .split(" ")
           .forEach((word) => {
             name = name.concat(generateSubstrings(word));
           });
@@ -279,7 +374,6 @@ function filter() {
         console.log(authorKeyword);
         console.log(language);
         console.log(languageKeyword);
-
         var flag = true;
 
         nameKeyword.forEach((keyword) => {
@@ -373,9 +467,10 @@ function generateSubstrings(str) {
 }
 
 function getMin(s) {
+  // console.log(s);
   var sum = "";
-  for (var i = 5; i < s.length; i++) {
-    //console.log(s[i]);
+  for (var i = 0; i < s.length; i++) {
+    console.log(s[i]);
     if (s[i] == "-" || s[i] == "+") {
       break;
     } else {
@@ -390,12 +485,12 @@ function getMin(s) {
 
 function getMax(s) {
   var sum = "";
-  for (var i = s.length - 1; 5 < i; i--) {
-    //console.log(s[i]);
+  for (var i = s.length - 1; 0 <= i; i--) {
+    console.log(s[i]);
     if (s[i] == "-" || s[i] == "+") {
       break;
     } else {
-      sum += s[i];
+      sum = s[i] + sum;
     }
   }
   if (sum == "") {
