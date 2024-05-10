@@ -192,7 +192,7 @@
 .topbar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   padding-left: 3%;
   padding-right: 3%;
@@ -225,4 +225,6 @@ body {
   color: #fff;
   font-weight: bold;
   font-size: 20px;
+  position: absolute;
+  margin-left: 37%;
 }
