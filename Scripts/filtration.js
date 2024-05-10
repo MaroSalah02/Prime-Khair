@@ -1,7 +1,9 @@
 window.onload = filterSelection();
 
+var selectorVal = "";
+
 function filterSelection() {
-  var selectorVal = document.getElementById("typeSelector").value.toLowerCase();
+  selectorVal = document.getElementById("typeSelector").value.toLowerCase();
 
   var filterGroups = document.getElementsByClassName("filter-group");
   // console.log(filterGroups);
@@ -39,13 +41,15 @@ function filterSelection() {
         .getElementById("stationery-filter")
         .classList.remove("invisible");
       break;
+    default:
+      selectorVal = "all";
   }
 
   filter();
 }
 
 function filter() {
-  var selectorVal = document.getElementById("typeSelector").value;
+  // var selectorVal = document.getElementById("typeSelector").value;
   if (selectorVal == "") {
     selectorVal = "all";
   }

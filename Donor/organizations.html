@@ -1,159 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/Styles/donor.css" />
-    <link rel="stylesheet" href="/Styles/navElements.css" />
-    <link rel="stylesheet" href="/Styles/general.css"/>
-    <script src="/Scripts/donor.js"></script>
-    <script src="/Scripts/sidebar.js"></script>
-    <script
-      src="https://kit.fontawesome.com/7e3bb74f76.js"
-      crossorigin="anonymous"
-    ></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="probar">
-      <div class="filled" id="myelement"></div>
-    </div>
+  <link rel="stylesheet" href="/Styles/donor.css" />
+  <link rel="stylesheet" href="/Styles/navElements.css" />
+  <link rel="stylesheet" href="/Styles/general.css" />
+  <script src="/Scripts/donor.js"></script>
+  <script src="/Scripts/sidebar.js"></script>
+  <script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
 
-    <div class="sidebar">
-      <div id="sidebar-top">
-        <div class="sidebar-button" id="3-bars" onclick="expand()">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-        <div id="logo-img" class="visible fade logo">
-          <img src="/icons/prime-khair-high-resolution-logo-transparent.png">
-        </div>
-      </div>
-      <hr class="visible fade">
-      <div class="profile-user-photo visible fade">
-        <img src="profile.jpg" alt="user" />
-        <p>Organization name</p>
-      </div>
-      <nav class="sidebar-nav visible fade">
-        <ul>
-          <li><a href="#">Profie Managment</a></li>
-          <li><a href="#">Create new Donation Post</a></li>
-          <li><a href="#">Donation History</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="/Donor/donor.html">View Donation Requests</a></li>
+  <title>Document</title>
 
-        </ul>
-      </nav>
-    </div>
-    <header class="topbar">
-      <h3 id="title">Explore Organization</h3>
-      <div class="links">
-        <a href="/main/main.html">
-          <h5 class="extraMenu">About</h5>
-        </a>
-        <a href="">
-          <h5 class="extraMenu">Contact</h5>
-        </a>
-      </div>
-      </div>
-      </div>
-    </header>
-  
+  <style>
+    #page {
+      margin-top: 0%;
+      padding-top: 7%;
+    }
+  </style>
+</head>
 
-    <div class="page">
-      <div id="posts">
-        <div class="post">
-          <h1 class="title">Pages of Hope: Books for Brilliance</h1>
-          <p class="description">
-            Help us enrich children's lives by donating books. Every story shared
-            sparks imagination and learning!
-          </p>
-          <h3>Motto: Igniting Minds, One Page at a Time</h3>
-          <h3>Category: Books</h3>
-          <button>More Details</button>
-        </div>
-        <div class="post">
-          <h1 class="title">Playful Hearts Foundation: Toys of Joy</h1>
-          <p class="description">
-            Join our mission to bring smiles to children's faces through toy
-            donations. Play is essential for healthy development!
-          </p>
-          <h3>Motto: Spreading Happiness Through Play</h3>
-          <h3>Category: Toys</h3>
-          <button>More Details</button>
-        </div>
-        <div class="post">
-          <h1 class="title">Food for All: Nourish the Future</h1>
-          <p class="description">
-            Help us fight hunger in our community by donating nutritious food
-            items. Together, we can make a difference one meal at a time!
-          </p>
-          <h3>Motto: Ending Hunger, One Plate at a Time</h3>
-          <h3>Category: Foods</h3>
-          <button>More Details</button>
-        </div>
-        <div class="post">
-          <h1 class="title">Care Beyond Borders: Healing Hands</h1>
-          <p class="description">
-            Your donation of medical supplies can save lives. Let's ensure
-            everyone has access to essential healthcare!
-          </p>
-          <h3>Motto: Bridging Gaps, Saving Lives</h3>
-          <h3>Category: Medical Supplies</h3>
-          <button>More Details</button>
-        </div>
-        <div class="post">
-          <h1 class="title">Blood Drive Heroes: Give the Gift of Life</h1>
-          <p class="description">
-            Blood donations save lives. Your generosity can be the lifeline for
-            someone in critical need!
-          </p>
-          <h3>Motto: Be a Hero, Save Lives</h3>
-          <h3>Category: Blood Donation</h3>
-          <button>More Details</button>
-        </div>
-        <div class="post">
-          <h1 class="title">Threads of Kindness: Warmth for All</h1>
-          <p class="description">
-            Help us provide warmth and comfort by donating clothing to those
-            experiencing hardship. Every garment counts!
-          </p>
-          <h3>Motto: Wrapping the World in Kindness</h3>
-          <h3>Category: Clothes</h3>
-          <button>More Details</button>
-        </div>
-        <div class="post">
-          <h1 class="title">Education Empowers: Empowerment through Education</h1>
-          <p class="description">
-            Equip classrooms with the tools they need for quality education. Your
-            support shapes the future!
-          </p>
-          <h3>Motto: Knowledge is Power</h3>
-          <h3>Category: Teaching</h3>
-          <button>More Details</button>
-        </div>
-        <div class="post">
-          <h1 class="title">Care in Crisis: Urgent Help Needed</h1>
-          <p class="description">
-            Your donation can provide critical medical assistance to those facing
-            life-threatening conditions. Every contribution matters!
-          </p>
-          <h3>Motto: Healing Hands, Compassionate Hearts</h3>
-          <h3>Category: Medical Cases</h3>
-          <button>More Details</button>
-        </div>
-        <div class="post">
-          <h1 class="title">Stationery Support Initiative: Write for Success</h1>
-          <p class="description">
-            Access to stationery fuels creativity and academic success. Help us
-            provide the tools students need to excel!
-          </p>
-          <h3>Motto: Empowering Tomorrow's Leaders</h3>
-          <h3>Category: Stationery</h3>
-          <button>More Details</button>
-        </div>
+<body>
+  <div class="probar">
+    <div class="filled" id="myelement"></div>
+  </div>
+
+  <div class="sidebar">
+    <div id="sidebar-top">
+      <div class="sidebar-button" id="3-bars" onclick="expand()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <div id="logo-img" class="visible fade logo">
+        <img src="/icons/prime-khair-high-resolution-logo-transparent.png">
       </div>
     </div>
-  </body>
+    <hr class="visible fade">
+    <div class="profile-user-photo visible fade">
+      <img src="profile.jpg" alt="user" />
+      <p>Organization name</p>
+    </div>
+    <nav class="sidebar-nav visible fade">
+      <ul>
+        <li><a href="#">Profie Managment</a></li>
+        <li><a href="#">Create new Donation Post</a></li>
+        <li><a href="#">Donation History</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="/Donor/donor.html">View Donation Requests</a></li>
+
+      </ul>
+    </nav>
+  </div>
+  <header class="topbar">
+    <h3 id="title">Explore Organization</h3>
+    <div class="links">
+      <a href="/main/main.html">
+        <h5 class="extraMenu">About</h5>
+      </a>
+      <a href="">
+        <h5 class="extraMenu">Contact</h5>
+      </a>
+    </div>
+    </div>
+    </div>
+  </header>
+
+
+  <div id="page">
+    <div id="posts">
+      <div class="post">
+        <h1 class="title">Pages of Hope: Books for Brilliance</h1>
+        <p class="description">
+          Help us enrich children's lives by donating books. Every story shared
+          sparks imagination and learning!
+        </p>
+        <h3 class="">Address: <span class="Governate"> Cairo</span><span class="Area"> AREA</span></h3>
+        <h3 class="type">Organization Type: Books</h3>
+        <button>More Details</button>
+      </div>
+      <div class="post">
+        <h1 class="title">Playful Hearts Foundation: Toys of Joy</h1>
+        <p class="description">
+          Join our mission to bring smiles to children's faces through toy
+          donations. Play is essential for healthy development!
+        </p>
+        <h3>Motto: Spreading Happiness Through Play</h3>
+        <h3>Category: Toys</h3>
+        <button>More Details</button>
+      </div>
+      <div class="post">
+        <h1 class="title">Food for All: Nourish the Future</h1>
+        <p class="description">
+          Help us fight hunger in our community by donating nutritious food
+          items. Together, we can make a difference one meal at a time!
+        </p>
+        <h3>Motto: Ending Hunger, One Plate at a Time</h3>
+        <h3>Category: Foods</h3>
+        <button>More Details</button>
+      </div>
+      <div class="post">
+        <h1 class="title">Care Beyond Borders: Healing Hands</h1>
+        <p class="description">
+          Your donation of medical supplies can save lives. Let's ensure
+          everyone has access to essential healthcare!
+        </p>
+        <h3>Motto: Bridging Gaps, Saving Lives</h3>
+        <h3>Category: Medical Supplies</h3>
+        <button>More Details</button>
+      </div>
+      <div class="post">
+        <h1 class="title">Blood Drive Heroes: Give the Gift of Life</h1>
+        <p class="description">
+          Blood donations save lives. Your generosity can be the lifeline for
+          someone in critical need!
+        </p>
+        <h3>Motto: Be a Hero, Save Lives</h3>
+        <h3>Category: Blood Donation</h3>
+        <button>More Details</button>
+      </div>
+      <div class="post">
+        <h1 class="title">Threads of Kindness: Warmth for All</h1>
+        <p class="description">
+          Help us provide warmth and comfort by donating clothing to those
+          experiencing hardship. Every garment counts!
+        </p>
+        <h3>Motto: Wrapping the World in Kindness</h3>
+        <h3>Category: Clothes</h3>
+        <button>More Details</button>
+      </div>
+      <div class="post">
+        <h1 class="title">Education Empowers: Empowerment through Education</h1>
+        <p class="description">
+          Equip classrooms with the tools they need for quality education. Your
+          support shapes the future!
+        </p>
+        <h3>Motto: Knowledge is Power</h3>
+        <h3>Category: Teaching</h3>
+        <button>More Details</button>
+      </div>
+      <div class="post">
+        <h1 class="title">Care in Crisis: Urgent Help Needed</h1>
+        <p class="description">
+          Your donation can provide critical medical assistance to those facing
+          life-threatening conditions. Every contribution matters!
+        </p>
+        <h3>Motto: Healing Hands, Compassionate Hearts</h3>
+        <h3>Category: Medical Cases</h3>
+        <button>More Details</button>
+      </div>
+      <div class="post">
+        <h1 class="title">Stationery Support Initiative: Write for Success</h1>
+        <p class="description">
+          Access to stationery fuels creativity and academic success. Help us
+          provide the tools students need to excel!
+        </p>
+        <h3>Motto: Empowering Tomorrow's Leaders</h3>
+        <h3>Category: Stationery</h3>
+        <button>More Details</button>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
