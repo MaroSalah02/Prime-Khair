@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prime Khair: Clothes Donation</title>
-    <link rel="stylesheet" type="text/css" href="/Styles/requestDetails.css">
-    <link rel="stylesheet" type="text/css" href="/Styles/navElements.css">
-
+    <link rel="stylesheet" type="text/css" href="/Styles/requestDetails.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/navElements.css" />
 
     <style>
-        #background-image-container {
-            background-image: url("/icons/clothesBackground.avif");
-            filter: brightness(0.5);
-        }
+      #background-image-container {
+        background-image: url("/icons/BloodDonation.jpg");
+        filter: brightness(0.5);
+      }
 
-        /* #page {
+      /* #page {
             padding-top: 2%;
         }
 
@@ -24,7 +22,7 @@
             padding-bottom: 3%;
             min-height: auto;
             /* transform: scale3d(0.9, 0.9, 1); */
-        /*
+      /*
         margin-bottom: 5%;
         }
 
@@ -43,143 +41,190 @@
 
         */
 
-        .horizontalFlex h3 {
-            padding-bottom: 12px;
-            min-width: 33%;
-        }
+      .horizontalFlex h3 {
+        padding-bottom: 12px;
+        min-width: 33%;
+      }
 
-        /* .card button:hover {
+      /* .card button:hover {
             scale: 1.035;
             transition: ease-in-out 0.5s;
         } */
-        /*
+      /*
         */
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="sidebar-container">
-        <div class="sidebar">
-            <div id="sidebar-top">
-                <div style="cursor: pointer;" class="sidebar-button" id="3-bars" onclick="expand()">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-                <div id="logo-img" class="visible fade logo">
-                    <img src="/icons/prime-khair-high-resolution-logo-transparent.png">
-                </div>
-            </div>
-            <hr class="visible fade">
-            <div class="profile-user-photo visible fade">
-                <img src="profile.jpg" alt="user" />
-                <p>Organization name</p>
-            </div>
+      <div class="sidebar">
+        <div id="sidebar-top">
+          <div
+            style="cursor: pointer"
+            class="sidebar-button"
+            id="3-bars"
+            onclick="expand()"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div id="logo-img" class="visible fade logo">
+            <img
+              src="/icons/prime-khair-high-resolution-logo-transparent.png"
+            />
+          </div>
         </div>
+        <hr class="visible fade" />
+        <div class="profile-user-photo visible fade">
+          <img src="profile.jpg" alt="user" />
+          <p>Organization name</p>
+        </div>
+      </div>
 
-        <header class="topbar">
-            <p id="page-header">Clothes Request
-                Details</p>
-            <a href="/main/main.html">Home</a>
-        </header>
+      <header class="topbar">
+        <p id="page-header">Clothes Request Details</p>
+        <a href="/main/main.html">Home</a>
+      </header>
     </div>
 
-    <div id="background-image-container">
-
-    </div>
+    <div id="background-image-container"></div>
 
     <div id="page">
-        <div class="card">
-
-            <div class="back-arrow" onclick="goBack()">
-                <i class="fa-solid fa-arrow-left"></i>
-            </div>
-
-            <div class="details">
-                <h1 id="post-title">Post Title Unavailbe</h1>
-                <hr>
-                <h2 id="post-description">Post Description Unavailbe</h2>
-                <!-- <div class="horizontalFlex"> -->
-
-
-                <div class="horizontalFlex" style="padding-top: 3%;">
-                    <h3>Clothing Type:<span id="type-value" style="margin-left: 5px; font-weight: bold;">TYPE</span>
-                    </h3>
-                    <h3>Intended Age:<span id="age-value" style="margin-left: 5px;font-weight: bold;">3-5</span>
-                    </h3>
-                </div>
-
-                <h3>Colthes for:<span id="gender-value" style="margin-left: 5px;font-weight: bold;">Boys and
-                        Girls</span>
-                </h3>
-                <h3>Clothes Season:<span id="season-value" style="margin-left: 5px;font-weight: bold;">Summer</span>
-                </h3>
-                <h3>Clothes Material:<span id="material-value" style="margin-left: 5px;font-weight: bold;">Cotton</span>
-                </h3>
-
-
-                <h3>Quantity:<span id="quantity-value"
-                        style="margin-left: 5px;font-weight: bold; width: 100%;">12</span>
-                </h3>
-
-                <div class="button-container" style="flex-basis: 100%; margin-top: 3%; margin-bottom: -4%;">
-                    <button onclick="showForm()">Donate</button>
-
-                </div>
-
-                <!-- </div> -->
-            </div>
+      <div class="card">
+        <div class="back-arrow" onclick="goBack()">
+          <i class="fa-solid fa-arrow-left"></i>
         </div>
 
-        <div id="confirmation-form" class="card invisible">
-            <div class="details">
-                <h1>
-                    Donation Information
-                </h1>
-                <hr>
-            </div>
-            <h3>Donation Quantity, Pickup Time & Transportation Selection</h3>
+        <div class="details">
+          <h1 id="post-title">Post Title Unavailbe</h1>
+          <hr />
+          <h2 id="post-description">Post Description Unavailbe</h2>
+          <!-- <div class="horizontalFlex"> -->
 
-            <div class="horizontalFlex" style="margin: 3%;">
-                <input id="quantity-input" class="stylized-input" style="width: 20%; text-align: center;" type="number"
-                    min="1" placeholder="Quantity">
-                <input id="time-input" class="stylized-input" type="datetime-local">
-                <select id="transport-input" class="stylized-input">
-                    <option selected value="car">
-                        Car
-                    </option>
-                    <option value="truck">
-                        Truck
-                    </option>
-                    <option value="motorcycle">
-                        Motorcycle
-                    </option>
-                </select>
-            </div>
-
+          <div class="horizontalFlex" style="padding-top: 3%">
             <h3>
-                Pickup Location
+              Blood Type:<span
+                id="Bloodtype-value"
+                style="margin-left: 5px; font-weight: bold"
+                >TYPE</span
+              >
             </h3>
+            <h3>
+              Hospital Name:<span
+                id="HospitalName"
+                style="margin-left: 5px; font-weight: bold"
+                >3-5</span
+              >
+            </h3>
+          </div>
 
-            <div id="map"
-                style="width: 100%; min-height: 300px; max-height: 300px; border-radius: 10px; margin-top: 3%; margin-bottom: 3%;">
-            </div>
-            <input id="location-field" class="stylized-input" style="margin-bottom: 3%; text-align: center;">
-            <div
-                style="display: flex; width: 70%; flex-direction: row; justify-content: space-evenly; align-self: center;">
-                <button class="cancelButton" onclick="hideForm()">
-                    Cancel
-                </button>
-                <button class="acceptButton" onclick="submitForm()">
-                    Confirm
-                </button>
-            </div>
+          <h3>
+            Hospital Area:<span
+              id="gender-value"
+              style="margin-left: 5px; font-weight: bold"
+              >Boys and Girls</span
+            >
+          </h3>
+          <h3>
+            Clothes Season:<span
+              id="season-value"
+              style="margin-left: 5px; font-weight: bold"
+              >Summer</span
+            >
+          </h3>
+          <h3>
+            Clothes Material:<span
+              id="material-value"
+              style="margin-left: 5px; font-weight: bold"
+              >Cotton</span
+            >
+          </h3>
+
+          <h3>
+            Quantity:<span
+              id="quantity-value"
+              style="margin-left: 5px; font-weight: bold; width: 100%"
+              >12</span
+            >
+          </h3>
+
+          <div
+            class="button-container"
+            style="flex-basis: 100%; margin-top: 3%; margin-bottom: -4%"
+          >
+            <button onclick="showForm()">Donate</button>
+          </div>
+
+          <!-- </div> -->
         </div>
+      </div>
+
+      <div id="confirmation-form" class="card invisible">
+        <div class="details">
+          <h1>Donation Information</h1>
+          <hr />
+        </div>
+        <h3>Donation Quantity, Pickup Time & Transportation Selection</h3>
+
+        <div class="horizontalFlex" style="margin: 3%">
+          <input
+            id="quantity-input"
+            class="stylized-input"
+            style="width: 20%; text-align: center"
+            type="number"
+            min="1"
+            placeholder="Quantity"
+          />
+          <input id="time-input" class="stylized-input" type="datetime-local" />
+          <select id="transport-input" class="stylized-input">
+            <option selected value="car">Car</option>
+            <option value="truck">Truck</option>
+            <option value="motorcycle">Motorcycle</option>
+          </select>
+        </div>
+
+        <h3>Pickup Location</h3>
+
+        <div
+          id="map"
+          style="
+            width: 100%;
+            min-height: 300px;
+            max-height: 300px;
+            border-radius: 10px;
+            margin-top: 3%;
+            margin-bottom: 3%;
+          "
+        ></div>
+        <input
+          id="location-field"
+          class="stylized-input"
+          style="margin-bottom: 3%; text-align: center"
+        />
+        <div
+          style="
+            display: flex;
+            width: 70%;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-self: center;
+          "
+        >
+          <button class="cancelButton" onclick="hideForm()">Cancel</button>
+          <button class="acceptButton" onclick="submitForm()">Confirm</button>
+        </div>
+      </div>
     </div>
     <script src="/Scripts/sidebar.js"></script>
-    <script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1IETOWKceQ_gRqH-8Tdq18qzMRqmJebo&callback=initMap"
-        async defer></script>
+    <script
+      src="https://kit.fontawesome.com/7e3bb74f76.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1IETOWKceQ_gRqH-8Tdq18qzMRqmJebo&callback=initMap"
+      async
+      defer
+    ></script>
     <script src="/Scripts/map.js"></script>
     <script src="/Scripts/fulfulForm.js"></script>
-</body>
-
+  </body>
 </html>
