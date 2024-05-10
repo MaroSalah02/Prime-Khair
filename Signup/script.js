@@ -57,7 +57,7 @@ window.location.href = "../main/main.html";
 }
 var userType = getQueryVariable("type");
 if (userType === "donor") {
-Organization.style.display = "none";
+    Organization.style.display = "none";
 } else {
     donor.style.display = "none";
 }
@@ -258,7 +258,7 @@ function Donor(){
         additional;
     }
 }
-function Organization(){
+function Organization_info(){
     this.org_first_name = org_first_name.value;
     this.org_last_name = org_last_name.value;
     this.org_email = org_email.value;
@@ -300,7 +300,7 @@ function buttonClickHandler() {
         console.log(donor.full_info());
     }
     else{
-        let organization = new Organization();
+        let organization = new Organization_info();
         console.log(organization.full_info());
     }
 
