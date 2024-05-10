@@ -46,11 +46,12 @@ const donor = document.getElementById("donor");
 
 const inputs_clinic = document.getElementById("inputs_clinic");
 const inputs_teacher = document.getElementById("inputs_teacher");
-const Upload = document.getElementById("Upload");
 
 inputs_clinic.style.display = "none";
 inputs_teacher.style.display = "none";
 Upload.style.display = "none";
+
+let no_error_found = false;
 
 function return_back() {
 window.location.href = "../main/main.html";
@@ -74,6 +75,7 @@ function getQueryVariable(variable) {
 }
 function check_empty(...args) {
     error.textContent = "";
+    no_error_found = false;
     if (userType === "donor") 
     {
         for (let item of args) {
@@ -83,6 +85,7 @@ function check_empty(...args) {
         if (input_field.value === "") {
             input_field.style.border = "2px solid red";
             error.textContent = "The highlighted field(s) is empty";
+            no_error_found = true;
         }
         }
     } 
@@ -98,6 +101,7 @@ function check_empty(...args) {
             {
                 input_field.style.border = "2px solid red";
                 error2.textContent = "The highlighted field(s) is empty";
+                no_error_found = true;
             }
         }
     }
@@ -117,6 +121,7 @@ option_regular.addEventListener("click", function () {
     inputs_clinic.style.display = "none";
 });
 function validate(userType) {
+    no_error_found = false;
     email_error.textContent = "";
     if (userType === "donor") {
     check_empty(donor_first,donor_email,donor_password,donor_address,donor_last,donor_contact,donor_area,donor_governorate);
@@ -138,6 +143,7 @@ function validate(userType) {
         email_error.textContent = "example: Ali@gmail.com";
         email_error.style.color = "red";
         email_error.style.fontWeight = "bold";
+        no_error_found = true;
         if (error.textContent != "") {
             error.appendChild(document.createElement("br"));
             error.appendChild(document.createTextNode("Invalid email format"));
@@ -153,6 +159,7 @@ function validate(userType) {
         email_error2.textContent = "example: Ali@gmail.com";
         email_error2.style.color = "red";
         email_error2.style.fontWeight = "bold";
+        no_error_found = true;
         if (error2.textContent != "") {
             error2.appendChild(document.createElement("br"));
             error2.appendChild(document.createTextNode("Invalid email format"));
@@ -206,6 +213,15 @@ function updateMap(markerPosition) {
     updateMap2(newMarkerPosition);
     });
 }
+document.addEventListener('DOMContentLoaded', function () {
+    const fileInput = document.getElementById('fileInput');
+    const fileUploadForm = document.getElementById('fileUploadForm');
+    fileInput.addEventListener('change', function () {
+        if (fileInput.files.length > 0) {
+            fileUploadForm.submit();
+        }
+    });
+});
 function Donor(){
     this.first_name = donor_first.value;
     this.last_name = donor_last.value;
@@ -295,13 +311,14 @@ function Organization_info(){
 }
 function buttonClickHandler() {
     validate(userType);
-    if(userType == 'donor'){
-        let donor = new Donor();
-        console.log(donor.full_info());
+    if(!no_error_found){
+        if(userType == 'donor'){
+            let donor = new Donor();
+            console.log(donor.full_info());
+        }
+        else{
+            let organization = new Organization_info();
+            console.log(organization.full_info());
+        }
     }
-    else{
-        let organization = new Organization_info();
-        console.log(organization.full_info());
-    }
-
 }
