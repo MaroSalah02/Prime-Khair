@@ -1,7 +1,7 @@
 window.onload = filterSelection();
 
 function filterSelection() {
-  var selectorVal = document.getElementById("typeSelector").value;
+  var selectorVal = document.getElementById("typeSelector").value.toLowerCase();
 
   var filterGroups = document.getElementsByClassName("filter-group");
   // console.log(filterGroups);

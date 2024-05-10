@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DonorPage</title>
   <link rel="stylesheet" href="/Styles/general.css" />
-  <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="/Styles/navElements.css" />
   <link rel="stylesheet" href="/Styles/donor.css" />
-  <script
-  src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="/Scripts/donor.js"></script>
 </head>
 
@@ -47,7 +46,7 @@
     </nav>
   </div>
 
-  <header class="topbar"> 
+  <header class="topbar">
     <h3 id="title">Explore Requests</h3>
     <div class="links">
       <a href="/main/main.html">
@@ -69,8 +68,8 @@
     <div id="filtration-fields">
       <div class="searchengine">
         <input id="searchbar" oninput="filter()" placeholder="Search...." style="margin-top: 3vh" />
-        <input type="text" id="typeSelector" onchange="filterSelection()" list="options" placeholder="Search category">
-          <datalist id="options">
+        <input type="text" id="typeSelector" oninput="filterSelection()" list="options" placeholder="Search category">
+        <datalist id="options">
           <option selected value="all"></option>
           <option value="clothes"></option>
           <option value="toys"></option>
@@ -88,35 +87,35 @@
             <option value="doctoring"></option>
           </optgroup>
         </datalist>
-      
+
       </div>
 
       <div id="clothes-filter" class="filter-group">
-          <input  oninput="filter()" id="clothes-min" type="number" min="1"placeholder="Min" />
-          <input oninput="filter()" id="clothes-max" type="number"placeholder="Max" />
-          <div class="wrap">
-              <input  oninput="filter()" id="clothes-male" type="checkbox" name="gender" value="male" />
-              <label for="clothes-male">Male</label>
-              <input  oninput="filter()" id="clothes-female" type="checkbox" name="gender" value="female" />
-          
-              <label for="clothes-female">female</label>
-         
-              <input   oninput="filter()" id="clothes-spring" type="checkbox" name="gender" value="male" />
-           
-              <label for="clothes-spring">spring</label>
-        
-              <input oninput="filter()" id="clothes-summer" type="checkbox" name="gender" value="female" />
-         
-              <label for="clothes-summer">summer</label>
-           
-              <input  oninput="filter()" id="clothes-autumn" type="checkbox" name="gender" value="male" />
-              
-              <label for="clothes-autumn">autumn</label>
-           
-              <input  oninput="filter()" id="clothes-winter" type="checkbox" name="gender" value="female" />
-              <label for="clothes-winter">winter</label>
-         
-          </div>
+        <input oninput="filter()" id="clothes-min" type="number" min="1" placeholder="Min" />
+        <input oninput="filter()" id="clothes-max" type="number" placeholder="Max" />
+        <div class="wrap">
+          <input oninput="filter()" id="clothes-male" type="checkbox" name="gender" value="male" />
+          <label for="clothes-male">Male</label>
+          <input oninput="filter()" id="clothes-female" type="checkbox" name="gender" value="female" />
+
+          <label for="clothes-female">female</label>
+
+          <input oninput="filter()" id="clothes-spring" type="checkbox" name="gender" value="male" />
+
+          <label for="clothes-spring">spring</label>
+
+          <input oninput="filter()" id="clothes-summer" type="checkbox" name="gender" value="female" />
+
+          <label for="clothes-summer">summer</label>
+
+          <input oninput="filter()" id="clothes-autumn" type="checkbox" name="gender" value="male" />
+
+          <label for="clothes-autumn">autumn</label>
+
+          <input oninput="filter()" id="clothes-winter" type="checkbox" name="gender" value="female" />
+          <label for="clothes-winter">winter</label>
+
+        </div>
       </div>
 
       <div id="books-filter" class="filter-group">
@@ -136,12 +135,12 @@
           <input oninput="filter()" id="toys-max" type="number" placeholder="Max" />
         </div>
         <div id="toys-checkbox">
-            <input oninput="filter()" id="toys-male" type="checkbox" name="gender" value="male" />
-         <label for="toys-male">Male</label>
-        
-            <input oninput="filter()" id="toys-female" type="checkbox" name="gender" value="female" />
-            <label for="toys-female">Female</label>
-          </div>
+          <input oninput="filter()" id="toys-male" type="checkbox" name="gender" value="male" />
+          <label for="toys-male">Male</label>
+
+          <input oninput="filter()" id="toys-female" type="checkbox" name="gender" value="female" />
+          <label for="toys-female">Female</label>
+        </div>
         <select id="toy-category" onchange="filter()">
           <option value="all">All</option>
           <option value="board games">Board Games</option>
