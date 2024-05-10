@@ -94,7 +94,7 @@ span {
 .card div button {
   color: black;
   background-color: #c2a83e;
-  width: 20%;
+  width: auto;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -109,9 +109,6 @@ span {
 
 body {
   min-height: 100vh;
-}
-
-#confirmation-form {
 }
 
 .invisible {
@@ -156,4 +153,18 @@ body {
   margin-top: 3%;
   border: gray solid 3px;
   border-radius: 14px;
+}
+
+.cancelButton:hover {
+  background-color: #e5383b;
+}
+
+.acceptButton:hover {
+  background-color: #90a955;
+}
+
+.stylized-input {
+  margin: 0 10px;
+  border: 3px solid #c2a83e;
+  border-radius: 20px;
 }
