@@ -6,14 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DonorPage</title>
   <link rel="stylesheet" href="/Styles/general.css" />
-  
+  <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
   <link rel="stylesheet" href="/Styles/navElements.css" />
   <link rel="stylesheet" href="/Styles/donor.css" />
   <script
   src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="/Scripts/donor.js"></script>
 </head>
-
 
 
 <body>
@@ -92,34 +91,31 @@
       </div>
 
       <div id="clothes-filter" class="filter-group">
-          <input oninput="filter()" id="clothes-min" type="number" min="1"placeholder="Min" />
+          <input  oninput="filter()" id="clothes-min" type="number" min="1"placeholder="Min" />
           <input oninput="filter()" id="clothes-max" type="number"placeholder="Max" />
-          <label>
-            <input oninput="filter()" id="clothes-male" type="checkbox" name="gender" value="male" />
-            Male
-          </label>
-          <label>
-            <input oninput="filter()" id="clothes-female" type="checkbox" name="gender" value="female" />
-            Female
-          </label>
-
-
-          <label>
-            <input oninput="filter()" id="clothes-spring" type="checkbox" name="gender" value="male" />
-            Spring
-          </label>
-          <label>
-            <input oninput="filter()" id="clothes-summer" type="checkbox" name="gender" value="female" />
-            Summer
-          </label>
-          <label>
-            <input oninput="filter()" id="clothes-autumn" type="checkbox" name="gender" value="male" />
-            Autumn
-          </label>
-          <label>
-            <input oninput="filter()" id="clothes-winter" type="checkbox" name="gender" value="female" />
-            Winter
-          </label>
+          <div class="wrap">
+              <input  oninput="filter()" id="clothes-male" type="checkbox" name="gender" value="male" />
+              <label for="clothes-male">Male</label>
+              <input  oninput="filter()" id="clothes-female" type="checkbox" name="gender" value="female" />
+          
+              <label for="clothes-female">female</label>
+         
+              <input   oninput="filter()" id="clothes-spring" type="checkbox" name="gender" value="male" />
+           
+              <label for="clothes-spring">spring</label>
+        
+              <input oninput="filter()" id="clothes-summer" type="checkbox" name="gender" value="female" />
+         
+              <label for="clothes-summer">summer</label>
+           
+              <input  oninput="filter()" id="clothes-autumn" type="checkbox" name="gender" value="male" />
+              
+              <label for="clothes-autumn">autumn</label>
+           
+              <input  oninput="filter()" id="clothes-winter" type="checkbox" name="gender" value="female" />
+              <label for="clothes-winter">winter</label>
+         
+          </div>
       </div>
 
       <div id="books-filter" class="filter-group">
@@ -133,34 +129,18 @@
       </div>
 
       <div id="toys-filter" class="filter-group">
-        <input oninput="filter()" id="toy-type" placeholder="Toy Type" />
-        <div style="
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              width: 100%;
-              margin-top: 3vh;
-            ">
-          <input oninput="filter()" id="toys-min" type="number" min="1" style="width: 20%" placeholder="Min" />
-          <input oninput="filter()" id="toys-max" type="number" style="width: 20%; margin-left: 14%"
-            placeholder="Max" />
+        <div id="toys-price">
+          <input oninput="filter()" id="toy-type" placeholder="Toy Type" />
+          <input oninput="filter()" id="toys-min" type="number" min="1" placeholder="Min" />
+          <input oninput="filter()" id="toys-max" type="number" placeholder="Max" />
         </div>
-        <div style="
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              width: 100%;
-              margin-top: 3vh;
-            ">
-          <label style="margin-right: 10%">
+        <div id="toys-checkbox">
             <input oninput="filter()" id="toys-male" type="checkbox" name="gender" value="male" />
-            Male
-          </label>
-          <label>
+         <label for="toys-male">Male</label>
+        
             <input oninput="filter()" id="toys-female" type="checkbox" name="gender" value="female" />
-            Female
-          </label>
-        </div>
+            <label for="toys-female">Female</label>
+          </div>
         <select id="toy-category" onchange="filter()">
           <option value="all">All</option>
           <option value="board games">Board Games</option>
