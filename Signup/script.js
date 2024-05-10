@@ -1,12 +1,15 @@
 const donor_first = document.getElementById("first_name");
+const donor_last = document.getElementById("last_name");
 const donor_email = document.getElementById("email");
 const email_error = document.getElementById("email_error");
 const donor_password = document.getElementById("password");
 const donor_address = document.getElementById("address");
-const donor_last = document.getElementById("last_name");
 const donor_contact = document.getElementById("contact");
 const donor_area = document.getElementById("area");
 const donor_governorate = document.getElementById("governorate");
+const option_male = document.getElementById("option_male");
+const option_female = document.getElementById("option_female");
+const option_other = document.getElementById("option_other");
 
 const option_regular = document.getElementById("option_regular");
 const option_doctor = document.getElementById("option_doctor");
@@ -68,7 +71,8 @@ function getQueryVariable(variable) {
 }
 function check_empty(...args) {
     error.textContent = "";
-    if (userType === "donor") {
+    if (userType === "donor") 
+    {
         for (let item of args) {
         item.style.border = "";
     }
@@ -78,15 +82,20 @@ function check_empty(...args) {
             error.textContent = "The highlighted field(s) is empty";
         }
         }
-    } else {
-        for (let item of args) {
-        item.style.border = "";
+    } 
+    else 
+    {
+        for (let item of args) 
+        {
+            item.style.border = "";
         }
-        for (let input_field of args) {
-        if (input_field.value === "") {
-            input_field.style.border = "2px solid red";
-            error2.textContent = "The highlighted field(s) is empty";
-        }
+        for (let input_field of args) 
+        {
+            if (input_field.value === "") 
+            {
+                input_field.style.border = "2px solid red";
+                error2.textContent = "The highlighted field(s) is empty";
+            }
         }
     }
 }
@@ -150,9 +159,6 @@ function validate(userType) {
         }
     }
 }
-function buttonClickHandler() {
-    validate(userType);
-}
 function initMap() {
     const center = { lat: 30.0444, lng: 31.2357 };
 
@@ -196,4 +202,67 @@ function updateMap(markerPosition) {
     marker2.setPosition(newMarkerPosition);
     updateMap2(newMarkerPosition);
     });
+}
+function Donor(){
+    this.first_name = donor_first.value;
+    this.last_name = donor_last.value;
+    this.email = donor_email.value;
+    this.contact_info = donor_contact.value;
+    this.password = donor_password.value;
+    this.area = donor_area.value;
+    this.address = donor_address.value;
+    this.governorate = donor_governorate.value;
+    this.gender = "";
+    this.clinic_info = "";
+    this.type = "";
+    this.teacher_info = "";
+    if(option_male.checked){
+        this.gender = "Male" ;
+    }
+    else if(option_female.checked){
+        this.gender = "Female" ;
+    }
+    else if(option_other.checked){
+        this.gender = "Other" ;
+    }
+    if(option_regular.checked){
+        this.type = "Regular";
+    }
+    else if(option_doctor.checked){
+        this.type = "Doctor";
+        this.clinic_info = "The clinic address: " + clinic_address.value + "\n" +
+        "The clinic area: " + clinic_area.value + "\n" +
+        "The clinic governrate: " + clinic_governrate.value + "\n" +
+        "The clinic Specialty: " + Specialty.value + "\n" +
+        "The number of cases: " + no_of_cases.value + "\n";
+    }
+    else if(option_teacher.checked){
+        this.type = "Teacher";
+        this.teacher_info = "The teacher subjects: " + teacher_subjects.value + "\n" +
+        "The number of classes: " + teacher_classes.value;
+    }
+    this.full_info = function(){
+        let additional = option_doctor.checked ? "The clinic info: " + this.clinic_info : option_teacher.checked ? + "The teacher info: " + this.teacher_info : ""
+        return "The donor name: " + donor_first.value + " " + this.last_name + "\n" +
+        "The donor email: " + this.email +"\n" +
+        "The donor contact: " + this.contact_info + "\n" +
+        "The donor password: " + this.password + "\n" +
+        "The donor area: " + this.area + "\n" +
+        "The donor address: " + this.address + "\n" +
+        "The donor governorate: " + this.governorate + "\n" +
+        "The donor gender: " + this.gender + "\n" +
+        "The donor type: " + this.type + "\n" +
+        additional;
+    }
+}
+function buttonClickHandler() {
+    validate(userType);
+    if(userType == 'donor'){
+        let donor = new Donor();
+        console.log(donor.full_info());
+    }
+    else{
+
+    }
+
 }
