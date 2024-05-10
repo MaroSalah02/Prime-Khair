@@ -40,6 +40,10 @@ span {
   display: flex;
   flex-direction: row;
 }
+#contact{
+  display: flex;
+  flex-direction: row;
+}
 .card {
   display: flex;
   flex-direction: column;
