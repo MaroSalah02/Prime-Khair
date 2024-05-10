@@ -363,6 +363,7 @@ a {
   width: 97%; /* Adjust the width as needed */
   margin-left: 3%;
   padding: 20px; /* Optional: add padding for better spacing */
+  padding-top: 10%;
   border-radius: 10px; /* Optional: add rounded corners */
   display: flex;
   flex-direction: row;
