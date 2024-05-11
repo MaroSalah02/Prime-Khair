@@ -280,6 +280,67 @@ function filter() {
             flag = false;
           }
 
+          if (!showCategory.includes("toys") && showCategory.length > 0) {
+            flag = false;
+          }
+
+          break;
+
+        case "food": //DONE
+          console.log("ENTERED FOOD");
+          var foodCategory = document.getElementById("food-category").value;
+
+          var categoryValue = currentPost
+            .getElementsByClassName("category-value")
+            .item(0)
+            .innerHTML.toLowerCase();
+
+          // console.log(foodCategory == categoryValue);
+          if (foodCategory == categoryValue || foodCategory == "all") {
+            //Do nothing
+          } else {
+            flag = false;
+          }
+          if (!showCategory.includes("food") && showCategory.length > 0) {
+            flag = false;
+          }
+          break;
+
+        case "stationery": //DONE
+          var typeKeyword = document
+            .getElementById("stationery-type")
+            .value.toLowerCase()
+            .split(" ");
+
+          var type = [];
+
+          currentPost
+            .getElementsByClassName("type")
+            .item(0)
+            .innerHTML.toLowerCase()
+            .split(" ")
+            .forEach((word) => {
+              type = type.concat(generateSubstrings(word));
+            });
+
+          console.log(type);
+          console.log(typeKeyword);
+
+          typeKeyword.forEach((keyword) => {
+            // console.log(keywords[0] == "" || title.contains(keyword) || description.contains(keyword));
+            if (typeKeyword[0] == "" || type.includes(keyword)) {
+              flag2 = true;
+              return;
+            } else {
+              flag2 = false;
+            }
+          });
+
+          flag = flag & (flag2 == 1) ? true : false;
+
+          if (!showCategory.includes("statoinery") && showCategory.length > 0) {
+            flag = false;
+          }
           break;
       }
     }
@@ -292,7 +353,9 @@ function filter() {
       currentPost.classList.remove("invisible");
     }
   }
+}
 
+function thowAway() {
   switch (selectorVal) {
     case "clothes": // DONE
       var clothesMin = document.getElementById("clothes-min").value;
@@ -529,9 +592,7 @@ function filter() {
     case "medical supplies":
       fieldList = document.getElementById("medical-suppies-filter").children;
       break;
-    case "medication":
-      fieldList = document.getElementById("medication-filter").children;
-      break;
+
     case "books": //DONE
       fieldList = document.getElementById("books-filter").children;
 
