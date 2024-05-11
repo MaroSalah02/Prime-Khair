@@ -162,9 +162,78 @@
         </select>
       </div>
 
+      <div id="blood-filter" class="filter-group">
+        <div style="display: flex; justify-content: center;">
+          <label for="blood-type" style="font-size: 18px;">Blood Type: &nbsp;</label>
+          <select id="blood-type" class="stylized-input" onchange="filter()">
+            <option value="AB+">
+              AB+
+            </option>
+            <option value="AB-">
+              AB-
+            </option>
+            <option ovalue="A+">
+              A+
+            </option>
+            <option value="A-">
+              A-
+            </option>
+            <option value="B+">
+              B+
+            </option>
+            <option value="B-">
+              B-
+            </option>
+            <option value="O+">
+              O+
+            </option>
+            <option value="O-">
+              O-
+            </option>
+          </select>
+          <label for="blood-governate" style="font-size: 18px;">Governate: &nbsp;</label>
+          <select id="blood-governate" class="stylized-input" onchange="filter()">
+            <!-- TODO: Get a drop-down list for all goverates -->
+            <option>
+              Alexandria
+            </option>
+          </select>
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <label for="blood-area" style="font-size: 18px;">Area Name: &nbsp;</label>
+          <input id="blood-area" class="stylized-input" oninput="filter()">
+          <label for="blood-hospital" style="font-size: 18px;">Hospital Name: &nbsp;</label>
+          <input id="blood-hospital" class="stylized-input" oninput="filter()">
+        </div>
+      </div>
+
       <div id="medical-supplies-filter" class="filter-group"></div>
       <div id="medication-filter" class="filter-group"></div>
-      <div id="food-filter" class="filter-group"></div>
+      <div id="food-filter" class="filter-group">
+        <div style="display: flex; justify-content: center;">
+          <label for="food-category" style="font-size: 18px;">Food Category: </label>
+          <select id="food-category" onchange="filter()" class="stylized-input">
+            <option selected value="all">
+              All
+            </option>
+            <option value="fruit">
+              Fruits
+            </option>
+            <option value="vegetable">
+              Vegetables
+            </option>
+            <option value="canned">
+              Canned Goods
+            </option>
+            <option value="meals">
+              Fresh Meals
+            </option>
+            <option value="baked">
+              Baked Goods
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
     <!-- Filtration Fields -->
     <!-- Dummy Data Posts -->
@@ -248,9 +317,10 @@
           items. Your contribution makes a real difference in the lives of
           those in need. Thank you for your compassion!
         </p>
-        <p>Item Name: Rice</p>
-        <p>Quantity Required: 500 KG</p>
-        <button>Donate</button>
+        <p class="category-value" hidden>vegetable</p>
+        <h5>Item Name: <span class="food-name">Btengan</span></hh5>
+          <p hidden>Quantity Required: <span class="food-quantity">500</span> KG</p>
+          <button>Donate</button>
       </div>
 
       <!-- <div class="post medical-supplies">
@@ -305,6 +375,23 @@
         <button>Assist</button>
       </div> -->
 
+      <div class="post blood">
+        <h3 class="title">
+          Urget!
+        </h3>
+        <p class="description">
+          FILL LATER
+        </p>
+        <h5>Blood Type (RH Type): <span class="type1">O+</span> <span hidden class="type2">(RH Sample)</span></h5>
+
+        <h5 hidden>Patient: <span class="patient-name">El Kbeer</span></h5>
+        <h5>Governate: <span class="governate">Giza</span></h5>
+        <h5>Area: <span class="area">7aga</span></h5>
+        <h5>Hospital: <span class="hospital">El Gawwy</span></h5>
+        <img hidden src="stuffed_animal.jpg" alt="Stuffed Animal" />
+        <button>Donate</button>
+      </div>
+
       <div class="post clothes">
         <h3 class="title">
           Summer Shirt Fest: Spread Joy to Children in Need!
@@ -316,6 +403,7 @@
         <h5>Age: <span class="age">10-12</span></h5>
         <h5>Gender: <span class="gender">Male</span></h5>
         <h5>Season: <span class="season">Spring/Summer/Fall</span> </h5>
+        <h5>Material: <span class="material" hidden>Cotton</span> </h5>
         <img hidden src="stuffed_animal.jpg" alt="Stuffed Animal" />
         <h5 class="quantity" hidden>Quantity Requested: 200</h5>
         <button>Donate</button>

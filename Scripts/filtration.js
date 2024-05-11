@@ -41,6 +41,9 @@ function filterSelection() {
         .getElementById("stationery-filter")
         .classList.remove("invisible");
       break;
+    case "blood":
+      document.getElementById("blood-filter").classList.remove("invisible");
+      break;
     default:
   }
 
@@ -60,7 +63,7 @@ function filter() {
   var selectedList = [];
 
   var keywords = document.getElementById("searchbar").value.split(" ");
-  //console.log(keywords);
+  console.log(keywords);
 
   for (var i = 0; i < postList.length; i++) {
     postList.item(i).classList.add("invisible");
@@ -324,7 +327,25 @@ function filter() {
 
       break;
     case "food":
-      fieldList = document.getElementById("food-filter").children;
+      var foodCategory = document.getElementById("food-category").value;
+
+      selectedList.forEach((post) => {
+        var postCategory = post
+          .getElementsByClassName("category-value")
+          .item(0)
+          .innerHTML.toLowerCase();
+        console.log(postCategory);
+        console.log(foodCategory);
+        console.log(foodCategory == postCategory);
+        if (foodCategory == postCategory) {
+          post.classList.remove("invisible");
+        } else {
+          post.classList.add("invisible");
+        }
+        if (foodCategory == "all") {
+          post.classList.remove("invisible");
+        }
+      });
       break;
     case "medical supplies":
       fieldList = document.getElementById("medical-suppies-filter").children;
@@ -449,6 +470,43 @@ function filter() {
             card.classList.add("invisible");
           }
         });
+      });
+      break;
+    case "blood":
+      var bloodtype = document.getElementById("blood-type").value;
+      var bloodGovernate = document
+        .getElementById("blood-governate")
+        .value.toLowerCase();
+      var bloodAreaStrings = substrings(
+        document.getElementById("blood-area").value.split(" ").toLowerCase()
+      );
+      var bloodHospitalStrings = substrings(
+        document.getElementById("blood-area").value.split(" ").toLowerCase()
+      );
+
+      selectedList.forEach((post) => {
+        var flag = true;
+        var postType = post.getElementsByClassName("type1").item(0).innerHTML;
+        var postGovernate = post
+          .getElementsByClassName("governate")
+          .item(0).innerHTML;
+        var postArea = post.getElementsByClassName("Area").item(0).innerHTML;
+        var postHospital = post
+          .getElementsByClassName("Hospital")
+          .item(0).innerHTML;
+
+        if (bloodtype != postType || postGovernate != bloodGovernate) {
+          flag = false;
+        }
+
+        flag =
+          flag &
+          bloodAreaStrings.forEach((keyword) => {
+            if (postArea.includes(keyword)) {
+              flag = flag & true;
+              return true;
+            }
+          });
       });
       break;
   }
