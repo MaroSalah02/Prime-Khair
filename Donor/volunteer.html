@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>Volunteering Opportunities</title>
+        <link rel="icon" href="/icons/Main_icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/Styles/general.css">
+        <link rel="stylesheet" href="/Styles/navElements.css">
+        <link rel="stylesheet" href="/Styles/donor.css">
+        <script src="/Scripts/donor.js"></script>
+
+        <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    </head>
+
+    <body>
+        <div class="probar">
+            <div class="filled" id="myelement">
+
+            </div>
+        </div>
+    
+        <!-- Navigation Element -->
+        <div class="sidebar">
+            <div id="sidebar-top">
+                <div class="sidebar-button" id="3-bars" onclick="expand()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <div id="logo-img" class="visible fade logo">
+                    <img src="/icons/prime-khair-high-resolution-logo-transparent.png">
+                </div>
+            </div>
+
+            <hr class="visible fade">
+
+            <div class="profile-user-photo visible fade">
+                <img src="profile.jpg" alt="user">
+                <p>Organization name</p>
+            </div>
+
+            <nav class="sidebar-nav visible fade">
+                <ul>
+                    <li><a href="#">Profie Managment</a></li>
+                    <li><a href="#">Create new Donation Post</a></li>
+                    <li><a href="#">Donation History</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="/Donor/organizations.html">View Organizations</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <header class="topbar">
+            <h3 id="title">Explore Opportunities</h3>
+
+            <div class="links">
+                <a href="/main/main.html">
+                    <h5 class="extraMenu">About</h5>
+                </a>
+                <a href="">
+                    <h5 class="extraMenu">Contact</h5>
+                </a>
+            </div>
+        </header>
+
+        <div id="page" style="margin-top: 0%;">
+            <!-- Filtration Fields -->
+            <div id="filtration-fields">
+                <div class="searchengine">
+                    <input id="searchbar" oninput="filter()" placeholder="Search...." style="margin-top: 3vh">
+                    <input type="text" id="typeSelector" oninput="filterSelection()" list="options" placeholder="Search category">
+                    
+                    <datalist id="options">
+                        <option selected value="All"></option>
+                        <option value="Teaching Cases"></option>
+                        <option value="Medical Cases"></option>
+                    </datalist>
+                </div>
+
+            <div id="teaching-filter" class="filter-group">
+                <select id="teaching-subject" onchange="filter()">
+                    <option value="all">All</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="biology">Biology</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="physics">Physics</option>
+                    <option value="earth_science">Arabic</option>
+                    <option value="earth_science">Social Studies</option>
+                </select>
+
+                <select id="teaching-gov">
+                    <option value="cairo">Cairo</option>
+                    <option value="alexandria">Alexandria</option>
+                    <option value="giza">Giza</option>
+                    <option value="luxor">Luxor</option>
+                    <option value="aswan">Aswan</option>
+                  </select>
+
+                <select id="teaching-area">
+                    <!-- Cairo -->
+                    <optgroup label="cairo">
+                        <option value="nasr city">Nasr City</option>
+                        <option value="maadi">Maadi</option>
+                        <option value="zamalek">Zamalek</option>
+                        <option value="heliopolis">Heliopolis</option>
+                        <option value="mohandessin">Mohandessin</option>
+                        <option value="helwan">Helwan</option>
+                        <option value="sayeda zeinab">Sayeda Zeinab</option>
+                        <option value="garden city">Garden City</option>
+                    </optgroup>
+                    
+                    <!-- Alexandria -->
+                    <optgroup label="alexandria">
+                        <option value="montaza">Montaza</option>
+                        <option value="smouha">Smouha</option>
+                        <option value="roushdy">Roushdy</option>
+                        <option value="san stefano">San Stefano</option>
+                        <option value="sporting">Sporting</option>
+                        <option value="agami">Agami</option>
+                        <option value="hadara">Hadara</option>
+                        <option value="miami">Miami</option>
+                        <option value="el shatby">El Shatby</option>
+                        <option value="sidi bishr">Sidi Bishr</option>
+                    </optgroup>
+                    
+                    <!-- Giza -->
+                    <optgroup label="giza">
+                        <option value="mohandiseen">Mohandiseen</option>
+                        <option value="agouza">Agouza</option>
+                        <option value="sheikh zayed city">Sheikh Zayed City</option>
+                        <option value="haram">Haram</option>
+                        <option value="6th of october city">6th of October City</option>
+                        <option value="faisal">Faisal</option>
+                        <option value="dokki">Dokki</option>
+                        <option value="imbaba">Imbaba</option>
+                        <option value="ousim">Ousim</option>
+                        <option value="warraq">Warraq</option>
+                    </optgroup>
+                    
+                    <!-- Luxor -->
+                    <optgroup label="luxor">
+                        <option value="east bank">East Bank</option>
+                        <option value="west bank">West Bank</option>
+                        <option value="karnak">Karnak</option>
+                        <option value="al toud">Al Toud</option>
+                    </optgroup>
+                    
+                    <!-- Aswan -->
+                    <optgroup label="aswan">
+                        <option value="aswan city">Aswan City</option>
+                        <option value="aswan west bank">Aswan West Bank</option>
+                        <option value="daraw">Daraw</option>
+                        <option value="kom ombo">Kom Ombo</option>
+                        <option value="edfu">Edfu</option>
+                        <option value="abu simbel">Abu Simbel</option>
+                        <option value="nagaa hammadi">Nagaa Hammadi</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div id="medical-filter" class="filter-group">
+                <input oninput="filter()" id="medical-org" placeholder="Organization Name">
+
+                <select id="medical-speciality" onchange="filter()">
+                    <option value="cardiology">Cardiology</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="oncology">Oncology</option>
+                    <option value="pediatrics">Pediatrics</option>
+                    <option value="psychiatry">Psychiatry</option>
+                    <option value="radiology">Radiology</option>
+                    <option value="surgery">Surgery</option>
+                </select>
+
+                <select id="medical-gov" onchange="filter()">
+                    <option value="cairo">Cairo</option>
+                    <option value="alexandria">Alexandria</option>
+                    <option value="giza">Giza</option>
+                    <option value="luxor">Luxor</option>
+                    <option value="aswan">Aswan</option>
+                </select>
+
+                <select id="medical-area">
+                    <!-- Cairo -->
+                    <optgroup label="cairo">
+                        <option value="nasr city">Nasr City</option>
+                        <option value="maadi">Maadi</option>
+                        <option value="zamalek">Zamalek</option>
+                        <option value="heliopolis">Heliopolis</option>
+                        <option value="mohandessin">Mohandessin</option>
+                        <option value="helwan">Helwan</option>
+                        <option value="sayeda zeinab">Sayeda Zeinab</option>
+                        <option value="garden city">Garden City</option>
+                    </optgroup>
+                    
+                    <!-- Alexandria -->
+                    <optgroup label="alexandria">
+                        <option value="montaza">Montaza</option>
+                        <option value="smouha">Smouha</option>
+                        <option value="roushdy">Roushdy</option>
+                        <option value="san stefano">San Stefano</option>
+                        <option value="sporting">Sporting</option>
+                        <option value="agami">Agami</option>
+                        <option value="hadara">Hadara</option>
+                        <option value="miami">Miami</option>
+                        <option value="el shatby">El Shatby</option>
+                        <option value="sidi bishr">Sidi Bishr</option>
+                    </optgroup>
+                    
+                    <!-- Giza -->
+                    <optgroup label="giza">
+                        <option value="mohandiseen">Mohandiseen</option>
+                        <option value="agouza">Agouza</option>
+                        <option value="sheikh zayed city">Sheikh Zayed City</option>
+                        <option value="haram">Haram</option>
+                        <option value="6th of october city">6th of October City</option>
+                        <option value="faisal">Faisal</option>
+                        <option value="dokki">Dokki</option>
+                        <option value="imbaba">Imbaba</option>
+                        <option value="ousim">Ousim</option>
+                        <option value="warraq">Warraq</option>
+                    </optgroup>
+                    
+                    <!-- Luxor -->
+                    <optgroup label="luxor">
+                        <option value="east bank">East Bank</option>
+                        <option value="west bank">West Bank</option>
+                        <option value="karnak">Karnak</option>
+                        <option value="al toud">Al Toud</option>
+                    </optgroup>
+                    
+                    <!-- Aswan -->
+                    <optgroup label="aswan">
+                        <option value="aswan city">Aswan City</option>
+                        <option value="aswan west bank">Aswan West Bank</option>
+                        <option value="daraw">Daraw</option>
+                        <option value="kom ombo">Kom Ombo</option>
+                        <option value="edfu">Edfu</option>
+                        <option value="abu simbel">Abu Simbel</option>
+                        <option value="nagaa hammadi">Nagaa Hammadi</option>
+                    </optgroup>
+                </select>
+            </div>
+            
+            <!-- Dummy Posts -->
+            <div id="posts">
+                <!-- Teaching Positions -->
+                <div class="post">
+                    <h3 class="title">Experienced 7th Grade Math Teacher Needed</h3>
+                    <p>
+                        <span class="description">
+                            We are seeking an experienced math educator with a passion for teaching and a
+                            commitment to student success. The ideal candidate will have a strong background in
+                            middle school mathematics curriculum and pedagogy. Join our dynamic team and make a
+                            difference in the lives of young learners.
+                        </span>
+                    </p>
+                    <h5>Subject(s): <span class="subjects">Math</span></h5>
+                    <h5 hidden>Number Of Students: <span class="students">30</span></h5>
+                    <h5>Governorate: <span class="governorate">Alexandria</span></h5>
+                    <h5>Area: <span class="area">Montaza</span></h5>
+                    <button>Volunteer</button>
+                </div>
+
+                <div class="post">
+                    <h3 class="title">Enthusiastic Physics Tutor Needed for High School Students</h3>
+                    <p>
+                        <span class="description">
+                            We are looking for an enthusiastic physics tutor to inspire and engage high school students
+                            in the fascinating world of physics. The successful candidate will possess excellent
+                            communication skills and the ability to adapt teaching methods to meet the diverse
+                            needs of learners. Join us in fostering a love for science and empowering students
+                            to reach their full potential.
+                        </span>
+                    </p>
+                    <h5>Subject(s): <span class="subjects">Physics</span></h5>
+                    <h5 hidden>Number Of Students: <span class="students">15</span></h5>
+                    <h5>Governorate: <span class="governorate">Giza</span></h5>
+                    <h5>Area: <span class="area">Dokki</span></h5>
+                    <button>Volunteer</button>
+                </div>
+
+                <div class="post">
+                    <h3 class="title">Biology Instructor for Interactive Summer Camp Sessions</h3>
+                    <p>
+                        <span class="description">
+                            Dive into the wonders of biology as our camp instructor! We're seeking a creative
+                            and dynamic educator to lead engaging hands-on activities and experiments that spark
+                            curiosity and exploration. Join us in creating memorable learning experiences for
+                            students as they discover the fascinating world of life sciences.
+                        </span>
+                    </p>
+                    <h5>Subject(s): <span class="subjects">Biology</span></h5>
+                    <h5 hidden>Number Of Students: <span class="students">20</span></h5>
+                    <h5>Governorate: <span class="governorate">Luxor</span></h5>
+                    <h5>Area: <span class="area">East Bank</span></h5>
+                    <button>Volunteer</button>
+                </div>
+
+                <!-- Medical Cases -->
+                <div class="post">
+                    <h3 class="title">Urgent Cardiac Surgery Needed for Critical Patient</h3>
+                    <p>
+                        <span class="description">
+                            Ahmed Abdelrahman, a 60-year-old male, is in critical condition and
+                            requires immediate cardiac surgery due to severe blockage in his coronary arteries.
+                            Without intervention, he faces a high risk of heart failure.
+                            Your expertise and swift action can save Ahmed's life and
+                            offer hope to his family during this challenging time.
+                        </span>
+                    </p>
+                    <h5 hidden>Name: <span class="name">Ahmed Abdelrahman</span></h5>
+                    <h5 hidden>Age: <span class="age">60</span></h5>
+                    <h5 hidden>Gender: <span class="gender">Male</span></h5>
+                    <h5 hidden>Weight: <span class="weight">70 KG</span></h5>
+                    <h5>Governorate: <span class="governorate">Luxor</span></h5>
+                    <h5>Area: <span class="area">East Bank</span></h5>
+                    <h5>Organization: <span class="organization">El Salam Hospital</span></h5>
+                    <h5>Speciality: <span class="speciality">Cardiology</span></h5>
+                    <button>Volunteer</button>
+                </div>
+                
+                <div class="post">
+                    <h3 class="title">Neurology Consultation for Head Trauma Patient</h3>
+                    <p>
+                        <span class="description">
+                            Sarah Ahmed, a 35-year-old female, sustained a head injury in a car accident and
+                            is experiencing persistent headaches and confusion.
+                            A neurology consultation is urgently needed to assess her condition,
+                            identify any neurological deficits, and develop an appropriate treatment plan.
+                        </span>
+                    </p>
+                    <h5 hidden>Name: <span class="name">Sarah Ahmed</span></h5>
+                    <h5 hidden>Age: <span class="age">35</span></h5>
+                    <h5 hidden>Gender: <span class="gender">Female</span></h5>
+                    <h5 hidden>Weight: <span class="weight">60 KG</span></h5>
+                    <h5>Governorate: <span class="governorate">Cairo</span></h5>
+                    <h5>Area: <span class="area">Maadi</span></h5>
+                    <h5>Organization: <span class="organization">Maadi Hospital</span></h5>
+                    <h5>Speciality: <span class="speciality">Neurology</span></h5>
+                    <button>Volunteer</button>
+                </div>
+                
+                <div class="post">
+                    <h3 class="title">Surgery Preparation for Appendicitis Patient</h3>
+                    <p>
+                        <span class="description">
+                            Mahmoud Hassan, a 25-year-old male, has been diagnosed with acute appendicitis and
+                            requires immediate surgical intervention to prevent complications such as rupture and
+                            infection. Your prompt action can alleviate Mahmoud's pain and restore his health.
+                        </span>
+                    </p>
+                    <h5 hidden>Name: <span class="name">Mahmoud Hassan</span></h5>
+                    <h5 hidden>Age: <span class="age">25</span></h5>
+                    <h5 hidden>Gender: <span class="gender">Male</span></h5>
+                    <h5 hidden>Weight: <span class="weight">75 KG</span></h5>
+                    <h5>Governorate: <span class="governorate">Giza</span></h5>
+                    <h5>Area: <span class="area">Mohandiseen</span></h5>
+                    <h5>Organization: <span class="organization">Dar El Fouad Hospital</span></h5>
+                    <h5>Speciality: <span class="speciality">Surgery</span></h5>
+                    <button>Volunteer</button>
+                </div>                              
+            </div>
+        </div>
+    </body>
+
+    <script src="script.js"></script>
+    <script src="/Scripts/sidebar.js"></script>
+    <script src="/Scripts/filtration.js"></script>
+    <script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
+</html>
