@@ -5,118 +5,293 @@ var selectorVal = "";
 function filterSelection() {
   selectorVal = document.getElementById("typeSelector").value.toLowerCase();
 
-  var filterGroups = document.getElementsByClassName("filter-group");
-  // console.log(filterGroups);
-  for (var i = 0; i < filterGroups.length; i++) {
-    filterGroups.item(i).classList.add("invisible");
+  if (selectorVal != "category") {
+    document.getElementById("searchbar").value =
+      selectorVal.charAt(0).toUpperCase() + selectorVal.slice(1);
+
+    document.getElementById("typeSelector").value = "Category";
   }
-
-  // console.log(selectorVal);
-
-  switch (selectorVal) {
-    case "clothes":
-      document.getElementById("clothes-filter").classList.remove("invisible");
-      break;
-    case "toys":
-      document.getElementById("toys-filter").classList.remove("invisible");
-      break;
-    case "food":
-      document.getElementById("food-filter").classList.remove("invisible");
-      break;
-    case "medical mupplies":
-      document
-        .getElementById("medical-suppies-filter")
-        .classList.remove("invisible");
-      break;
-    case "medication":
-      document
-        .getElementById("medication-filter")
-        .classList.remove("invisible");
-      break;
-    case "books":
-      document.getElementById("books-filter").classList.remove("invisible");
-      break;
-    case "stationery":
-      document
-        .getElementById("stationery-filter")
-        .classList.remove("invisible");
-      break;
-    case "blood":
-      document.getElementById("blood-filter").classList.remove("invisible");
-      break;
-    case "all":
-      for (var i = 0; i < filterGroups.length; i++) {
-        filterGroups.item(i).classList.remove("invisible");
-      }
-    default:
-  }
-
   filter();
 }
 
+function getCategory(post) {
+  return post.classList.item(1);
+}
+
 function filter() {
-  // var selectorVal = document.getElementById("typeSelector").value;
-  selectorVal = document.getElementById("typeSelector").value.toLowerCase();
-  if (selectorVal == "") {
-    selectorVal = "all";
-  }
-  var fieldList;
-
   var postList = document.getElementsByClassName("post");
+  var searchBarWords = document
+    .getElementById("searchbar")
+    .value.toLowerCase()
+    .split(" ");
 
-  var selectedList = [];
+  var showCategory = [];
+  {
+    //Which Categories to show
+    if (searchBarWords.includes("clothes")) {
+      showCategory.push("clothes");
+    }
+    if (searchBarWords.includes("books")) {
+      showCategory.push("books");
+    }
 
-  var keywords = document.getElementById("searchbar").value.split(" ");
-  console.log(keywords);
-
-  for (var i = 0; i < postList.length; i++) {
-    postList.item(i).classList.add("invisible");
-  }
-  // console.log(selectorVal == "all");
-
-  for (var i = 0; i < postList.length; i++) {
+    if (searchBarWords.includes("stationery")) {
+      showCategory.push("stationery");
+    }
     if (
-      postList.item(i).classList.contains(selectorVal) ||
-      selectorVal == "all"
+      searchBarWords.includes("school") ||
+      searchBarWords.includes("supplies")
     ) {
-      selectedList.push(postList.item(i));
+      showCategory.push("books");
+      showCategory.push("stationery");
+    }
+    if (searchBarWords.includes("toys")) {
+      showCategory.push("toys");
+    }
+    if (searchBarWords.includes("food")) {
+      showCategory.push("food");
+    }
+    if (searchBarWords.includes("blood")) {
+      showCategory.push("blood");
+    }
+    if (
+      searchBarWords.includes("medication") ||
+      searchBarWords.includes("equipment") ||
+      searchBarWords.includes("supplies") ||
+      searchBarWords.includes("medical")
+    ) {
+      showCategory.push("medical supplies");
     }
   }
 
-  selectedList.forEach((card) => {
-    var children = card.children;
+  for (var i = 0; i < postList.length; i++) {
+    var currentPost = postList.item(i);
+    var postCategory = getCategory(currentPost);
+    var flag = true;
+    {
+      //Filter based on searchbar keywords
+      var title = [];
+      var description = [];
 
-    var title = [];
-    var description = [];
+      currentPost
+        .getElementsByClassName("title")
+        .item(0)
+        .innerHTML.toLowerCase()
+        .split(" ")
+        .forEach((word) => {
+          title = title.concat(generateSubstrings(word));
+        });
 
-    children
-      .item(0)
-      .innerHTML.split(" ")
-      .forEach((word) => {
-        title = title.concat(generateSubstrings(word));
+      currentPost
+        .getElementsByClassName("description")
+        .item(0)
+        .innerHTML.toLowerCase()
+        .split(" ")
+        .forEach((word) => {
+          description = description.concat(generateSubstrings(word));
+        });
+
+      var flag2;
+
+      searchBarWords.forEach((keyword) => {
+        // console.log(keywords[0] == "" || title.contains(keyword) || description.contains(keyword));
+        if (
+          searchBarWords[0] == "" ||
+          title.includes(keyword) ||
+          description.includes(keyword) ||
+          postCategory == keyword
+        ) {
+          flag2 = true;
+          return;
+        }
       });
 
-    children
-      .item(1)
-      .innerHTML.split(" ")
-      .forEach((word) => {
-        description = description.concat(generateSubstrings(word));
-      });
+      flag = flag & (flag2 == 1) ? true : false;
 
-    keywords.forEach((keyword) => {
-      // console.log(keywords[0] == "" || title.contains(keyword) || description.contains(keyword));
-      if (
-        keywords[0] == "" ||
-        title.includes(keyword) ||
-        description.includes(keyword)
-      ) {
-        card.classList.remove("invisible");
-        return;
+      //END OF GENERAL FILTER
+    }
+
+    if (flag) {
+      switch (postCategory) {
+        case "clothes": // DONE
+          console.log("ENTERED CLOTHES");
+          var clothesMin = document.getElementById("clothes-min").value;
+          var clothesMax = document.getElementById("clothes-max").value;
+          var minClothesDefault = clothesMin == "" ? 1 : clothesMin;
+          var maxClothesDefault = clothesMax == "" ? 900 : clothesMax;
+          var clothesMale = document.getElementById("clothes-male").checked;
+          var clothesFemale = document.getElementById("clothes-female").checked;
+          var clothesSpring = document.getElementById("clothes-spring").checked;
+          var clothesSummer = document.getElementById("clothes-summer").checked;
+          var clothesAutumn = document.getElementById("clothes-autumn").checked;
+          var clothesWinter = document.getElementById("clothes-winter").checked;
+
+          console.log(flag);
+          console.log(showCategory);
+          // console.log(selectedList);
+          if (!showCategory.includes("clothes") && showCategory.length > 0) {
+            flag = false;
+          }
+          console.log(flag);
+
+          var ageString = currentPost
+            .getElementsByClassName("age")
+            .item(0).innerHTML;
+          var genderString = currentPost
+            .getElementsByClassName("gender")
+            .item(0)
+            .innerHTML.toLowerCase();
+          var seaosnStrings = currentPost
+            .getElementsByClassName("season")
+            .item(0)
+            .innerHTML.toLowerCase()
+            .split("/");
+
+          var minPost = getMin(ageString);
+          var maxPost = getMax(ageString);
+          // console.log(ageString);
+          // console.log(minClothesDefault);
+          // console.log(minPost);
+          // console.log(maxClothesDefault);
+          // console.log(maxPost);
+          if (
+            parseInt(minClothesDefault) > parseInt(minPost) ||
+            parseInt(maxClothesDefault) < parseInt(maxPost)
+          ) {
+            flag = false;
+          }
+          // console.log(flag);
+
+          if (
+            genderString.includes("any") ||
+            (!clothesMale && !clothesFemale)
+          ) {
+            //do nothing
+          } else {
+            if (genderString.includes("female") && !clothesFemale) {
+              flag = false;
+            }
+            if (
+              genderString.includes("male") &&
+              !genderString.includes("female") &&
+              !clothesMale
+            ) {
+              flag = false;
+            }
+          }
+          if (
+            !clothesAutumn &&
+            !clothesSpring &&
+            !clothesSummer &&
+            !clothesWinter
+          ) {
+            //do nothing
+          } else {
+            flag = false;
+          }
+
+          if (
+            (seaosnStrings.includes("fall") ||
+              seaosnStrings.includes("autumn")) &&
+            clothesAutumn
+          ) {
+            flag = true;
+          }
+          if (seaosnStrings.includes("summer") && clothesSummer) {
+            flag = true;
+          }
+          if (seaosnStrings.includes("winter") && clothesWinter) {
+            flag = true;
+          }
+          if (seaosnStrings.includes("spring") && clothesSpring) {
+            flag = true;
+          }
+
+          break;
+
+        case "toys": //DONE
+          var female = document.getElementById("toys-female").checked;
+          var male = document.getElementById("toys-male").checked;
+
+          var min = document.getElementById("toys-min").value;
+          var max = document.getElementById("toys-max").value;
+
+          var maxDefault = max == "" ? 900 : max;
+          var minDefault = min == "" ? 1 : min;
+
+          var typeKeyword = document
+            .getElementById("toy-type")
+            .value.split(" ");
+
+          var category = document.getElementById("toy-category").value;
+
+          var flag = true;
+
+          var typeToy = currentPost.getElementsByClassName("type").item(0);
+          var age = currentPost.getElementsByClassName("age").item(0);
+          var gender = currentPost.getElementsByClassName("gender").item(0);
+          var categoryToy = currentPost
+            .getElementsByClassName("category")
+            .item(0);
+
+          var type = [];
+
+          typeToy.innerHTML.split(" ").forEach((word) => {
+            type = type.concat(generateSubstrings(word.toLowerCase()));
+          });
+
+          typeKeyword.forEach((keyword) => {
+            if (typeKeyword[0] == "" || type.includes(keyword)) {
+              return;
+            } else {
+              flag = false;
+            }
+          });
+
+          var ageString = age.innerHTML;
+
+          min = getMin(ageString);
+          max = getMax(ageString);
+
+          if (
+            parseInt(minDefault) > parseInt(min) ||
+            parseInt(maxDefault) < parseInt(max)
+          ) {
+            flag = false;
+          }
+
+          var tmp = gender.innerHTML;
+          if (tmp.includes("Any")) {
+            //do nothing
+          } else {
+            if (tmp.includes("Female") && !female) {
+              flag = false;
+            }
+            if (tmp.includes("Male") && !tmp.includes("Female") && !male) {
+              flag = false;
+            }
+          }
+          //console.log(flag);
+
+          if (
+            !categoryToy.innerHTML.toLocaleLowerCase().includes(category) &&
+            category != "all"
+          ) {
+            flag = false;
+          }
+
+          break;
       }
-    });
-  });
+    }
 
-  //console.log(selectedList[0].children);
+    //hide or show, finally
+
+    if (!flag) {
+      currentPost.classList.add("invisible");
+    } else {
+      currentPost.classList.remove("invisible");
+    }
+  }
 
   switch (selectorVal) {
     case "clothes": // DONE
@@ -532,7 +707,7 @@ function getMin(s) {
   // console.log(s);
   var sum = "";
   for (var i = 0; i < s.length; i++) {
-    console.log(s[i]);
+    // console.log(s[i]);
     if (s[i] == "-" || s[i] == "+") {
       break;
     } else {
@@ -548,7 +723,7 @@ function getMin(s) {
 function getMax(s) {
   var sum = "";
   for (var i = s.length - 1; 0 <= i; i--) {
-    console.log(s[i]);
+    // console.log(s[i]);
     if (s[i] == "-" || s[i] == "+") {
       break;
     } else {
