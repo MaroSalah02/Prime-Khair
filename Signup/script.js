@@ -152,6 +152,7 @@ function validate(userType) {
         }
     }
     } else {
+    email_error2.textContent = "";
     check_empty(org_first_name,org_email,org_password,org_address,org_name,org_last_name,org_contact,org_area,org_governorate,org_type);
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(org_email.value)) {
@@ -213,15 +214,6 @@ function updateMap(markerPosition) {
     updateMap2(newMarkerPosition);
     });
 }
-document.addEventListener('DOMContentLoaded', function () {
-    const fileInput = document.getElementById('fileInput');
-    const fileUploadForm = document.getElementById('fileUploadForm');
-    fileInput.addEventListener('change', function () {
-        if (fileInput.files.length > 0) {
-            fileUploadForm.submit();
-        }
-    });
-});
 function Donor(){
     this.first_name = donor_first.value;
     this.last_name = donor_last.value;
