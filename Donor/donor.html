@@ -44,7 +44,7 @@
             </div>
         </div>
         <hr class="visible fade">
-        <div class="profile-user-photo">
+        <div class="profile-user-photo visible fade">
             <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
             <p>Organization name</p>
         </div>
@@ -74,28 +74,21 @@
   <div id="page">
     
     <div class="searchengine">
-      <input id="searchbar" oninput="filter()" placeholder="Search...." style="margin-top: 3vh" />
-      <!-- <input type="text" id="typeSelector" oninput="filterSelection()" list="options" placeholder="Search category">
-      <datalist id="options">
-        <option selected value="All"></option>
-        <option value="Clothes"></option>
-        <option value="Toys"></option>
-        <option value="Food"></option>
-        <!- <optgroup label="Medical Requests"> ->
-        <option value="Medical Supplies"></option>
-        <option value="Medication"></option>
-        <!- </optgroup> ->
-        <!- <optgroup label="School Supplies"> ->
-        <option value="Books"></option>
-        <option value="Sationery"></option>
-        <option value="Blood"></option>
+      <input id="searchbar" oninput="filter()" placeholder="Search...." style="" />
+      <select id="typeSelector">
+        <option value="Category" hidden>Category</option>
+        <option value="All">All</option>
+        <option value="Clothes">Clothes</option>
+        <option value="Toys">Toys</option>
+        <option value="Food">Food</option>
+        <option value="Medical Supplies">Medical Supplies</option>
+        <optgroup label="School Supplies">
+          <option value="Books">Books</option>
+          <option value="Sationery">Stationery</option>
+        </optgroup>
+        <option value="Blood">Blood</option>
 
-        <!- </optgroup> ->
-        <!- <optgroup label="Pro-bono">
-          <option value="teaching"></option>
-          <option value="doctoring"></option>
-        </optgroup> -> 
-      </datalist> -->
+      </select>
 
     </div>
 
@@ -144,7 +137,7 @@
         <h5 class="collapsible-header"><i class="fa-solid fa-caret-right clickableArrow" style="font-size: 24px;" onclick="toggleCollapsible(this)"></i> Book Donation Filters</h5>
         <div class="collapsible-content">
           <div class="wrap">
-            <input class="wrapComp stylized-input oninput="filter()" id="book-title" placeholder="Book Title" />
+            <input class="wrapComp stylized-input" oninput="filter()" id="book-title" placeholder="Book Title" />
             <input class="wrapComp stylized-input" oninput="filter()" id="book-author" placeholder="Book Author" />
             <input class="wrapComp stylized-input" oninput="filter()" id="book-language" placeholder="Book Language" />
           </div>
@@ -166,7 +159,7 @@
               <input class="wrapComp stylized-input" oninput="filter()" id="toy-type" placeholder="Toy Type" />
               <div class="wrap wrapComp">
                 <input class="wrapComp stylized-input" style="width: 30%;" oninput="filter()" id="toys-min" type="number" min="1" placeholder="Min Age" />
-                <input class="wrapComp stylized-input" style="width: 30%;" oninput="filter()" id="toys-max" type="number" placeholder="Max Age" />
+                <input class="wrapComp stylized-input" style="width: 30%;" oninput="filter()" id="toys-max" type="number" min="1" placeholder="Max Age" />
               </div>
             </div>
           </div>
@@ -260,7 +253,7 @@
           contribution helps kids thrive academically. Thank you for making a
           difference!
         </p>
-        <p class="type">Type: Ruler</p>
+        <p>Type: <span  class="type">Ruler</span></p>
 
         <p hidden class="quantity">500</p>
         <button>Donate</button>
@@ -269,21 +262,21 @@
       <div class="post books">
         <h3 class="title">Library Expansion Project: Donate Books Now!</h3>
         <p>
-          <span class="book-description">Help enrich our library collection by donating your favorite books.
+          <span class="description">Help enrich our library collection by donating your favorite books.
             Your contribution will open new worlds for readers of all ages.
             Thank you for fostering a love of reading!</span>
         </p>
         <h5>
-          Title: <span class="book-name">Title: To Kill a Mockingbird</span>
+          Title: <span class="book-name">To Kill a Mockingbird</span>
         </h5>
         <h5>
-          Author: <span class="book-author">Author: Harper Lee</span>
+          Author: <span class="book-author">Harper Lee</span>
         </h5>
         <h5>
-          Language: <span class="book-language">Language: English</span>
+          Language: <span class="book-language">English</span>
         </h5>
         <h5 hidden>
-          Edition: <span class="book-edition" hidden>Edition: Revised Edition</span>
+          Edition: <span class="book-edition" hidden>Revised Edition</span>
         </h5>
         <h5 hidden>
           Short Summary: <span class="book-summary" hidden>A powerful story of racial injustice and moral growth in the
