@@ -7,14 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 1200);
 });
 
-function goToMoreDetailsOrganization() {
-  window.location.href = "/Admin/organizationMoreDetails.html";
+function goTo(address) {
+  window.location.href = address;
 }
-
-function goToOrganizationList() {
-  window.location.href = "/Admin/organizationsRequestsReview.html";
-}
-
 
 
 function showForm() {

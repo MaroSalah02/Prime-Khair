@@ -137,10 +137,10 @@ h1 {
 .posts {
   perspective: 1000px;
   perspective-origin: center center;
-  width: 60%; /* Adjust the width as needed */
-  margin: auto; /* This centers the div horizontally */
+  width: 60%; 
+  margin: auto; 
   padding-top: 15vh;
-  border-radius: 10px; /* Optional: add rounded corners */
+  border-radius: 10px; 
 }
 
 body {
@@ -363,3 +363,4 @@ button:not(:disabled),
   align-items: center;
   display: flex;
 }
+
