@@ -44,6 +44,10 @@ function filterSelection() {
     case "blood":
       document.getElementById("blood-filter").classList.remove("invisible");
       break;
+    case "all":
+      for (var i = 0; i < filterGroups.length; i++) {
+        filterGroups.item(i).classList.remove("invisible");
+      }
     default:
   }
 
@@ -555,4 +559,17 @@ function getMax(s) {
     sum = 900;
   }
   return sum;
+}
+
+function toggleCollapsible() {
+  var tmp = document.getElementsByClassName("collapsible");
+
+  var coll = [];
+  for (var i = 0; i < tmp.length; i++) {
+    coll.push(tmp.item(i));
+  }
+  console.log(coll);
+  coll.forEach(function (collapsible) {
+    collapsible.classList.toggle("active");
+  });
 }

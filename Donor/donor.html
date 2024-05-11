@@ -100,140 +100,131 @@
 
       </div>
 
-      <div id="clothes-filter" class="filter-group">
-        <input oninput="filter()" id="clothes-min" type="number" min="1" placeholder="Min" />
-        <input oninput="filter()" id="clothes-max" type="number" min="1" placeholder="Max" />
-        <div class="wrap">
-          <input oninput="filter()" id="clothes-male" type="checkbox" name="gender" value="male" />
-          <label for="clothes-male">Male</label>
-          <input oninput="filter()" id="clothes-female" type="checkbox" name="gender" value="female" />
-
-          <label for="clothes-female">female</label>
-
-          <input oninput="filter()" id="clothes-spring" type="checkbox" name="gender" value="male" />
-
-          <label for="clothes-spring">spring</label>
-
-          <input oninput="filter()" id="clothes-summer" type="checkbox" name="gender" value="female" />
-
-          <label for="clothes-summer">summer</label>
-
-          <input oninput="filter()" id="clothes-autumn" type="checkbox" name="gender" value="male" />
-
-          <label for="clothes-autumn">autumn</label>
-
-          <input oninput="filter()" id="clothes-winter" type="checkbox" name="gender" value="female" />
-          <label for="clothes-winter">winter</label>
-
+      <div id="clothes-filter" class="filter-group collapsible">
+        <h4 class="collapsible-header">Clothes</h4>
+        <div class="collapsible-content">
+          <input oninput="filter()" id="clothes-min" type="number" min="1" placeholder="Min" />
+          <input oninput="filter()" id="clothes-max" type="number" min="1" placeholder="Max" />
+          <div class="wrap">
+            <input oninput="filter()" id="clothes-male" type="checkbox" name="gender" value="male" />
+            <label for="clothes-male">Male</label>
+            <input oninput="filter()" id="clothes-female" type="checkbox" name="gender" value="female" />
+            <label for="clothes-female">Female</label>
+            <input oninput="filter()" id="clothes-spring" type="checkbox" name="gender" value="male" />
+            <label for="clothes-spring">Spring</label>
+            <input oninput="filter()" id="clothes-summer" type="checkbox" name="gender" value="female" />
+            <label for="clothes-summer">Summer</label>
+            <input oninput="filter()" id="clothes-autumn" type="checkbox" name="gender" value="male" />
+            <label for="clothes-autumn">Autumn</label>
+            <input oninput="filter()" id="clothes-winter" type="checkbox" name="gender" value="female" />
+            <label for="clothes-winter">Winter</label>
+          </div>
         </div>
       </div>
 
-      <div id="books-filter" class="filter-group">
-        <input oninput="filter()" id="book-title" placeholder="Book Title" />
-        <input oninput="filter()" id="book-author" placeholder="Book Author" />
-        <input oninput="filter()" id="book-language" placeholder="Book Language" />
-      </div>
-
-      <div id="stationery-filter" class="filter-group">
-        <input oninput="filter()" id="stationery-type" placeholder="Stationery Type" />
-      </div>
-
-      <div id="toys-filter" class="filter-group">
-        <div id="toys-price">
-          <input oninput="filter()" id="toy-type" placeholder="Toy Type" />
-          <input oninput="filter()" id="toys-min" type="number" min="1" placeholder="Min" />
-          <input oninput="filter()" id="toys-max" type="number" placeholder="Max" />
-        </div>
-        <div id="toys-checkbox">
-          <input oninput="filter()" id="toys-male" type="checkbox" name="gender" value="male" />
-          <label for="toys-male">Male</label>
-
-          <input oninput="filter()" id="toys-female" type="checkbox" name="gender" value="female" />
-          <label for="toys-female">Female</label>
-        </div>
-        <select id="toy-category" onchange="filter()">
-          <option value="all">All</option>
-          <option value="board games">Board Games</option>
-          <option value="stuffed toys">Stuffed Toys</option>
-          <option value="dolls">Dolls</option>
-          <option value="sports">Sports</option>
-          <option value="cars">Cars</option>
-          <option value="outdoor">Outdoor</option>
-        </select>
-      </div>
-
-      <div id="blood-filter" class="filter-group">
-        <div style="display: flex; justify-content: center;">
-          <label for="blood-type" style="font-size: 18px;">Blood Type: &nbsp;</label>
-          <select id="blood-type" class="stylized-input" onchange="filter()">
-            <option value="AB+">
-              AB+
-            </option>
-            <option value="AB-">
-              AB-
-            </option>
-            <option ovalue="A+">
-              A+
-            </option>
-            <option value="A-">
-              A-
-            </option>
-            <option value="B+">
-              B+
-            </option>
-            <option value="B-">
-              B-
-            </option>
-            <option value="O+">
-              O+
-            </option>
-            <option value="O-">
-              O-
-            </option>
-          </select>
-          <label for="blood-governate" style="font-size: 18px;">Governate: &nbsp;</label>
-          <select id="blood-governate" class="stylized-input" onchange="filter()">
-            <!-- TODO: Get a drop-down list for all goverates -->
-            <option>
-              Alexandria
-            </option>
-          </select>
-        </div>
-        <div style="display: flex; justify-content: center;">
-          <label for="blood-area" style="font-size: 18px;">Area Name: &nbsp;</label>
-          <input id="blood-area" class="stylized-input" oninput="filter()">
-          <label for="blood-hospital" style="font-size: 18px;">Hospital Name: &nbsp;</label>
-          <input id="blood-hospital" class="stylized-input" oninput="filter()">
+      <div id="books-filter" class="filter-group collapsible">
+        <h4 class="collapsible-header">Books</h4>
+        <div class="collapsible-content">
+          <input oninput="filter()" id="book-title" placeholder="Book Title" />
+          <input oninput="filter()" id="book-author" placeholder="Book Author" />
+          <input oninput="filter()" id="book-language" placeholder="Book Language" />
         </div>
       </div>
 
-      <div id="medical-supplies-filter" class="filter-group"></div>
-      <div id="medication-filter" class="filter-group"></div>
-      <div id="food-filter" class="filter-group">
-        <div style="display: flex; justify-content: center;">
-          <label for="food-category" style="font-size: 18px;">Food Category: </label>
-          <select id="food-category" onchange="filter()" class="stylized-input">
-            <option selected value="all">
-              All
-            </option>
-            <option value="fruit">
-              Fruits
-            </option>
-            <option value="vegetable">
-              Vegetables
-            </option>
-            <option value="canned">
-              Canned Goods
-            </option>
-            <option value="meals">
-              Fresh Meals
-            </option>
-            <option value="baked">
-              Baked Goods
-            </option>
+      <div id="stationery-filter" class="filter-group collapsible">
+        <h4 class="collapsible-header">Stationery</h4>
+        <div class="collapsible-content">
+          <input oninput="filter()" id="stationery-type" placeholder="Stationery Type" />
+        </div>
+      </div>
+
+      <div id="toys-filter" class="filter-group collapsible">
+        <h4 class="collapsible-header">Toys</h4>
+        <div class="collapsible-content">
+          <div id="toys-price">
+            <input oninput="filter()" id="toy-type" placeholder="Toy Type" />
+            <input oninput="filter()" id="toys-min" type="number" min="1" placeholder="Min" />
+            <input oninput="filter()" id="toys-max" type="number" placeholder="Max" />
+          </div>
+          <div id="toys-checkbox">
+            <input oninput="filter()" id="toys-male" type="checkbox" name="gender" value="male" />
+            <label for="toys-male">Male</label>
+            <input oninput="filter()" id="toys-female" type="checkbox" name="gender" value="female" />
+            <label for="toys-female">Female</label>
+          </div>
+          <select id="toy-category" onchange="filter()">
+            <option value="all">All</option>
+            <option value="board games">Board Games</option>
+            <option value="stuffed toys">Stuffed Toys</option>
+            <option value="dolls">Dolls</option>
+            <option value="sports">Sports</option>
+            <option value="cars">Cars</option>
+            <option value="outdoor">Outdoor</option>
           </select>
         </div>
       </div>
+
+      <div id="blood-filter" class="filter-group collapsible">
+        <h4 class="collapsible-header">Blood</h4>
+        <div class="collapsible-content">
+          <div style="display: flex; justify-content: center;">
+            <label for="blood-type" style="font-size: 18px;">Blood Type: &nbsp;</label>
+            <select id="blood-type" class="stylized-input" onchange="filter()">
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+            <label for="blood-governate" style="font-size: 18px;">Governate: &nbsp;</label>
+            <select id="blood-governate" class="stylized-input" onchange="filter()">
+              <option>Alexandria</option> <!-- Add other options -->
+            </select>
+          </div>
+          <div style="display: flex; justify-content: center;">
+            <label for="blood-area" style="font-size: 18px;">Area Name: &nbsp;</label>
+            <input id="blood-area" class="stylized-input" oninput="filter()">
+            <label for="blood-hospital" style="font-size: 18px;">Hospital Name: &nbsp;</label>
+            <input id="blood-hospital" class="stylized-input" oninput="filter()">
+          </div>
+        </div>
+      </div>
+
+      <div id="medical-supplies-filter" class="filter-group collapsible">
+        <h4 class="collapsible-header">Medical Supplies</h4>
+        <div class="collapsible-content">
+          <!-- Add filtration fields for medical supplies -->
+        </div>
+      </div>
+
+      <div id="medication-filter" class="filter-group collapsible">
+        <h4 class="collapsible-header">Medication</h4>
+        <div class="collapsible-content">
+          <!-- Add filtration fields for medication -->
+        </div>
+      </div>
+
+      <div id="food-filter" class="filter-group collapsible">
+        <h4 class="collapsible-header">Food</h4>
+        <div class="collapsible-content">
+          <div style="display: flex; justify-content: center;">
+            <label for="food-category" style="font-size: 18px;">Food Category: </label>
+            <select id="food-category" onchange="filter()" class="stylized-input">
+              <option value="all" selected>All</option>
+              <option value="fruit">Fruits</option>
+              <option value="vegetable">Vegetables</option>
+              <option value="canned">Canned Goods</option>
+              <option value="meals">Fresh Meals</option>
+              <option value="baked">Baked Goods</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="toggleCollapsible()">Collapse/Expand All</button>
     </div>
     <!-- Filtration Fields -->
     <!-- Dummy Data Posts -->
