@@ -561,15 +561,25 @@ function getMax(s) {
   return sum;
 }
 
-function toggleCollapsible() {
-  var tmp = document.getElementsByClassName("collapsible");
+function toggleCollapsible(headerIcon) {
+  // console.log(headerIcon);
+  var collapsibleArea = headerIcon.parentNode.parentNode;
 
-  var coll = [];
-  for (var i = 0; i < tmp.length; i++) {
-    coll.push(tmp.item(i));
+  // var tmp = document.getElementsByClassName("collapsible");
+
+  // var coll = [];
+  // for (var i = 0; i < tmp.length; i++) {
+  //   coll.push(tmp.item(i));
+  // }
+  // console.log(collapsibleArea);
+
+  if (headerIcon.classList.contains("fa-caret-right")) {
+    headerIcon.classList.remove("fa-caret-right");
+    headerIcon.classList.add("fa-caret-down");
+  } else {
+    headerIcon.classList.remove("fa-caret-down");
+    headerIcon.classList.add("fa-caret-right");
   }
-  console.log(coll);
-  coll.forEach(function (collapsible) {
-    collapsible.classList.toggle("active");
-  });
+
+  collapsibleArea.classList.toggle("active");
 }
