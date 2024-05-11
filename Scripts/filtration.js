@@ -342,6 +342,108 @@ function filter() {
             flag = false;
           }
           break;
+
+        case "books": //DONE
+          var nameKeyword = document
+            .getElementById("book-title")
+            .value.toLowerCase()
+            .split(" ");
+          var authorKeyword = document
+            .getElementById("book-author")
+            .value.toLowerCase()
+            .split(" ");
+          var languageKeyword = document
+            .getElementById("book-language")
+            .value.toLowerCase()
+            .split(" ");
+
+          var name = [];
+          var author = [];
+          var language = [];
+
+          document
+            .getElementsByClassName("book-name")
+            .item(0)
+            .innerHTML.toLowerCase()
+            .split(" ")
+            .forEach((word) => {
+              name = name.concat(generateSubstrings(word));
+            });
+
+          document
+            .getElementsByClassName("book-author")
+            .item(0)
+            .innerHTML.toLowerCase()
+            .split(" ")
+            .forEach((word) => {
+              author = author.concat(generateSubstrings(word));
+            });
+
+          document
+            .getElementsByClassName("book-language")
+            .item(0)
+            .innerHTML.toLowerCase()
+            .split(" ")
+            .forEach((word) => {
+              language = language.concat(generateSubstrings(word));
+            });
+
+          // console.log(name);
+          // console.log(nameKeyword);
+          // console.log(author);
+          // console.log(authorKeyword);
+          // console.log(language);
+          // console.log(languageKeyword);
+          // var flag = true;
+
+          nameKeyword.forEach((keyword) => {
+            // console.log(keywords[0] == "" || title.contains(keyword) || description.contains(keyword));
+            if (nameKeyword[0] == "" || name.includes(keyword)) {
+              //card.classList.remove("invisible");
+              flag2 = true;
+
+              return;
+            } else {
+              flag2 = false;
+              //card.classList.add("invisible");
+            }
+          });
+
+          flag = flag & (flag2 == 1) ? true : false;
+          console.log(flag);
+
+          authorKeyword.forEach((keyword) => {
+            // console.log(keywords[0] == "" || title.contains(keyword) || description.contains(keyword));
+            if (authorKeyword[0] == "" || author.includes(keyword)) {
+              //card.classList.remove("invisible");
+              flag2 = true;
+
+              return;
+            } else {
+              //card.classList.add("invisible");
+              flag2 = false;
+            }
+          });
+          flag = flag & (flag2 == 1) ? true : false;
+          console.log(flag);
+
+          languageKeyword.forEach((keyword) => {
+            // console.log(keywords[0] == "" || title.contains(keyword) || description.contains(keyword));
+            if (languageKeyword[0] == "" || language.includes(keyword)) {
+              //card.classList.remove("invisible");
+              flag2 = true;
+              return;
+            } else {
+              //card.classList.add("invisible");
+              flag2 = false;
+            }
+          });
+          flag = flag & (flag2 == 1) ? true : false;
+          console.log(languageKeyword);
+          console.log(language);
+          console.log(flag);
+
+          break;
       }
     }
 
