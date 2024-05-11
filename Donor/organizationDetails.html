@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prime Khair: Organization Details</title>
+    <link rel="stylesheet" type="text/css" href="/Styles/organizationDetails.css">
+    <link rel="stylesheet" type="text/css" href="/Styles/navElements.css">
+  </head>
+
+  <body>
+    <div class="sidebar-container">
+        <div class="sidebar-container">
+            <div class="sidebar">
+                <div id="sidebar-top">
+                    <div style="cursor: pointer;" class="sidebar-button" id="3-bars" onclick="expand()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+                    <div id="logo-img" class="visible fade logo">
+                        <img src="/icons/prime-khair-high-resolution-logo-transparent.png">
+                    </div>
+                </div>
+
+                <hr class="visible fade">
+
+                <div class="profile-user-photo visible fade">
+                    <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
+                    <p>Organization Name</p>
+                </div>
+            </div>
+
+            <header class="topbar">
+                    <p id="page-header">Organization Details</p>
+                    <a href="/main/main.html">Home</a>
+            </header>
+    </div>
+
+    <div class="card">
+        <div class="back-arrow" onclick="goBack()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+
+        <div class="details">
+            <h1>Organization Details</h1>
+            <hr>
+        </div>
+
+        <div id="info-table">
+            <section id="info">
+                <div>
+                    <h2>Green Thumb Project: Planting Futures</h2>
+                    <p><strong>Organization Type:</strong> Environmental Advocacy</p>
+                    <p><strong>Representative:</strong> Laila Ghanem</p>
+                    <p><strong>Governorate:</strong> Alexandria</p>
+                    <p>
+                        <strong>Mission:</strong> To green community spaces and educate
+                        about environmental stewardship.
+                    </p>
+                </div>
+            </section>
+            
+            <section id="contact">
+                <div>
+                    <h2>Contact Information</h2>
+                    <p><strong>Email:</strong> contact@greenthumb.org</p>
+                    <p><strong>Phone:</strong> +20 123 456 7890</p>
+                    <p><strong>Address:</strong> 123 Eco Road, Alexandria, Egypt</p>
+                </div>
+            </section>
+
+            <section id = "location">
+                <h2>Company Location</h2>
+                <div id="map" style="
+                                    width: 100%;
+                                    min-height: 40vh;
+                                    max-height: 100vw;
+                                    border-radius: 10px;
+                                    ">
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="/Scripts/sidebar.js"></script>
+    <script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1IETOWKceQ_gRqH-8Tdq18qzMRqmJebo&callback=initMap" async defer></script>
+    <script src="/Scripts/map.js"></script>
+    <script src="/Scripts/fulfulForm.js"></script>
+  </body>
+</html>
