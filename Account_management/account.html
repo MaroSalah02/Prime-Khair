@@ -7,22 +7,130 @@
     <title>Account Management</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/Styles/navElements.css">
 </head>
 <body>
-    <div class="sidebar" id="sidebar">
-        <div class="menu-icon" onclick="toggleSidebar()" id="icon">☰</div>
-        <div class="info_for_admin" id="side_bar_info">
-            <i class="fa-solid fa-circle-user fa-2xl" id="user_icon"></i>
-            <p id="type_of_user"></p>
+    <div class="sidebar-container">
+        <div class="sidebar">
+            <div id="sidebar-top">
+                <div style="cursor: pointer;" class="sidebar-button" id="3-bars" onclick="expand()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div id="logo-img" class="visible fade logo">
+                    <img src="/icons/prime-khair-high-resolution-logo-transparent.png">
+                </div>
+            </div>
+            <hr class="visible fade">
+            <div class="profile-user-photo">
+                <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
+                <p id="type_of_user"></p>
+            </div>
         </div>
+        <header class="topbar">
+            <p id="page-header">Account Management</p>
+            <a href="/main/main.html">Home</a>
+        </header>
     </div>
 
-    <div class="main-content">
-        <div class="container">
-            <h1>Account Management</h1>
+    <div id="page">
+        <div class="card" id="admin_card">
+            <label for="operation">Choose an operation</label>
+            <select id="operation_admin">
+                <option value="" disabled selected>Select an operation</option>
+                <option value="update">Update Password</option>
+                <option value="view">View Donors and Organizations</option>
+            </select>
+        </div>
+
+        <div class="card" id="donor_card">
+            <h1 style="margin-bottom: 10px;">Update account info</h1>
+            <hr>
+            <select id="operation_donor">
+                <option value="" disabled selected>Select an operation</option>
+                <option value="update_email">Update email</option>
+                <option value="update_contact">Update contact info</option>
+                <option value="update_password">Update password</option>
+                <option value="update_area">Update area</option>
+                <option value="update_address">Update address</option>
+                <option value="update_governorate">Update governorate</option>
+            </select>
+            <div class="update_password">
+                <label for="" id="donor_email">Enter new Email<input type="text" name="" style="margin-left: 10px;"></label>
+                <label for="" id="donor_contact">Enter new contact info<input type="text" name=""  style="margin-left: 10px;"></label>
+                <div class="update_password" id="update_password_donor">
+                    <label for="" id="donor_old_password">Enter old Password<input type="text" name=""  style="margin-left: 10px;"></label>
+                    <label for="" id="donor_new_password">Enter new Password<input type="text" name=""  style="margin-left: 4px;"></label>
+                    <p id="error2" style="margin-bottom: 5px;"></p>
+                </div>
+                <label for="" id="donor_area">Enter new area<input type="text" name=""  style="margin-left: 10px;"></label>
+                <label for="" id="donor_address">Enter new address<input type="text" name="" style="margin-left: 10px;"></label>
+                <label for="" id="donor_governorate">Enter new governorate<input type="text" name=""  style="margin-left: 10px;"></label>
+            </div>
+            <button onclick="update()">Update</button>
+        </div>
+
+        <div class="card" id="organization_card">
+            <h1 style="margin-bottom: 10px;">Update account info</h1>
+            <hr>
+            <select id="operation_organization">
+                <option value="" disabled selected>Select an operation</option>
+                <option value="update_email">Update email</option>
+                <option value="update_contact">Update contact info</option>
+                <option value="update_password">Update password</option>
+                <option value="update_area">Update area</option>
+                <option value="update_address">Update address</option>
+                <option value="update_governorate">Update governorate</option>
+            </select>
+            <div class="update_password">
+                <label for="" id="organization_email">Enter new Email<input type="text" name="" style="margin-left: 10px;"></label>
+                <label for="" id="organization_contact">Enter new contact info<input type="text" name=""  style="margin-left: 10px;"></label>
+                <div class="update_password" id="update_password_organization">
+                    <label for="" id="organization_old_password">Enter old Password<input type="text" name=""  style="margin-left: 10px;"></label>
+                    <label for="" id="organization_new_password">Enter new Password<input type="text" name=""  style="margin-left: 4px;"></label>
+                    <p id="error2" style="margin-bottom: 5px;"></p>
+                </div>
+                <label for="" id="organization_area">Enter new area<input type="text" name=""  style="margin-left: 10px;"></label>
+                <label for="" id="organization_address">Enter new address<input type="text" name="" style="margin-left: 10px;"></label>
+                <label for="" id="organization_governorate">Enter new governorate<input type="text" name=""  style="margin-left: 10px;"></label>
+            </div>
+            <button onclick="update()">Update</button>
+        </div>
+
+        <div id="confirmation-form" class="card invisible">
+            <div class="details" id="details_for_password">
+                <h1>
+                    Password Change
+                </h1>
+                <hr>
+                <div class="update_password">
+                    <label for="">Enter old Password<input type="text" name="" id="admin_old_password" style="margin-left: 10px;"></label>
+                    <label for="">Enter new Password<input type="text" name="" id="admin_new_password" style="margin-left: 4px;"></label>
+                    <p id="error"></p>
+                </div>
+            </div>
+
+            <div class="details" id="details_for_view">
+                <h1>
+                    View Details
+                </h1>
+                <hr>
+                <div class="view">
+
+                </div>
+            </div>
+
+            <div class="details" id="">
+
+            </div>
+
+            <div class="change_back">
+                <button class="cancelButton" onclick="hideForm()">Go back</button>
+                <button class="cancelButton" onclick="">Change</button>
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="../Scripts/sidebar.js"></script>
 </body>
 </html>
