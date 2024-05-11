@@ -33,30 +33,27 @@
   </div>
   <!-- Navigation Element -->
 
-  <div class="sidebar">
-    <div id="sidebar-top">
-      <div class="sidebar-button" id="3-bars" onclick="expand()">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-      <div id="logo-img" class="visible fade logo">
-        <img src="/icons/prime-khair-high-resolution-logo-transparent.png">
-      </div>
+  <div class="sidebar-container">
+    <div class="sidebar">
+        <div id="sidebar-top">
+            <div style="cursor: pointer;" class="sidebar-button" id="3-bars" onclick="expand()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div id="logo-img" class="visible fade logo">
+                <img src="/icons/prime-khair-high-resolution-logo-transparent.png">
+            </div>
+        </div>
+        <hr class="visible fade">
+        <div class="profile-user-photo">
+            <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
+            <p>Organization name</p>
+        </div>
     </div>
-    <hr class="visible fade">
-    <div class="profile-user-photo visible fade">
-      <img src="profile.jpg" alt="user" />
-      <p>Organization name</p>
-    </div>
-    <nav class="sidebar-nav visible fade">
-      <ul>
-        <li><a href="#">Profie Managment</a></li>
-        <li><a href="#">Create new Donation Post</a></li>
-        <li><a href="#">Donation History</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="/Donor/organizations.html">View Organizations</a></li>
-      </ul>
-    </nav>
-  </div>
+    <header class="topbar">
+        <p id="page-header">Account Management</p>
+        <a href="/main/main.html">Home</a>
+    </header>
+</div>
 
   <header class="topbar">
     <h3 id="title">Explore Requests</h3>

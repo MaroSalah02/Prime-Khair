@@ -228,3 +228,13 @@ body {
   position: absolute;
   margin-left: 37%;
 }
+.profile-user-photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.profile-user-photo i {
+  margin-top: 20px;
+}
