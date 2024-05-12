@@ -69,7 +69,7 @@ function filter2() {
     flag = flag & (flag2 == 1) ? true : false;
     // console.log(flag);
 
-    if (postType != typeFilter && typeFilter != "all") {
+    if (!postType.includes(typeFilter) && typeFilter != "all") {
       flag = false;
     }
     // console.log(flag);
