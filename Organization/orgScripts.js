@@ -4,9 +4,73 @@ const progressBar = document.querySelector('.progress-bar');
 
 function nextStep() {
     if(currentStep === 1){
-        var select = document.getElementById("season");
+        var select = document.getElementById("donations-input");
+        
+        var toys = document.getElementById("toys-form");
+        var food = document.getElementById("food-form");
+        var clothes = document.getElementById("clothes-form");
+        var supply = document.getElementById("supply-form");
+        var station = document.getElementById("stationary-form");
+        var books = document.getElementById("book-form");
+        var blood = document.getElementById("blood-form");
+
         var selectedValue = select.value;
-        console.log("Selected value: " + selectedValue);
+        switch (selectedValue){
+            case 'Toys':
+                toys.style.display = 'block';
+                food.style.display = 'none';
+                clothes.style.display = 'none';
+                supply.style.display = 'none';
+                station.style.display = 'none';
+                books.style.display = 'none';
+                blood.style.display = 'none';
+                break;
+            case 'Food':
+                toys.style.display = 'none';
+                food.style.display = 'block';
+                clothes.style.display = 'none';
+                supply.style.display = 'none';
+                station.style.display = 'none';
+                books.style.display = 'none';
+                blood.style.display = 'none';
+                break;
+            case 'Medical Supplies':
+                toys.style.display = 'none';
+                food.style.display = 'none';
+                clothes.style.display = 'none';
+                supply.style.display = 'block';
+                station.style.display = 'none';
+                books.style.display = 'none';
+                blood.style.display = 'none';
+                break;
+            case 'School Supplies: Stationary':
+                toys.style.display = 'none';
+                food.style.display = 'none';
+                clothes.style.display = 'none';
+                supply.style.display = 'none';
+                station.style.display = 'block';
+                books.style.display = 'none';
+                blood.style.display = 'none';
+                break;
+            case 'School Supplies: Books':
+                toys.style.display = 'none';
+                food.style.display = 'none';
+                clothes.style.display = 'none';
+                supply.style.display = 'none';
+                station.style.display = 'none';
+                books.style.display = 'block';
+                blood.style.display = 'none';
+                break;
+            default:
+                toys.style.display = 'none';
+                food.style.display = 'none';
+                clothes.style.display = 'block';
+                supply.style.display = 'none';
+                station.style.display = 'none';
+                books.style.display = 'none';
+                blood.style.display = 'none';
+                break
+        }
     }
     if (currentStep < 3) {
         currentStep++;

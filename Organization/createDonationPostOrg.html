@@ -60,7 +60,7 @@
             <form id="multi-step-form">
               <div class="form-step active" id="step1">
               <h2>What Kind Of Donation Do you need</h2>
-              <select id="transport-input" class="stylized-input">
+              <select id="donations-input" class="stylized-input">
                 <option selected value="clothes">
                     Clothes
                 </option>
@@ -77,11 +77,11 @@
                     School Supplies: Stationary
                 </option>
                 <option value="School Supplies: Books">
-                  School Supplies: Books
+                    School Supplies: Books
                 </option>
-                  <option value="Blood Donations">
-                      Blood Donation
-                  </option>
+                <option value="Blood Donations">
+                    Blood Donation
+                </option>
             </select>
           </form>
             <button type="button" onclick="nextStep()">Next</button>
@@ -89,7 +89,7 @@
           <div class="form-step" id="step2">
               <!--start Toys part-->
 
-              <form class="form-donation" action="#" method="post">
+              <form class="form-donation" id = "toys-form" action="#" method="post">
                 <h2>Create Toys Donation</h2>
 
                 <div>
@@ -131,7 +131,7 @@
 
               <!--Start -Clothes part -->
 
-              <form class="form-donation" action="#" method="post">
+              <form class="form-donation" id = "clothes-form" action="#" method="post">
                 <h2>Create Clothes Donation</h2>
                 <div>
                   <label for="title">Title:</label>
@@ -176,7 +176,7 @@
 
 
               <!--Start -Food part -->
-             <form class="form-donation" action="#" method="post">
+             <form class="form-donation" id = "food-form" action="#" method="post">
               <h2>Create Food Donation</h2>
   
               <div>
@@ -204,7 +204,7 @@
 
 
               <!--Start -Stationaru part -->
-              <form class="form-donation" action="#" method="post">
+              <form class="form-donation" id = "stationary-form" action="#" method="post">
                 <h2>Create Stationary Donation</h2>
                 <div>
                   <label for="title">Title:</label>
@@ -228,7 +228,7 @@
 
 
               <!--Start -book part -->
-              <form class="form-donation" action="#" method="post">
+              <form class="form-donation" id = "book-form" action="#" method="post">
                 <h2>Create Book Donation</h2>
 
                 <div>
@@ -271,8 +271,18 @@
 
 
 
-              <!--Start -medical supplies part -->
-              <form class="form-donation" action="#" method="post">
+              <!--Start -medical supplies part  device type, use, image, quantity -->
+              <form class="form-donation" id = "supply-form" action="#" method="post">
+                <h2>Create Medical Supply Donation</h2>
+
+                <div>
+                  <label for="post-type">Donation Type:</label>
+                  <select id="post-type" name="post-type" required>
+                    <option value="Medication">Medication</option>
+                    <option value="Device">Device</option>
+                    <option value="Equipment">Equipment</option>
+                  </select>
+                </div>
                 <div>
                   <label for="title">Title:</label>
                   <input type="text" id="title" name="title" required>
@@ -282,40 +292,28 @@
                   <textarea id="description" name="description" required></textarea>
                 </div>
                 <div>
-                  <label for="clothing-type">Clothing Type:</label>
-                  <input type="text" id="clothing-type" name="clothing-type" required>
+                  <label for="Device-Equipment-type">Device/Equipment Type:</label>
+                  <input type="text" id="Device-Equipment-type" name="Device-Equipment-type" required>
                 </div>
                 <div>
-                  <label for="age-min">Intended Age (min):</label>
-                  <input type="number" id="age-min" name="age-min" required>
-                  <input type="number" id="age-max" name="age-max" required>
+                  <label for="Use">Its Use:</label>
+                  <input type="text" id="use" name="use" required>
                 </div>
                 <div>
-                  <label for="clothes-for">Clothes for:</label>
-                  <input type="text" id="clothes-for" name="clothes-for" required>
-                </div>
-                <div>
-                  <label for="season">Season:</label>
-                  <select id="season" name="season" required>
-                    <option value="Spring">Spring</option>
-                    <option value="Summer">Summer</option>
-                    <option value="Autumn">Autumn</option>
-                    <option value="Winter">Winter</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="material">Material:</label>
-                  <input type="text" id="material" name="material" required>
+                  <button type="button" style="margin-top: 3vh;" onclick="">Upload Photo</button>
                 </div>
                 <div>
                   <label for="quantity">Quantity:</label>
                   <input type="number" id="quantity" name="quantity" required>
                 </div>
+              
               </form>
               <!--END -medical supplies part -->
 
                <!--Start -Blood part -->
-               <form class="form-donation" action="#" method="post">
+               <form class="form-donation" id = "blood-form" action="#" method="post">
+                <h2>Create Blood Donation</h2>
+
                 <div>
                   <label for="title">Title:</label>
                   <input type="text" id="title" name="title" required>
@@ -325,34 +323,42 @@
                   <textarea id="description" name="description" required></textarea>
                 </div>
                 <div>
-                  <label for="clothing-type">Clothing Type:</label>
-                  <input type="text" id="clothing-type" name="clothing-type" required>
-                </div>
-                <div>
-                  <label for="age-min">Intended Age (min):</label>
-                  <input type="number" id="age-min" name="age-min" required>
-                  <input type="number" id="age-max" name="age-max" required>
-                </div>
-                <div>
-                  <label for="clothes-for">Clothes for:</label>
-                  <input type="text" id="clothes-for" name="clothes-for" required>
+                  <label for="Blood-type">Blood Type:</label>
+                  <input type="text" id="Blood-type" name="clothing-type" required>
                 </div>
                 <div>
                   <label for="season">Season:</label>
-                  <select id="season" name="season" required>
-                    <option value="Spring">Spring</option>
-                    <option value="Summer">Summer</option>
-                    <option value="Autumn">Autumn</option>
-                    <option value="Winter">Winter</option>
+                  <select id="blood_type" name="blood_type" required>
+                    <option value="">Select a blood type</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
                   </select>
                 </div>
                 <div>
-                  <label for="material">Material:</label>
-                  <input type="text" id="material" name="material" required>
+                  <label for="hospital-name">Hospital Name:</label>
+                  <input type="text" id="Hospital-name" name="Hospital-name" required>
                 </div>
                 <div>
-                  <label for="quantity">Quantity:</label>
-                  <input type="number" id="quantity" name="quantity" required>
+                  <label for="hospital-Area">Hospital Area:</label>
+                  <input type="text" id="Hospital-Area" name="Hospital-Area" required>
+                </div>
+                <div>
+                  <label for="Governorate">Governorate:</label>
+                  <input type="text" id="Governorate" name="Governorate" required>
+                </div>
+                <div>
+                  <label for="Address">Address:</label>
+                  <input type="text" id="Governorate" name="Governorate" required>
+                </div>
+                <div>
+                  <label for="patient-name">Patient Name:</label>
+                  <input type="number" id="patient-name" name="patient-name" required>
                 </div>
               </form>
               <!--END -Blood part -->
