@@ -50,3 +50,15 @@
   margin: 0px;
   padding: 0px;
 }
+.filled {
+  width: 0%;
+  height: 100%;
+  background-color: #c2a83e;
+  transition: width 1s;
+}
+.filled.load {
+  width: 100%;
+}
+.filled.hide {
+  display: none;
+}

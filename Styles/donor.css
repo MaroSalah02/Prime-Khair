@@ -99,7 +99,8 @@
   flex-direction: column;
   margin-top: 2%;
   margin-left: 5%;
-  border: solid black 5px;
+  border: solid grey 2px;
+  background-color: whitesmoke;
   border-radius: 20px;
 }
 

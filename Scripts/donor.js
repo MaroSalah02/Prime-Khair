@@ -6,3 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("myelement").classList.add("hide");
   }, 1200);
 });
+function bloodDetails() {
+  window.location.href("../Donor/bloodDonationDetails.html");
+}
