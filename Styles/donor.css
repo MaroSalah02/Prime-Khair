@@ -151,7 +151,6 @@
   height: 100px;
   width: 50%;
   /* width: 3000px; */
-} */
 
 #orgname {
   margin-bottom: 10px;
@@ -303,11 +302,11 @@ a {
   position: absolute;
   margin-left: 22vw;
   width: 50%;
-  margin-top: 3vh
+  margin-top: 3vh;
 }
 /* .search {
   height: 50px;
-  /* width: 500px; *//*
+  /* width: 500px; */ /*
   border-radius: 50px;
   border: 5px solid #c2a83e;
   color: #000;
