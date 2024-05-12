@@ -134,4 +134,5 @@ function createNotificationFromDonor(){
     var h5Element = document.createElement("h5");
     h5Element.textContent = "A donor has fulfilled your B+ donation for patient Ahmed Hassan";
     card.appendChild(h5Element);
+
 }
