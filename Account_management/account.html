@@ -58,15 +58,15 @@
                 </tr>
                 <tr>
                     <td>Password</td>
-                    <td>123-cont<i class="fa-solid fa-pen-to-square icon" id="update_password_admin"></i></td>
+                    <td id="admin_password_change">******<i class="fa-solid fa-pen-to-square icon" id="update_password_admin"></i></td>
                 </tr>
             </table>
             <div class="update_password" id="admin_password">
                 <label for="">Enter old Password<input type="text" name="" id="admin_old_password" style="margin-left: 10px;"></label>
                 <label for="">Enter new Password<input type="text" name="" id="admin_new_password" style="margin-left: 4px;"></label>
-                <p id="error"></p>
-                <button>Update</button>
+                <button onclick="update()">Update</button>
             </div>
+            <p id="error_admin" style="margin-bottom: 5px; color: red;"></p>
             <button class="show_org_donor" onclick="show_org_donor()">Show Organizations and donors</button>
             <div class="donor_org_info" id="donor_org_info">
                 <div class="account">
@@ -197,41 +197,41 @@
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td>rageh205@gmail.com <i class="fa-solid fa-pen-to-square icon" id="update_email_donor"></i></td>
+                    <td id="donor_email_change">rageh205@gmail.com <i class="fa-solid fa-pen-to-square icon" id="update_email_donor"></i></td>
                 </tr>
                 <tr>
                     <td>Contact Info</td>
-                    <td>01097806990 <i class="fa-solid fa-pen-to-square icon" id="update_contact_donor"></i></td>
+                    <td id="donor_contact_change">01097806990 <i class="fa-solid fa-pen-to-square icon" id="update_contact_donor"></i></td>
                 </tr>
                 <tr>
                     <td>Password</td>
-                    <td>123-ask-admin <i class="fa-solid fa-pen-to-square icon" id="update_password_donor"></i></td>
+                    <td id="donor_password_change">******<i class="fa-solid fa-pen-to-square icon" id="update_password_donor"></i></td>
                 </tr>
                 <tr>
                     <td>Donor Area</td>
-                    <td>New Cairo <i class="fa-solid fa-pen-to-square icon" id="update_area_donor"></i></td>
+                    <td id="donor_area_change">New Cairo <i class="fa-solid fa-pen-to-square icon" id="update_area_donor"></i></td>
                 </tr>
                 <tr>
                     <td>Donor Address</td>
-                    <td>Fifth Settlement <i class="fa-solid fa-pen-to-square icon" id="update_address_donor"></i></td>
+                    <td id="donor_address_change">Fifth Settlement <i class="fa-solid fa-pen-to-square icon" id="update_address_donor"></i></td>
                 </tr>
                 <tr>
                     <td>Donor Governorate</td>
-                    <td>Cairo <i class="fa-solid fa-pen-to-square icon" id="update_governorate_donor"></i></td>
+                    <td id="donor_governorate_change">Cairo <i class="fa-solid fa-pen-to-square icon" id="update_governorate_donor"></i></td>
                 </tr>
             </table>
             <div class="update_password">
                 <label for="" id="donor_email">Enter new Email<input type="text" name="" style="margin-left: 10px;"></label>
-                <label for="" id="donor_contact">Enter new contact info<input type="text" name=""  style="margin-left: 10px;"></label>
+                <label for="" id="donor_contact">Enter new contact info<input type="number" name=""  style="margin-left: 10px;"></label>
                 <div class="update_password" id="donor_password">
                     <label for="" id="donor_old_password">Enter old Password<input type="text" name=""  style="margin-left: 10px;"></label>
                     <label for="" id="donor_new_password">Enter new Password<input type="text" name=""  style="margin-left: 4px;"></label>
-                    <p id="error2" style="margin-bottom: 5px;"></p>
                 </div>
                 <label for="" id="donor_area">Enter new area<input type="text" name=""  style="margin-left: 10px;"></label>
                 <label for="" id="donor_address">Enter new address<input type="text" name="" style="margin-left: 10px;"></label>
                 <label for="" id="donor_governorate">Enter new governorate<input type="text" name=""  style="margin-left: 10px;"></label>
             </div>
+            <p id="error_donor" style="margin-bottom: 5px; color: red;"></p>
             <button onclick="update()">Update Info</button>
         </div>
 
@@ -293,12 +293,12 @@
                     <div class="update_password" id="update_password_organization">
                         <label for="" id="organization_old_password">Enter old Password<input type="text" name=""  style="margin-left: 10px;"></label>
                         <label for="" id="organization_new_password">Enter new Password<input type="text" name=""  style="margin-left: 4px;"></label>
-                        <p id="error2" style="margin-bottom: 5px;"></p>
                     </div>
                     <label for="" id="organization_area">Enter new area<input type="text" name=""  style="margin-left: 10px;"></label>
                     <label for="" id="organization_address">Enter new address<input type="text" name="" style="margin-left: 10px;"></label>
                     <label for="" id="organization_governorate">Enter new governorate<input type="text" name=""  style="margin-left: 10px;"></label>
                 </div>
+                <p id="error_organization" style="margin-bottom: 5px; color: red;"></p>
             <button onclick="update()">Update Info</button>
         </div>
     </div>
