@@ -59,6 +59,15 @@
             transform: scale3d(0.8, 0.8);
             min-height: 200px;
         }
+        .back_button {
+            color: black;
+            background-color: #c2a83e;
+            width: fit-content;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body>
@@ -74,9 +83,8 @@
             </div>
             <hr class="visible fade">
             <div class="profile-user-photo visible fade">
-                <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
                 <p id="type_of_user"></p>
-                <button onclick="back_to_account()">Back to account</button>
+                <button onclick="back_to_account()" class="back_button">Back to account</button>
             </div>
         </div>
         <header class="topbar">
