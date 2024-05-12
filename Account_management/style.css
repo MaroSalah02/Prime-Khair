@@ -94,6 +94,7 @@ h1 {
 table {
   border-collapse: collapse;
   width: 100%;
+  font-weight: bold;
 }
 th,
 td {
@@ -121,4 +122,16 @@ th {
 }
 .account {
   padding: 10px;
+}
+.history_button {
+    color: black;
+    background-color: #c2a83e;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.history_button :hover {
+  scale: 1.1;
 }

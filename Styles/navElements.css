@@ -231,9 +231,8 @@ body {
 .profile-user-photo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 }
 .profile-user-photo i {
   margin-top: 20px;

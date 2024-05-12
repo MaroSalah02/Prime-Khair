@@ -36,6 +36,35 @@ function getQueryVariable(variable) {
     }
     return null;
 }
+const egyptGovernorates = [
+    "Alexandria",
+    "Aswan",
+    "Assiut",
+    "Beheira",
+    "Beni Suef",
+    "Cairo",
+    "Dakahlia",
+    "Damietta",
+    "Fayoum",
+    "Gharbia",
+    "Giza",
+    "Ismailia",
+    "Kafr el-Sheikh",
+    "Matrouh",
+    "Minya",
+    "Menofia",
+    "New Valley",
+    "North Sinai",
+    "Port Said",
+    "Qualyubia",
+    "Qena",
+    "Red Sea",
+    "Al-Sharqia",
+    "Soha",
+    "South Sinai",
+    "Suez",
+    "Luxor"
+];
 var donor_action = "";
 var org_action = "";
 const edit_icons = document.getElementsByClassName('fa-solid fa-pen-to-square icon');
@@ -227,7 +256,7 @@ function update(){
         }
         else if(donor_action === 'update_governorate_donor'){
             const donor_governorate_change = document.getElementById("donor_governorate_change");
-            if(donor_governorate.querySelector('input').value === ''){
+            if(donor_governorate.querySelector('input').value === '' || !searchGovernorates(donor_governorate.querySelector('input').value)){
                 error_donor.textContent = "Invalid Governorate";
             }
             else{
@@ -299,7 +328,7 @@ function update(){
         }
         else if(org_action = 'update_governorate_org'){
             const org_governorate_change = document.getElementById("org_governorate_change");
-            if(org_governorate.querySelector('input').value === ''){
+            if(org_governorate.querySelector('input').value === '' || !searchGovernorates(org_governorate.querySelector('input').value)){
                 error_org.textContent = "Invalid Governorate";
             }
             else{
@@ -308,6 +337,18 @@ function update(){
             }
         }
     }
+}
+function searchGovernorates(input) {
+    const searchTerm = input.toLowerCase();
+    for (let governorate of egyptGovernorates) {
+        if (governorate.toLowerCase() === searchTerm) {
+            return true;
+        }
+    }
+    return false;
+}
+function go_to_history(){
+    window.location.href = "../Account_management/history.html";
 }
 function display_hide(element_to_show,...args){
     for(let element of args){
