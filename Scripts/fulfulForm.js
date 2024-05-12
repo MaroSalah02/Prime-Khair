@@ -27,12 +27,14 @@ async function hideForm() {
   form.classList.add("invisible");
 }
 
-function submitForm() {
-  // TODO: Form Logic
-}
-
 //THIS IS THE BACK BUTTON SCRIPT FOR DETAILS PAGES
 
 function goBack() {
   window.location.href = "/Donor/donor.html"; //TODO: Make it return to the list page rather than the main page
+}
+
+function submitForm() {
+  alert(
+    "Request has been Successfully Accepted, you may leave this page whenever you want."
+  );
 }
