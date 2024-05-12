@@ -33,3 +33,12 @@ function orgDet() {
 function goBackOrg() {
   window.location.href = "../Donor/organizations.html";
 }
+function goTeach() {
+  window.location.href = "../Donor/teachingDetails.html";
+}
+function goDoc() {
+  window.location.href = "../Donor/medicalDetails.html";
+}
+function gobackVol() {
+  window.location.href = "../Donor/volunteer.html";
+}
