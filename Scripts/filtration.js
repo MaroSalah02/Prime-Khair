@@ -521,14 +521,7 @@ function filter() {
 
           break;
 
-        case "medical supplies": //TODO: TEST THIS
-          if (
-            !showCategory.includes("medical supplies") &&
-            showCategory.length > 0
-          ) {
-            flag = false;
-          }
-
+        case "medical-supplies": //TODO: TEST THIS
           var checkedEquipment = document.getElementById(
             "medical-equipment-checkbox"
           ).checked;
@@ -540,6 +533,10 @@ function filter() {
           ).checked;
 
           var secondaryClass = currentPost.classList.item(2);
+          console.log("Secondary Class=" + secondaryClass);
+          console.log(checkedEquipment);
+          console.log(checkedDevices);
+          console.log(checkedMeciation);
 
           if (secondaryClass == "devices" && !checkedDevices) {
             flag = false;
@@ -549,6 +546,10 @@ function filter() {
           }
           if (secondaryClass == "medication" && !checkedMeciation) {
             flag = false;
+          }
+
+          if (!checkedDevices && !checkedEquipment && !checkedMeciation) {
+            flag = true;
           }
 
           if (secondaryClass == "medication") {
@@ -572,6 +573,12 @@ function filter() {
             });
           }
 
+          if (
+            !showCategory.includes("medical supplies") &&
+            showCategory.length > 0
+          ) {
+            flag = false;
+          }
           break;
       }
     }
@@ -1064,4 +1071,6 @@ function toggleMedicalUse() {
       extraFilter.classList.add("vanished");
     }
   }
+
+  filter();
 }

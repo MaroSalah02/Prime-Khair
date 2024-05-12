@@ -230,11 +230,11 @@
           <div class="wrap">
             <div class="wrapComp">
               <label for="medical-equipment-checkbox" style="margin-right: 0px;">Equipment:&nbsp;</label>
-              <input id="medical-equipment-checkbox" class="stylized-input" type="checkbox">
+              <input id="medical-equipment-checkbox" class="stylized-input" type="checkbox" onchange="filter()">
             </div>
             <div class="wrapComp">
               <label for="medical-devices-checkbox" style="margin-right: 0px; margin-left: 15px;">Devices:&nbsp; </label>
-              <input id="medical-devices-checkbox" class="stylized-input" type="checkbox">
+              <input id="medical-devices-checkbox" class="stylized-input" type="checkbox" onchange="filter()">
             </div>
             <div>
               <label for="medication-checkbox">Medication:</label>
@@ -271,13 +271,13 @@
     <!-- Filtration Fields -->
     <!-- Dummy Data Posts -->
     <div id="posts">
-      <div class="post medical-supplies">
+      <div class="post medical-supplies equipment">
         <h3 class="title">Medical Supplies Donation Drive: Join Us in Saving Lives!</h3>
         <p class="description">
             Make a meaningful impact by donating critical medical supplies. Your generosity can help save lives and support healthcare efforts globally. Together, let's make a difference in the fight against illness and injury.
         </p>
         <p>Type: <span class="type">Face Masks</span></p>
-        <p class="quantity">Quantity Available: 1000</p>
+        <p>Quantity Available: <span  class="quantity">1000</span></p>
         <button>Donate</button>
       </div>
       <div class="post stationery"> 
