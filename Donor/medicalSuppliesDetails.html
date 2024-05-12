@@ -110,7 +110,7 @@
 
           <div class="horizontalFlex" style="padding-top: 3%">
             <h3>
-              Blood Type:<span
+              Supply Type:<span
                 id="Type"
                 style="margin-left: 5px; font-weight: bold"
                 >Face Masks</span
@@ -144,7 +144,7 @@
             Address:<span
               id="material-value"
               style="margin-left: 5px; font-weight: bold"
-              >123 Nile Street</span
+              >40 North 90</span
             >
           </h3>
 
@@ -221,7 +221,23 @@
       async
       defer
     ></script>
-    <script src="/Scripts/map.js"></script>
+    <script>
+      function initMap() {
+          const center = { lat: 30.029145887990964, lng: 31.46907405970837 };
+
+          const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 12,
+          center: center,
+          });
+
+          const marker = new google.maps.Marker({
+          position: center,
+          map: map,
+          title: "Marker Title",
+          });
+      }
+
+  </script>
     <script src="/Scripts/fulfulForm.js"></script>
   </body>
 </html>

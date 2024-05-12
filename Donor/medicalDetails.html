@@ -118,7 +118,22 @@
         <script src="/Scripts/sidebar.js"></script>
         <script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1IETOWKceQ_gRqH-8Tdq18qzMRqmJebo&callback=initMap" async defer></script>
-        <script src="/Scripts/map.js"></script>
+        <script>
+            function initMap() {
+                const center = { lat: 25.68824249946418, lng: 32.641006204279215 };
+                const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: center,
+                });
+    
+                const marker = new google.maps.Marker({
+                position: center,
+                map: map,
+                title: "Marker Title",
+                });
+            }
+    
+        </script>
         <script src="/Scripts/fulfulForm.js"></script>
     </body>
 </html>
