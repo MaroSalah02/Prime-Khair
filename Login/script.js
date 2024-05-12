@@ -32,6 +32,12 @@ function login(){
   if(user_name.value === 'mohamad' && password.value === '123456' ){
       window.location.href = "../Account_management/account.html?type=admin";
   }
+  else if(user_name.value === 'ahmed' && password.value === '123456' ){
+    window.location.href = "../Account_management/account.html?type=donor";
+  }
+  else if(user_name.value === 'ali' && password.value === '123456' ){
+    window.location.href = "../Account_management/account.html?type=organization";
+  }
   else {
       error.textContent = "Invalid inputs";
   }
