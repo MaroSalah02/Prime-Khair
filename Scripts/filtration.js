@@ -12,6 +12,7 @@ function filterSelection() {
     document.getElementById("typeSelector").value = "Category";
   }
   filter();
+  toggleMedicalUse();
 }
 
 function getCategory(post) {
@@ -126,13 +127,13 @@ function filter() {
           var clothesAutumn = document.getElementById("clothes-autumn").checked;
           var clothesWinter = document.getElementById("clothes-winter").checked;
 
-          console.log(flag);
-          console.log(showCategory);
+          // console.log(flag);
+          // console.log(showCategory);
           // console.log(selectedList);
           if (!showCategory.includes("clothes") && showCategory.length > 0) {
             flag = false;
           }
-          console.log(flag);
+          // console.log(flag);
 
           var ageString = currentPost
             .getElementsByClassName("age")
@@ -287,7 +288,7 @@ function filter() {
           break;
 
         case "food": //DONE
-          console.log("ENTERED FOOD");
+          // console.log("ENTERED FOOD");
           var foodCategory = document.getElementById("food-category").value;
 
           var categoryValue = currentPost
@@ -323,8 +324,8 @@ function filter() {
               type = type.concat(generateSubstrings(word));
             });
 
-          console.log(type);
-          console.log(typeKeyword);
+          // console.log(type);
+          // console.log(typeKeyword);
 
           typeKeyword.forEach((keyword) => {
             // console.log(keywords[0] == "" || title.contains(keyword) || description.contains(keyword));
@@ -410,7 +411,7 @@ function filter() {
           });
 
           flag = flag & (flag2 == 1) ? true : false;
-          console.log(flag);
+          // console.log(flag);
 
           authorKeyword.forEach((keyword) => {
             // console.log(keywords[0] == "" || title.contains(keyword) || description.contains(keyword));
@@ -425,7 +426,7 @@ function filter() {
             }
           });
           flag = flag & (flag2 == 1) ? true : false;
-          console.log(flag);
+          // console.log(flag);
 
           languageKeyword.forEach((keyword) => {
             // console.log(keywords[0] == "" || title.contains(keyword) || description.contains(keyword));
@@ -439,9 +440,137 @@ function filter() {
             }
           });
           flag = flag & (flag2 == 1) ? true : false;
-          console.log(languageKeyword);
-          console.log(language);
-          console.log(flag);
+          // console.log(languageKeyword);
+          // console.log(language);
+          // console.log(flag);
+
+          if (!showCategory.includes("blood") && showCategory.length > 0) {
+            flag = false;
+          }
+
+          break;
+
+        case "blood": // DONE
+          //var bloodtype = document.getElementById("blood-type").value;
+          var bloodGovernate = document
+            .getElementById("blood-governate")
+            .value.toLowerCase();
+
+          var bloodAreaStrings = generateSubstrings(
+            document.getElementById("blood-area").value.toLowerCase().split(" ")
+          );
+
+          var bloodHospitalStrings = generateSubstrings(
+            document
+              .getElementById("blood-hospital")
+              .value.toLowerCase()
+              .split(" ")
+          );
+
+          // console.log("input governate: " + bloodGovernate);
+          // console.log(bloodAreaStrings);
+          // console.log(bloodHospitalStrings);
+
+          // var postType = post
+          //   .getElementsByClassName("type1")
+          //   .item(0).innerHTML;
+          var postGovernate = currentPost
+            .getElementsByClassName("governate")
+            .item(0)
+            .innerHTML.toLowerCase();
+          var postArea = currentPost
+            .getElementsByClassName("area")
+            .item(0)
+            .innerHTML.toLowerCase();
+          var postHospital = currentPost
+            .getElementsByClassName("hospital")
+            .item(0)
+            .innerHTML.toLowerCase();
+
+          // console.log("post governate: " + postGovernate);
+          // console.log(postArea);
+          // console.log(postHospital);
+
+          flag2 = false;
+          bloodHospitalStrings.forEach((keyword) => {
+            if (postHospital.includes(keyword)) {
+              flag2 = true;
+              return;
+            }
+          });
+
+          flag = flag & (flag2 == 1) ? true : false;
+
+          flag2 = false;
+          bloodAreaStrings.forEach((keyword) => {
+            if (postArea.includes(keyword)) {
+              flag2 = true;
+              return;
+            }
+          });
+
+          flag = flag & (flag2 == 1) ? true : false;
+
+          if (postGovernate != bloodGovernate) {
+            flag = false;
+          }
+
+          if (!showCategory.includes("blood") && showCategory.length > 0) {
+            flag = false;
+          }
+
+          break;
+
+        case "medical supplies": //TODO: TEST THIS
+          if (
+            !showCategory.includes("medical supplies") &&
+            showCategory.length > 0
+          ) {
+            flag = false;
+          }
+
+          var checkedEquipment = document.getElementById(
+            "medical-equipment-checkbox"
+          ).checked;
+          var checkedDevices = document.getElementById(
+            "medical-devices-checkbox"
+          ).checked;
+          var checkedMeciation = document.getElementById(
+            "medication-checkbox"
+          ).checked;
+
+          var secondaryClass = currentPost.classList.item(2);
+
+          if (secondaryClass == "devices" && !checkedDevices) {
+            flag = false;
+          }
+          if (secondaryClass == "equipment" && !checkedEquipment) {
+            flag = false;
+          }
+          if (secondaryClass == "medication" && !checkedMeciation) {
+            flag = false;
+          }
+
+          if (secondaryClass == "medication") {
+            var useCaseKeywords = document
+              .getElementById("medical-use-filter")
+              .value.toLowerCase()
+              .split(" ");
+            var medicalUse = currentPost
+              .getElementsByClassName("medical-use")
+              .item(0)
+              .innerHTML.toLowerCase();
+
+            flag2 = false;
+            useCaseKeywords.forEach((keyword) => {
+              if (medicalUse.includes(keyword)) {
+                flag2 = true;
+                return;
+              }
+
+              flag = flag & (flag2 == 1) ? true : false;
+            });
+          }
 
           break;
       }
@@ -670,7 +799,7 @@ function thowAway() {
       });
 
       break;
-    case "food":
+    case "food": //DONE
       var foodCategory = document.getElementById("food-category").value;
 
       selectedList.forEach((post) => {
@@ -814,6 +943,7 @@ function thowAway() {
         });
       });
       break;
+
     case "blood":
       var bloodtype = document.getElementById("blood-type").value;
       var bloodGovernate = document
@@ -903,6 +1033,7 @@ function toggleCollapsible(headerIcon) {
   // console.log(headerIcon);
   var collapsibleArea = headerIcon.parentNode.parentNode;
 
+  // console.log(collapsibleArea);
   // var tmp = document.getElementsByClassName("collapsible");
 
   // var coll = [];
@@ -920,4 +1051,17 @@ function toggleCollapsible(headerIcon) {
   }
 
   collapsibleArea.classList.toggle("active");
+}
+
+function toggleMedicalUse() {
+  var extraFilter = document.getElementById("medication-filter");
+  var checkbox = document.getElementById("medication-checkbox").checked;
+  //console.log(extraFilter);
+  if (checkbox) {
+    extraFilter.classList.remove("vanished");
+  } else {
+    if (!extraFilter.classList.contains("vanished")) {
+      extraFilter.classList.add("vanished");
+    }
+  }
 }
