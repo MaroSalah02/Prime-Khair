@@ -54,7 +54,17 @@
         <hr class="visible fade" />
         <div class="profile-user-photo visible fade">
           <i class="fa-solid fa-user fa-2xl" style="color: #ffffff"></i>
-          <p>Organization name</p>
+          <p>user name</p>
+          <div style="display: flex; flex-direction: column; width: 100%">
+            <a class="link" href="/Account_management/account.html"
+              >Account Management</a
+            >
+            <a class="link" href="/Donor/organizations.html"
+              >View Organizations</a
+            >
+            <a class="link" href="/Donor/donor.html">View Donation Requests</a>
+            <a class="link" href="/main/main.html">Logout</a>
+          </div>
         </div>
       </div>
       <header class="topbar">
@@ -78,7 +88,7 @@
 
     <div id="page">
       <!-- Filtration Fields -->
-      <div class="searchengine">
+      <div class="searchengine" style="padding-bottom: 2%">
         <input
           id="searchbar"
           oninput="filter()"

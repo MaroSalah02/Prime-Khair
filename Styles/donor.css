@@ -2,6 +2,14 @@
   margin: auto;
   text-align: right;
 }
+.link {
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 10px 10px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
 .collapsible-content {
   display: none;
   flex-direction: column;
@@ -290,7 +298,7 @@ a {
   text-align: left;
 }
 .post button {
-  display: block;
+  display: block; 
   margin: 0 auto;
   width: 30%;
 }

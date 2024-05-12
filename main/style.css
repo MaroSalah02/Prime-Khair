@@ -1,136 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
-    font-size: 16px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
 }
 h1 {
-    font-size: 25px;
+  font-size: 25px;
 }
 body {
-    
 }
 header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2a3e36;
-    padding: 25px;
-    padding-right: 40px;
-    transition: transform 0.3s;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2a3e36;
+  padding: 25px;
+  padding-right: 40px;
+  transition: transform 0.3s;
 }
 header img {
-    width: 300px;
+  width: 300px;
 }
 .links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .links a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s ease-in-out;
-    padding: 16px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  padding: 16px;
 }
 .links a:hover {
-    scale: 1.1;
+  scale: 1.1;
 }
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 .dropbtn {
-    background-color: transparent;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 .dropbtn:hover {
-    scale: 1.1;
+  scale: 1.1;
 }
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #2a3e36;
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #2a3e36;
+  z-index: 1;
 }
 .dropdown-content a {
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    width: 130px;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  width: 130px;
 }
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 .dropdown-content a:hover {
-    background-color: #fff;
-    color: black;
+  background-color: #fff;
+  color: black;
 }
 .main img {
-    width: 100%;
-    height: 90vh;
-    background-size: cover;
-    display: block;
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  display: block;
 }
 .section1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
 }
 .section1 h1,
 .section1 p,
 .section1 button {
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 20px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 .section1 h1 {
-    font-size: 40px;
-    color: #bde7bf;
+  font-size: 40px;
+  color: #bde7bf;
 }
 .section1 p {
-    font-size: 19px;
-    color: white;
-    font-weight: bold;
+  font-size: 19px;
+  color: white;
+  font-weight: bold;
 }
 .section1 button {
-    color: black;
-    background-color: #c2a83e;
-    width: 20%;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
+  color: black;
+  background-color: #c2a83e;
+  width: 20%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 .section1 button:hover {
-    scale: 1.1;
+  scale: 1.1;
 }
 .contact {
-    
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    height: 250px;
-    background-color: #7ca982;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 250px;
+  background-color: #7ca982;
 }
 .contact_card {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
 }
