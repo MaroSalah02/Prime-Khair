@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prime Khair: Blood Donation</title>
+    <title>Blood Donation</title>
     <link rel="stylesheet" type="text/css" href="/Styles/requestDetails.css" />
     <link rel="stylesheet" type="text/css" href="/Styles/navElements.css" />
     <script src="/Scripts/donor.js"></script>
@@ -213,7 +213,7 @@
     ></script>
     <script>
       function initMap() {
-        const center = { lat: 29.968393755595493, lng: 31.241426467895508 };
+        const center = { lat: 31.252723152271063, lng: 29.987113862455033 };
 
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 12,
@@ -226,16 +226,6 @@
           title: "Marker Title",
         });
 
-        function updateMap(markerPosition) {
-          map.setCenter(markerPosition);
-          console.log("Map Updated: Lat:", markerPosition.lat(), "Lng:", markerPosition.lng());
-        }
-
-        google.maps.event.addListener(map, "click", function (event) {
-          const newMarkerPosition = event.latLng;
-          marker.setPosition(newMarkerPosition);
-          updateMap(newMarkerPosition);
-        });
       }
 
     </script>

@@ -1,121 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/icons/Main_icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/Styles/donor.css" />
+    <link rel="stylesheet" href="/Styles/navElements.css" />
+    <link rel="stylesheet" href="/Styles/general.css" />
+    <script src="/Scripts/donor.js"></script>
+    <script src="/Scripts/sidebar.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7e3bb74f76.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/Scripts/filtrationOrg.js"></script>
+    <script src="/Scripts/donor.js"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="/icons/Main_icon.png" type="image/x-icon"/>
-  <link rel="stylesheet" href="/Styles/donor.css" />
-  <link rel="stylesheet" href="/Styles/navElements.css" />
-  <link rel="stylesheet" href="/Styles/general.css" />
-  <script src="/Scripts/donor.js"></script>
-  <script src="/Scripts/sidebar.js"></script>
-  <script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
+    <title>Document</title>
 
-  <title>Document</title>
+    <style>
+      #page {
+        margin-top: 0%;
+        padding-top: 5%;
+      }
 
-  <style>
-    #page {
-      margin-top: 0%;
-      padding-top: 5%;
-    }
-  </style>
-</head>
+      .post Button {
+        width: 50%;
+        margin-top: auto;
+        position: absolute;
+        bottom: 3%;
+        left: 25%;
+      }
 
-<body>
-  <div class="probar">
-    <div class="filled" id="myelement"></div>
-  </div>
+      .post {
+        position: relative;
+        width: 30%;
+        margin-right: 1.5%;
+        margin-left: 1.5%;
+      }
 
-  <div class="sidebar-container">
-    <div class="sidebar">
-      <div id="sidebar-top">
-          <div style="cursor: pointer;" class="sidebar-button" id="3-bars" onclick="expand()">
-              <i class="fa-solid fa-bars"></i>
+      .post.invisible {
+        margin-right: 0px;
+        margin-left: 0px;
+        position: fixed;
+        width: 0px;
+        height: 0px;
+      }
+
+      #posts {
+        width: 100%;
+        justify-content: center;
+      }
+
+      #page {
+        margin-top: 0px;
+        padding-top: 7%;
+      }
+
+      #cat-filter-fields {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: auto;
+        padding-top: 3%;
+        width: 100%;
+      }
+
+      #cat-filter-fields > * {
+        width: 30%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="probar">
+      <div class="filled" id="myelement"></div>
+    </div>
+
+    <div class="sidebar-container">
+      <div class="sidebar">
+        <div id="sidebar-top">
+          <div
+            style="cursor: pointer"
+            class="sidebar-button"
+            id="3-bars"
+            onclick="expand()"
+          >
+            <i class="fa-solid fa-bars"></i>
           </div>
           <div id="logo-img" class="visible fade logo">
-              <img src="/icons/prime-khair-high-resolution-logo-transparent.png">
+            <img
+              src="/icons/prime-khair-high-resolution-logo-transparent.png"
+            />
           </div>
-      </div>
-      <hr class="visible fade">
-      <div class="profile-user-photo visible fade">
-          <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
+        </div>
+        <hr class="visible fade" />
+        <div class="profile-user-photo visible fade">
+          <i class="fa-solid fa-user fa-2xl" style="color: #ffffff"></i>
           <p>Organization name</p>
+        </div>
       </div>
-  </div>
-    <header class="topbar">
+      <header class="topbar">
         <p id="page-header">Account Management</p>
         <a href="/main/main.html">Home</a>
+      </header>
+    </div>
+    <header class="topbar">
+      <h3 id="title">Explore Organization</h3>
+      <div class="links">
+        <a href="/main/main.html">
+          <h5 class="extraMenu">About</h5>
+        </a>
+        <a href="">
+          <h5 class="extraMenu">Contact</h5>
+        </a>
+      </div>
     </header>
-</div>
-  <header class="topbar">
-    <h3 id="title">Explore Organization</h3>
-    <div class="links">
-      <a href="/main/main.html">
-        <h5 class="extraMenu">About</h5>
-      </a>
-      <a href="">
-        <h5 class="extraMenu">Contact</h5>
-      </a>
-    </div>
-    </div>
-    </div>
-  </header>
 
-
-  <div id="page">
-     <input class="search" oninput="filter()" placeholder="Search...." style="margin-top: 3vh" />
-    <div id="posts">
-      <div class="post">
+    <div id="page">
+      <div class="searchengine">
+        <input
+          id="searchbar"
+          oninput="filter2()"
+          placeholder="Search Organization Name"
+          style="margin-top: 3vh"
+          class="stylized-input"
+        />
+      </div>
+      <div id="cat-filter-fields">
+        <select
+          id="governate-filter"
+          class="stylized-input"
+          onchange="filter2()"
+        >
+          <option selected value="All">All Governates</option>
+          <option value="Alexandria">Alexandria</option>
+          <option value="Aswan">Aswan</option>
+          <option value="Asyut">Asyut</option>
+          <option value="Beheira">Beheira</option>
+          <option value="Beni Suef">Beni Suef</option>
+          <option value="Cairo">Cairo</option>
+          <option value="Dakahlia">Dakahlia</option>
+          <option value="Damietta">Damietta</option>
+          <option value="Faiyum">Faiyum</option>
+          <option value="Gharbia">Gharbia</option>
+          <option value="Giza">Giza</option>
+          <option value="Ismailia">Ismailia</option>
+          <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+          <option value="Luxor">Luxor</option>
+          <option value="Matrouh">Matrouh</option>
+          <option value="Minya">Minya</option>
+          <option value="Monufia">Monufia</option>
+          <option value="New Valley">New Valley</option>
+          <option value="North Sinai">North Sinai</option>
+          <option value="Port Said">Port Said</option>
+          <option value="Qalyubia">Qalyubia</option>
+          <option value="Qena">Qena</option>
+          <option value="Red Sea">Red Sea</option>
+          <option value="Sharqia">Sharqia</option>
+          <option value="Sohag">Sohag</option>
+          <option value="South Sinai">South Sinai</option>
+          <option value="Suez">Suez</option>
+        </select>
+        <input
+          id="area-filter"
+          class="stylized-input"
+          oninput="filter2()"
+          placeholder="Area Name"
+        />
+        <select id="type-filter" class="stylized-input" onchange="filter2()">
+          <option selected value="All">All Organization Types</option>
+          <option value="mosque">Mosque</option>
+          <option value="church">Church</option>
+          <option value="hospital">Hospital</option>
+          <option value="school">School</option>
+          <option value="orpahage">Orphanage</option>
+          <option value="Non-profit">Non-Profit</option>
+        </select>
+      </div>
+      <div id="posts">
+        <div class="post">
           <h3 class="title">Naguib Mahfouz Experimental School</h3>
           <p class="description">
-              Naguib Mahfouz Experimental School aims to provide innovative education to students.
+            Naguib Mahfouz Experimental School aims to provide innovative
+            education to students.
           </p>
-          <h3 class="">Address: <span class="Governate">Giza</span><span class="Area">Dokki</span><span class="addressRem"> Street 15, Building 10</span></h3>
-          <h3 class="type">Organization Type: School</h3>
-          <button>More Details</button>
-      </div>
-  
-      <div class="post">
+          <h5 class="">
+            Address: <span class="Governate">Giza</span
+            ><span class="Area"> Dokki</span
+            ><span class="addressRem"> Street 15, Building 10</span>
+          </h5>
+          <h5 class="type">Organization Type: School</h5>
+          <button onclick="orgDet()">More Details</button>
+        </div>
+
+        <div class="post">
           <h3 class="title">St. Mark's Coptic Hospital</h3>
           <p class="description">
-              St. Mark's Coptic Hospital is dedicated to providing healthcare with compassion.
+            St. Mark's Coptic Hospital is dedicated to providing healthcare with
+            compassion.
           </p>
-          <h3 class="">Address: <span class="Governate">Cairo</span><span class="Area">Heliopolis</span><span class="addressRem"> Street 25, Building 8</span></h3>
-          <h3 class="type">Organization Type: Hospital</h3>
-          <button>More Details</button>
-      </div>
-  
-      <div class="post">
+          <h5 class="">
+            Address: <span class="Governate">Cairo</span
+            ><span class="Area"> Heliopolis</span
+            ><span class="addressRem"> Street 25, Building 8</span>
+          </h5>
+          <h5 class="type">Organization Type: Hospital</h5>
+          <button onclick="orgDet()">More Details</button>
+        </div>
+
+        <div class="post">
           <h3 class="title">St. Anthony's Church</h3>
           <p class="description">
-              St. Anthony's Church serves as a place of worship and community gathering.
+            St. Anthony's Church serves as a place of worship and community
+            gathering.
           </p>
-          <h3 class="">Address: <span class="Governate">Luxor</span><span class="Area">Al Karnak</span><span class="addressRem"> Street 30, Building 12</span></h3>
-          <h3 class="type">Organization Type: Church</h3>
-          <button>More Details</button>
-      </div>
-  
-      <div class="post">
+          <h5 class="">
+            Address: <span class="Governate">Luxor</span
+            ><span class="Area"> Al Karnak</span
+            ><span class="addressRem"> Street 30, Building 12</span>
+          </h5>
+          <h5 class="type">Organization Type: Church</h5>
+          <button onclick="orgDet()">More Details</button>
+        </div>
+
+        <div class="post">
           <h3 class="title">Egyptian Red Crescent Society</h3>
           <p class="description">
-              The Egyptian Red Crescent Society provides humanitarian aid and disaster relief.
+            The Egyptian Red Crescent Society provides humanitarian aid and
+            disaster relief.
           </p>
-          <h3 class="">Address: <span class="Governate">Cairo</span><span class="Area">Maadi</span><span class="addressRem"> Street 5, Building 20</span></h3>
-          <h3 class="type">Organization Type: Non-profit</h3>
-          <button>More Details</button>
-      </div>
-  
-      <div class="post">
+          <h5 class="">
+            Address: <span class="Governate">Cairo</span
+            ><span class="Area"> Maadi</span
+            ><span class="addressRem"> Street 5, Building 20</span>
+          </h5>
+          <h5 class="type">Organization Type: Non-profit</h5>
+          <button onclick="orgDet()">More Details</button>
+        </div>
+
+        <div class="post">
           <h3 class="title">Al Azhar Charity Foundation</h3>
           <p class="description">
-              Al Azhar Charity Foundation supports underprivileged communities through various programs.
+            Al Azhar Charity Foundation supports underprivileged communities
+            through various programs.
           </p>
-          <h3 class="">Address: <span class="Governate">Alexandria</span><span class="Area">Raml Station</span><span class="addressRem"> Street 12, Building 30</span></h3>
-          <h3 class="type">Organization Type: Non-profit</h3>
-          <button>More Details</button>
+          <h5 class="">
+            Address: <span class="Governate">Alexandria</span
+            ><span class="Area"> Raml Station</span
+            ><span class="addressRem"> Street 12, Building 30</span>
+          </h5>
+          <h5 class="type">Organization Type: Non-profit</h5>
+          <button onclick="orgDet()">More Details</button>
+        </div>
       </div>
-  </div>
-</body>
-
+    </div>
+  </body>
 </html>

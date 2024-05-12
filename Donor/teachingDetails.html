@@ -187,7 +187,23 @@
       async
       defer
     ></script>
-    <script src="/Scripts/map.js"></script>
+    <script>
+      function initMap() {
+  const center = { lat: 30.038119206462657, lng: 31.21136873325856 };
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 12,
+    center: center,
+  });
+
+  const marker = new google.maps.Marker({
+    position: center,
+    map: map,
+    title: "Marker Title",
+  });
+}
+
+    </script>
     <script src="/Scripts/fulfulForm.js"></script>
   </body>
 </html>

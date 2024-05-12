@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Prime Khair: Organization Details</title>
+    <title>Organization Details</title>
     <link rel="stylesheet" type="text/css" href="/Styles/organizationDetails.css">
     <link rel="stylesheet" type="text/css" href="/Styles/navElements.css">
   </head>
-
+<script src="/Scripts/donor.js"></script>
   <body>
     <div class="sidebar-container">
         <div class="sidebar-container">
@@ -38,7 +38,7 @@
     </div>
 
     <div class="card">
-        <div class="back-arrow" onclick="goBack()">
+        <div class="back-arrow" onclick="goBackOrg()">
             <i class="fa-solid fa-arrow-left"></i>
         </div>
 
@@ -66,7 +66,7 @@
                     <h2>Contact Information</h2>
                     <p><strong>Email:</strong> contact@greenthumb.org</p>
                     <p><strong>Phone:</strong> +20 123 456 7890</p>
-                    <p><strong>Address:</strong> 123 Eco Road, Alexandria, Egypt</p>
+                    <p><strong>Address:</strong> 123 Sidi Bishr, Alexandria, Egypt</p>
                 </div>
             </section>
 
@@ -87,7 +87,25 @@
     <script src="/Scripts/sidebar.js"></script>
     <script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1IETOWKceQ_gRqH-8Tdq18qzMRqmJebo&callback=initMap" async defer></script>
-    <script src="/Scripts/map.js"></script>
+    <script>
+        function initMap() {
+            const center = { lat: 29.968393755595493, lng: 31.241426467895508 };
+
+            const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 12,
+            center: center,
+            });
+
+            const marker = new google.maps.Marker({
+            position: center,
+            map: map,
+            title: "Marker Title",
+            });
+
+
+        }
+
+    </script>
     <script src="/Scripts/fulfulForm.js"></script>
   </body>
 </html>
