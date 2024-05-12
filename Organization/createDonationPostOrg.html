@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Khair: Stationery Donation</title>
+    <link rel="stylesheet" type="text/css" href="/Organization/createDonationPost.css">
+    <link rel="stylesheet" type="text/css" href="/Styles/navElements.css">
+    <style>
+        #background-image-container {
+            background-image: url("/icons/stationeryBackground.jpg");
+        }
+    </style>
+</head>
+
+<body>
+
+  <!--side bar and top bar-->
+    <div class="sidebar-container">
+        <div class="sidebar">
+            <div id="sidebar-top">
+                <div style="cursor: pointer;" class="sidebar-button" id="3-bars" onclick="expand()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div id="logo-img" class="visible fade logo">
+                    <img src="/icons/prime-khair-high-resolution-logo-transparent.png">
+                </div>
+            </div>
+            <hr class="visible fade">
+            <div class="profile-user-photo visible fade">
+                <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
+                <p>Organization name</p>
+            </div>
+        </div>
+        <header class="topbar">
+            <p id="page-header">Create New Donation</p>
+            <a href="/main/main.html">Home</a>
+        </header>
+    </div>
+  <!-- END  side bar and top bar-->
+
+    <div id="background-image-container">
+
+    </div>
+
+    <div id="page">
+        <div class="card" style="">
+
+            <div class="back-arrow" onclick="goBack()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+
+            <!-- ADD UP-->
+                        
+            <div class="progress-bar">
+              <div class="progress" style="width: 0%;"></div>
+            </div>
+
+            <form id="multi-step-form">
+              <div class="form-step active" id="step1">
+              <h2>What Kind Of Donation Do you need</h2>
+              <select id="transport-input" class="stylized-input">
+                <option selected value="clothes">
+                    Clothes
+                </option>
+                <option value="Toys">
+                    Toys
+                </option>
+                <option value="Food">
+                    Food
+                </option>
+                <option selected value="Medical Supplies">
+                    Medical Supplies
+                </option>
+                <option value="School Supplies: Stationary">
+                    School Supplies: Stationary
+                </option>
+                <option value="School Supplies: Books">
+                  School Supplies: Books
+                </option>
+                  <option value="Blood Donations">
+                      Blood Donation
+                  </option>
+            </select>
+          </form>
+            <button type="button" onclick="nextStep()">Next</button>
+          </div>
+          <div class="form-step" id="step2">
+              <!--start Toys part-->
+
+              <form class="form-donation" action="#" method="post">
+                <h2>Create Toys Donation</h2>
+
+                <div>
+                  <label for="title">Title:</label>
+                  <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                  <label for="description">Description:</label>
+                  <textarea id="description" name="description" required></textarea>
+                </div>
+                <div>
+                  <label for="clothing-type">Toy Type:</label>
+                  <input type="text" id="clothing-type" name="clothing-type" required>
+                </div>
+                <div>
+                  <label for="age-min">Intended Age (min):</label>
+                  <input type="number" id="age-min" name="age-min" required>
+                  <input type="number" id="age-max" name="age-max" required>
+                </div>
+                <div>
+                  <label for="clothes-for">Toys for:</label>
+                  <select id="toys-for" name="toys-for" required>
+                    <option value="Boys">Boys</option>
+                    <option value="Girls">Girls</option>
+                    <option value="BoysAndGirls">Boys and Girls</option>
+
+                  </select>
+                </div>
+                <div>
+                  <label for="toy-Category">Toy Category:</label>
+                  <input type="text" id="toy-Category" name="Category" required>
+                </div>
+                <div>
+                  <label for="quantity">Quantity:</label>
+                  <input type="number" id="quantity" name="quantity" required>
+                </div>
+              </form>
+              <!--END -Toys part -->
+
+              <!--Start -Clothes part -->
+
+              <form class="form-donation" action="#" method="post">
+                <h2>Create Clothes Donation</h2>
+                <div>
+                  <label for="title">Title:</label>
+                  <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                  <label for="description">Description:</label>
+                  <textarea id="description" name="description" required></textarea>
+                </div>
+                <div>
+                  <label for="clothing-type">Clothing Type:</label>
+                  <input type="text" id="clothing-type" name="clothing-type" required>
+                </div>
+                <div>
+                  <label for="age-min">Intended Age (min):</label>
+                  <input type="number" id="age-min" name="age-min" required>
+                  <input type="number" id="age-max" name="age-max" required>
+                </div>
+                <div>
+                  <label for="clothes-for">Clothes for:</label>
+                  <input type="text" id="clothes-for" name="clothes-for" required>
+                </div>
+                <div>
+                  <label for="season">Season:</label>
+                  <select id="season" name="season" required>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Autumn">Autumn</option>
+                    <option value="Winter">Winter</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="material">Material:</label>
+                  <input type="text" id="material" name="material" required>
+                </div>
+                <div>
+                  <label for="quantity">Quantity:</label>
+                  <input type="number" id="quantity" name="quantity" required>
+                </div>
+              </form>
+              <!--END -Clother part -->
+
+
+              <!--Start -Food part -->
+             <form class="form-donation" action="#" method="post">
+              <h2>Create Food Donation</h2>
+  
+              <div>
+                  <label for="title">Title:</label>
+                  <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                  <label for="title">Food Name:</label>
+                  <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                  <label for="description">Description:</label>
+                  <textarea id="description" name="description" required></textarea>
+                </div>
+                <div>
+                  <label for="clothing-type">Food Type:</label>
+                  <input type="text" id="clothing-type" name="clothing-type" required>
+                </div>
+                <div>
+                  <label for="quantity">Quantity:</label>
+                  <input type="number" id="quantity" name="quantity" required>
+                </div>
+              </form>
+              <!--END -Food part -->
+
+
+              <!--Start -Stationaru part -->
+              <form class="form-donation" action="#" method="post">
+                <h2>Create Stationary Donation</h2>
+                <div>
+                  <label for="title">Title:</label>
+                  <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                  <label for="description">Description:</label>
+                  <textarea id="description" name="description" required></textarea>
+                </div>
+                <div>
+                  <label for="stationary-type">Stationary Type:</label>
+                  <input type="text" id="stationary-type" name="stationary-type" required>
+                </div>
+                <div>
+                  <label for="quantity">Quantity:</label>
+                  <input type="number" id="quantity" name="quantity" required>
+                </div>
+              </form>
+              <!--END -stationary part -->
+
+
+
+              <!--Start -book part -->
+              <form class="form-donation" action="#" method="post">
+                <h2>Create Book Donation</h2>
+
+                <div>
+                  <label for="title">Title:</label>
+                  <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                  <label for="description">Description:</label>
+                  <textarea id="description" name="description" required></textarea>
+                </div>
+                <div>
+                  <label for="Book-title">Book Title:</label>
+                  <input type="text" id="Book-title" name="Book-title" required>
+                </div>
+                <div>
+                  <label for="Author">Book Author:</label>
+                  <input type="text" id="Book-author" name="Author" required>
+                </div>
+                <div>
+                  <label for="language">Book Language:</label>
+                  <input type="text" id="Book-language" name="Book-language" required>
+                </div>
+                <div>
+                  <label for="Edition">Book Edition:</label>
+                  <input type="text" id="Book-edition" name="Book-edition" required>
+                </div>
+                <div>
+                  <label for="Summaray">Book Summaray:</label>
+                  <textarea id="Summaray" name="Summaray" required></textarea>
+                </div>
+                <div>
+                  <label for="quantity">Quantity:</label>
+                  <input type="number" id="quantity" name="quantity" required>
+                </div>
+                <div>
+                  <button type="button" style="margin-top: 3vh;" onclick="">Upload Book Photo</button>
+                </div>
+              </form>
+              <!--END -book part -->
+
+
+
+              <!--Start -medical supplies part -->
+              <form class="form-donation" action="#" method="post">
+                <div>
+                  <label for="title">Title:</label>
+                  <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                  <label for="description">Description:</label>
+                  <textarea id="description" name="description" required></textarea>
+                </div>
+                <div>
+                  <label for="clothing-type">Clothing Type:</label>
+                  <input type="text" id="clothing-type" name="clothing-type" required>
+                </div>
+                <div>
+                  <label for="age-min">Intended Age (min):</label>
+                  <input type="number" id="age-min" name="age-min" required>
+                  <input type="number" id="age-max" name="age-max" required>
+                </div>
+                <div>
+                  <label for="clothes-for">Clothes for:</label>
+                  <input type="text" id="clothes-for" name="clothes-for" required>
+                </div>
+                <div>
+                  <label for="season">Season:</label>
+                  <select id="season" name="season" required>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Autumn">Autumn</option>
+                    <option value="Winter">Winter</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="material">Material:</label>
+                  <input type="text" id="material" name="material" required>
+                </div>
+                <div>
+                  <label for="quantity">Quantity:</label>
+                  <input type="number" id="quantity" name="quantity" required>
+                </div>
+              </form>
+              <!--END -medical supplies part -->
+
+               <!--Start -Blood part -->
+               <form class="form-donation" action="#" method="post">
+                <div>
+                  <label for="title">Title:</label>
+                  <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                  <label for="description">Description:</label>
+                  <textarea id="description" name="description" required></textarea>
+                </div>
+                <div>
+                  <label for="clothing-type">Clothing Type:</label>
+                  <input type="text" id="clothing-type" name="clothing-type" required>
+                </div>
+                <div>
+                  <label for="age-min">Intended Age (min):</label>
+                  <input type="number" id="age-min" name="age-min" required>
+                  <input type="number" id="age-max" name="age-max" required>
+                </div>
+                <div>
+                  <label for="clothes-for">Clothes for:</label>
+                  <input type="text" id="clothes-for" name="clothes-for" required>
+                </div>
+                <div>
+                  <label for="season">Season:</label>
+                  <select id="season" name="season" required>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Autumn">Autumn</option>
+                    <option value="Winter">Winter</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="material">Material:</label>
+                  <input type="text" id="material" name="material" required>
+                </div>
+                <div>
+                  <label for="quantity">Quantity:</label>
+                  <input type="number" id="quantity" name="quantity" required>
+                </div>
+              </form>
+              <!--END -Blood part -->
+
+              <button type="button" onclick="prevStep()">Previous</button>
+              <button type="button" onclick="nextStep()">Next</button>
+          </div>
+          <div class="form-step hidden" id="step3">
+              <h2>Step 3</h2>
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password">
+              <button type="button" onclick="prevStep()">Previous</button>
+              <button type="submit">Submit</button>
+          </div>
+                        <!-- ADD UP-->
+
+        </div>
+
+    </div>
+    <script src="/Organization/orgScripts.js"></script>
+    <script src="/Scripts/sidebar.js"></script>
+    <script src="https://kit.fontawesome.com/7e3bb74f76.js" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1IETOWKceQ_gRqH-8Tdq18qzMRqmJebo&callback=initMap"
+        async defer></script>
+    <script src="/Scripts/map.js"></script>
+    <script src="/Scripts/fulfulForm.js"></script>
+</body>
+
+</html>
