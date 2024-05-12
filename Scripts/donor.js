@@ -27,3 +27,9 @@ function blood() {
 function cloths() {
   window.location.href = "../Donor/clothesDetails.html";
 }
+function orgDet() {
+  window.location.href = "../Donor/organizationDetails.html";
+}
+function goBackOrg() {
+  window.location.href = "../Donor/organizations.html";
+}
