@@ -25,7 +25,6 @@ function showForm() {
     behavior: "smooth",
   });
 }
-
 function tableviewshow(){
   var table = document.getElementsByClassName("table")[0];
   var cards = document.getElementsByClassName("posts")[0];
@@ -37,4 +36,21 @@ function cardviewshow(){
   var cards = document.getElementsByClassName("posts")[0];
   cards.classList.remove("hidden");
   table.classList.add("hidden");
+}
+function download_docs(){
+    var fileName = 'Validation pdf.pdf';
+    var fileUrl = '../' + fileName;
+    fetch(fileUrl)
+        .then(response => response.blob())
+        .then(blob => {
+            var a = document.createElement('a');
+            var blobUrl = window.URL.createObjectURL(blob);
+            a.href = blobUrl;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(blobUrl);
+        })
+        .catch(error => console.error('Error downloading file:', error));
 }
