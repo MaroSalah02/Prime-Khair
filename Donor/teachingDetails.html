@@ -3,61 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prime Khair: Blood Donation</title>
+
+    <title>Teaching Case</title>
+    <link rel="icon" href="/icons/Main_icon.png" type="image/ x-icon" />
     <link rel="stylesheet" type="text/css" href="/Styles/requestDetails.css" />
     <link rel="stylesheet" type="text/css" href="/Styles/navElements.css" />
     <script src="/Scripts/donor.js"></script>
+
     <style>
       #background-image-container {
-        background-image: url("/icons/BloodDonation.jpg");
+        background-image: url("/icons/teachingBackground.jpg");
         filter: brightness(0.5);
       }
-
-      /* #page {
-            padding-top: 2%;
-        }
-
-        .card {
-            width: 70%;
-            padding-bottom: 3%;
-            min-height: auto;
-            /* transform: scale3d(0.9, 0.9, 1); */
-      /*
-        margin-bottom: 5%;
-        }
-
-        #toy-img {
-            width: 25%;
-            box-shadow: 12px 12px 2xp rgba(0, 0, 0, 0.5);
-            border: solid gray 3px;
-            border-radius: 14px;
-            overflow: hidden;
-        }
-
-        #toy-img img {
-            height: auto;
-            width: 100%;
-        }
-
-        */
-
-      .horizontalFlex h3 {
-        padding-bottom: 12px;
-        min-width: 33%;
-      }
-
-      /* .card button:hover {
-            scale: 1.035;
-            transition: ease-in-out 0.5s;
-        } */
-      /*
-        */
     </style>
   </head>
-  <div class="probar">
-    <div class="filled" id="myelement"></div>
-  </div>
+
   <body>
+    <div class="probar">
+      <div class="filled" id="myelement"></div>
+    </div>
+
     <div class="sidebar-container">
       <div class="sidebar">
         <div id="sidebar-top">
@@ -69,18 +34,22 @@
           >
             <i class="fa-solid fa-bars"></i>
           </div>
+
           <div id="logo-img" class="visible fade logo">
             <img
               src="/icons/prime-khair-high-resolution-logo-transparent.png"
             />
           </div>
         </div>
+
         <hr class="visible fade" />
+
         <div class="profile-user-photo visible fade">
           <i class="fa-solid fa-user fa-2xl" style="color: #ffffff"></i>
-          <p>Organization name</p>
+          <p>Organization Name</p>
         </div>
       </div>
+
       <header class="topbar">
         <p id="page-header">Post Details</p>
         <a href="/main/main.html">Home</a>
@@ -96,59 +65,40 @@
         </div>
 
         <div class="details">
-          <h1 id="post-title">Blood Donation: Save Lives Today!</h1>
+          <h1 id="post-title">
+            Enthusiastic Physics Tutor Needed for High School Students
+          </h1>
           <hr />
           <h2 id="post-description">
-            Be a hero by donating blood. Your donation can save lives and make a
-            significant impact on someone's health. Thank you for your
-            generosity!
+            We are looking for an enthusiastic physics tutor to inspire and
+            engage high school students in the fascinating world of physics. The
+            successful candidate will possess excellent communication skills and
+            the ability to adapt teaching methods to meet the diverse needs of
+            learners. Join us in fostering a love for science and empowering
+            students to reach their full potential.
           </h2>
-          <!-- <div class="horizontalFlex"> -->
-
-          <div class="horizontalFlex" style="padding-top: 3%">
-            <h3>
-              Blood Type:<span
-                id="Bloodtype-value"
-                style="margin-left: 5px; font-weight: bold"
-                >O+</span
-              >
-            </h3>
-            <h3>
-              Hospital Name:<span
-                id="HospitalName"
-                style="margin-left: 5px; font-weight: bold"
-                >Maadi Military Hospital</span
-              >
-            </h3>
-          </div>
+          <hr />
 
           <h3>
-            Hospital Area:<span
-              id="gender-value"
+            Number Of Students:
+            <span
+              id="students-value"
               style="margin-left: 5px; font-weight: bold"
-              >Maadi</span
+              >15</span
             >
           </h3>
           <h3>
-            Governate:<span
-              id="season-value"
-              style="margin-left: 5px; font-weight: bold"
-              >Cairo</span
+            Address:
+            <span id="address-value" style="margin-left: 5px; font-weight: bold"
+              >Giza, Dokki</span
             >
           </h3>
           <h3>
-            Address:<span
-              id="material-value"
+            Subject(s):
+            <span
+              id="subjects-value"
               style="margin-left: 5px; font-weight: bold"
-              >123 Nile Street</span
-            >
-          </h3>
-
-          <h3>
-            Patient Name:<span
-              id="quantity-value"
-              style="margin-left: 5px; font-weight: bold; width: 100%"
-              >Omar Farouk</span
+              >Physics</span
             >
           </h3>
 
@@ -156,21 +106,15 @@
             class="button-container"
             style="flex-basis: 100%; margin-top: 3%; margin-bottom: -4%"
           >
-            <button onclick="showForm()">Donate</button>
+            <button onclick="showForm()">Volunteer</button>
           </div>
-
-          <!-- </div> -->
         </div>
       </div>
 
       <div id="confirmation-form" class="card invisible">
         <div class="details">
-          <h1>Donation Information</h1>
+          <h1>Volunteering Information</h1>
           <hr />
-        </div>
-
-        <div class="horizontalFlex" style="margin: 3%">
-          <input id="time-input" class="stylized-input" type="datetime-local" />
         </div>
 
         <h3>Location</h3>
@@ -201,16 +145,6 @@
         </div>
       </div>
     </div>
-    <script src="/Scripts/sidebar.js"></script>
-    <script
-      src="https://kit.fontawesome.com/7e3bb74f76.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1IETOWKceQ_gRqH-8Tdq18qzMRqmJebo&callback=initMap"
-      async
-      defer
-    ></script>
     <script>
       function initMap() {
         const center = { lat: 29.968393755595493, lng: 31.241426467895508 };
@@ -228,7 +162,12 @@
 
         function updateMap(markerPosition) {
           map.setCenter(markerPosition);
-          console.log("Map Updated: Lat:", markerPosition.lat(), "Lng:", markerPosition.lng());
+          console.log(
+            "Map Updated: Lat:",
+            markerPosition.lat(),
+            "Lng:",
+            markerPosition.lng()
+          );
         }
 
         google.maps.event.addListener(map, "click", function (event) {
@@ -237,8 +176,18 @@
           updateMap(newMarkerPosition);
         });
       }
-
     </script>
+    <script src="/Scripts/sidebar.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7e3bb74f76.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1IETOWKceQ_gRqH-8Tdq18qzMRqmJebo&callback=initMap"
+      async
+      defer
+    ></script>
+    <script src="/Scripts/map.js"></script>
     <script src="/Scripts/fulfulForm.js"></script>
   </body>
 </html>

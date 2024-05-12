@@ -23,6 +23,11 @@
       padding-top: 7%;
       align-items: start;
     } 
+
+    .vanished{
+      visibility: hidden;
+      position: absolute;
+    }
   </style>
 </head>
 
@@ -208,7 +213,8 @@
             <div class="wrap">
               <label for="blood-governate" style="margin-left: 0px; margin-right: 0px; flex-basis: 100%; text-align: center;">Governate:</label>
               <select id="blood-governate" class="wrapComp stylized-input" style="width: 60%;" onchange="filter()">
-                <option>Alexandria</option> <!-- Add other options -->
+                <option>Alexandria</option>
+                <option>Giza</option>
               </select>
               <label class="wrapComp" for="blood-area" style="margin-left: 0px; margin-right: 0px; flex-basis: 100%; text-align: center;">Area Name:</label>
               <input id="blood-area" class="wrapComp stylized-input" oninput="filter()">
@@ -221,9 +227,28 @@
       <div id="medical-supplies-filter" class="filter-group collapsible">
         <h5 class="collapsible-header" style="align-self: center; text-align: center;"><i class="fa-solid fa-caret-right clickableArrow" style="font-size: 24px;" onclick="toggleCollapsible(this)"></i> Medical Supplies Donation Filters</h5>
         <div class="collapsible-content">
-          <!-- Add filtration fields for medical supplies -->
+          <div class="wrap">
+            <div class="wrapComp">
+              <label for="medical-equipment-checkbox" style="margin-right: 0px;">Equipment:&nbsp;</label>
+              <input id="medical-equipment-checkbox" class="stylized-input" type="checkbox" onchange="filter()">
+            </div>
+            <div class="wrapComp">
+              <label for="medical-devices-checkbox" style="margin-right: 0px; margin-left: 15px;">Devices:&nbsp; </label>
+              <input id="medical-devices-checkbox" class="stylized-input" type="checkbox" onchange="filter()">
+            </div>
+            <div>
+              <label for="medication-checkbox">Medication:</label>
+              <input id="medication-checkbox" class="stylized-input" type="checkbox" onchange="toggleMedicalUse()">
+            </div>
+            <div class="filter-group" id="medication-filter">
+              <div class="collapsible-content" style="width: 80%; display: flex; flex-direction: column; justify-content: center; margin-left: auto;margin-right: auto;">
+                <label class="wrapComp" for="medical-use-filter" style="margin-left: 0px; margin-right: 0px; flex-basis: 100%; text-align: center;">Medical Use:</label>
+                <input id="medical-use-filter" class="wrapComp stylized-input" oninput="filter()">
+              </div>
+            </div>
+          </div>
         </div>
-      </div>  <!-- TODO: add the filtration fields-->
+      </div> 
 
       <div id="food-filter" class="filter-group collapsible" style="margin-bottom: 30px;">
         <h5 class="collapsible-header"><i class="fa-solid fa-caret-right clickableArrow" style="font-size: 24px;" onclick="toggleCollapsible(this)"></i> Food Donation Filters</h5>
@@ -246,8 +271,16 @@
     <!-- Filtration Fields -->
     <!-- Dummy Data Posts -->
     <div id="posts">
-      
-      <div class="post stationery">
+      <div class="post medical-supplies equipment">
+        <h3 class="title">Medical Supplies Donation Drive: Join Us in Saving Lives!</h3>
+        <p class="description">
+            Make a meaningful impact by donating critical medical supplies. Your generosity can help save lives and support healthcare efforts globally. Together, let's make a difference in the fight against illness and injury.
+        </p>
+        <p>Type: <span class="type">Face Masks</span></p>
+        <p>Quantity Available: <span  class="quantity">1000</span></p>
+        <button>Donate</button>
+      </div>
+      <div class="post stationery"> 
         <h3 class="title">School Supplies Drive: Donate Today!</h3>
         <p class="description">
           Support local students by donating essential school supplies. Your
@@ -259,16 +292,6 @@
         <p hidden class="quantity">500</p>
         <button>Donate</button>
       </div>
-
-      <div class="post health">
-        <h3 class="title">Blood Donation: Save Lives Today!</h3>
-        <p class="description">
-            Be a hero by donating blood. Your donation can save lives and make a significant impact on someone's health. Thank you for your generosity!
-        </p>
-        <p class="category-value" hidden>Blood Type</p>
-        <h5>Donor Blood Type: <span class="blood-type">O+</span></h5>
-        <button onclick="bloodDetails()">Donate</button>
-    </div>
     
       <div class="post books">
         <h3 class="title">Library Expansion Project: Donate Books Now!</h3>

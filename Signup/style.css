@@ -47,6 +47,19 @@ body {
     color: black;
     font-weight: bold;
 }
+.card2 select {
+    height: 45px;
+    width: 290px;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 15px;
+    color: black;
+    font-weight: bold;
+}
+select option {
+    color: black;
+    font-weight: bold;
+}
 .gender, .donor_type {
     width: 100%;
     display: flex;
