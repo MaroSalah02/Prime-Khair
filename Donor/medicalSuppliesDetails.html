@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prime Khair: Blood Donation</title>
+    <title>Prime Khair: Medical Supplies Donation</title>
     <link rel="stylesheet" type="text/css" href="/Styles/requestDetails.css" />
     <link rel="stylesheet" type="text/css" href="/Styles/navElements.css" />
     <script src="/Scripts/donor.js"></script>
     <style>
       #background-image-container {
-        background-image: url("/icons/BloodDonation.jpg");
+        background-image: url("/icons/MedicalSupplies.jpg");
         filter: brightness(0.5);
       }
 
@@ -96,37 +96,41 @@
         </div>
 
         <div class="details">
-          <h1 id="post-title">Blood Donation: Save Lives Today!</h1>
+          <h1 id="post-title">
+            Medical Supplies Donation Drive: Join Us in Saving Lives!
+          </h1>
           <hr />
           <h2 id="post-description">
-            Be a hero by donating blood. Your donation can save lives and make a
-            significant impact on someone's health. Thank you for your
-            generosity!
+            Make a meaningful impact by donating critical medical supplies. Your
+            generosity can help save lives and support healthcare efforts
+            globally. Together, let's make a difference in the fight against
+            illness and injury.
           </h2>
           <!-- <div class="horizontalFlex"> -->
 
           <div class="horizontalFlex" style="padding-top: 3%">
             <h3>
               Blood Type:<span
-                id="Bloodtype-value"
+                id="Type"
                 style="margin-left: 5px; font-weight: bold"
-                >O+</span
+                >Face Masks</span
               >
             </h3>
             <h3>
-              Hospital Name:<span
+              use:<span
                 id="HospitalName"
                 style="margin-left: 5px; font-weight: bold"
-                >Maadi Community Hospital</span
+              >
+                Prevent spread of infectious diseases. .</span
               >
             </h3>
           </div>
-
+          <img src="/icons/FaceMasks.jpg" alt="FaceMaks" />
           <h3>
-            Hospital Area:<span
+            Quantity:<span
               id="gender-value"
               style="margin-left: 5px; font-weight: bold"
-              >Maadi</span
+              >10000</span
             >
           </h3>
           <h3>
@@ -141,14 +145,6 @@
               id="material-value"
               style="margin-left: 5px; font-weight: bold"
               >123 Nile Street</span
-            >
-          </h3>
-
-          <h3>
-            Patient Name:<span
-              id="quantity-value"
-              style="margin-left: 5px; font-weight: bold; width: 100%"
-              >Omar Farouk</span
             >
           </h3>
 
@@ -168,6 +164,7 @@
           <h1>Donation Information</h1>
           <hr />
         </div>
+        <h3>Donation Quantity, Pickup Time & Transportation Selection</h3>
 
         <div class="horizontalFlex" style="margin: 3%">
           <input id="time-input" class="stylized-input" type="datetime-local" />
