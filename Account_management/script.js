@@ -99,29 +99,35 @@ for (let i = 0; i < edit_icons.length; i++) {
         if (edit_icons[i].id === 'update_email_org') {
             edit_icons[i].addEventListener('click', function() {
                 display_hide(organization_email, organization_contact, organization_area, organization_address, organization_governorate, update_password_organization);
+                org_action = 'update_email_org';
             });
         } else if (edit_icons[i].id === 'update_contact_org') {
             edit_icons[i].addEventListener('click', function() {
                 display_hide(organization_contact, organization_email, organization_area, organization_address, organization_governorate, update_password_organization);
+                org_action = 'update_contact_org';
             });
         } else if (edit_icons[i].id === 'update_password_org') {
             const organization_old_password = document.getElementById("organization_old_password");
             const organization_new_password = document.getElementById("organization_new_password");
             edit_icons[i].addEventListener('click', function() {
                 display_hide(update_password_organization, organization_email, organization_contact, organization_area, organization_address, organization_governorate);
+                org_action = 'update_password_org';
             });
             // Add your validation logic here
         } else if (edit_icons[i].id === 'update_area_org') {
             edit_icons[i].addEventListener('click', function() {
                 display_hide(organization_area, organization_email, organization_contact, organization_address, organization_governorate, update_password_organization);
+                org_action = 'update_area_org';
             });
         } else if (edit_icons[i].id === 'update_address_org') {
             edit_icons[i].addEventListener('click', function() {
                 display_hide(organization_address, organization_email, organization_contact, organization_area, organization_governorate, update_password_organization);
+                org_action = 'update_address_org';
             });
         } else {
             edit_icons[i].addEventListener('click', function() {
                 display_hide(organization_governorate, organization_email, organization_contact, organization_area, organization_address, update_password_organization);
+                org_action = 'update_governorate_org'
             });
         }
     }
@@ -141,6 +147,7 @@ function show_org_donor(){
     donor_org_info.style.display = 'flex';
 }
 function update(){
+    console.log(userType);
     if(userType === 'admin'){
         const admin_old_password = document.getElementById("admin_old_password");
         const admin_new_password = document.getElementById("admin_new_password");
@@ -218,7 +225,7 @@ function update(){
                 error_donor.textContent = "Address Updated";
             }
         }
-        else{
+        else if(donor_action === 'update_governorate_donor'){
             const donor_governorate_change = document.getElementById("donor_governorate_change");
             if(donor_governorate.querySelector('input').value === ''){
                 error_donor.textContent = "Invalid Governorate";
@@ -226,6 +233,78 @@ function update(){
             else{
                 donor_governorate_change.textContent = donor_governorate.querySelector('input').value;
                 error_donor.textContent = "Governorate Updated";
+            }
+        }
+    }
+    else if(userType === 'Organization'){
+        const org_email = document.getElementById("organization_email");
+        const org_contact = document.getElementById("organization_contact");
+        const update_password_organization = document.getElementById("update_password_organization");
+        const org_area = document.getElementById("organization_area");
+        const org_address = document.getElementById("organization_address");
+        const org_governorate = document.getElementById("organization_governorate");
+        const error_org = document.getElementById("error_org");
+        const org_email_change = document.getElementById("org_email_change");
+        const org_contact_change = document.getElementById("org_contact_change");
+        if(org_action === "update_email_org" ){
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(org_email.querySelector('input').value)) {
+                error_org.textContent = "Invalid email";
+            }
+            else{
+                org_email_change.textContent = org_email.querySelector('input').value;
+                error_org.textContent = "Email Updated";
+            }
+        }
+        else if(org_action === "update_contact_org"){
+            if(org_contact.querySelector('input').value.length != 11){
+                error_org.textContent = "Invalid Contact";
+            }
+            else{
+                org_contact_change.textContent = org_contact.querySelector('input').value;
+                error_org.textContent = "Contact Updated";
+            }
+        }
+        else if(org_action === "update_password_org"){
+            const organization_old_password = document.getElementById("organization_old_password");
+            const organization_new_password = document.getElementById("organization_new_password");
+            const org_password_change = document.getElementById("org_password_change");
+            if("123456" === organization_old_password.querySelector('input').value){
+                error_org.textContent = "Password Updated";
+                org_password_change.textContent = organization_new_password.querySelector('input').value;
+            }
+            else{
+                error_org.textContent = "Incorrect old password";
+            }
+        }
+        else if(org_action === 'update_area_org'){
+            const org_area_change = document.getElementById("org_area_change");
+            if(org_area.querySelector('input').value === ''){
+                error_org.textContent = "Invalid Area";
+            }
+            else{
+                org_area_change.textContent = org_area.querySelector('input').value;
+                error_org.textContent = "Area Updated";
+            }
+        }
+        else if(org_action === 'update_address_org'){
+            const org_address_change = document.getElementById("org_address_change");
+            if(org_address.querySelector('input').value === ''){
+                error_org.textContent = "Invalid Address";
+            }
+            else{
+                org_address_change.textContent = org_address.querySelector('input').value;
+                error_org.textContent = "Address Updated";
+            }
+        }
+        else if(org_action = 'update_governorate_org'){
+            const org_governorate_change = document.getElementById("org_governorate_change");
+            if(org_governorate.querySelector('input').value === ''){
+                error_org.textContent = "Invalid Governorate";
+            }
+            else{
+                org_governorate_change.textContent = org_governorate.querySelector('input').value;
+                error_org.textContent = "Governorate Updated";
             }
         }
     }
