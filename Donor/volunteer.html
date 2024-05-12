@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      div#page {
+        margin-top: 0%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 7%;
+        align-items: start;
+      }
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -66,9 +76,9 @@
       </div>
     </header>
 
-    <div id="page" style="margin-top: 0%">
+    <div id="page">
       <!-- Filtration Fields -->
-      <div class="searchengine" style="padding-top: 7%; padding-bottom: 2%">
+      <div class="searchengine">
         <input
           id="searchbar"
           oninput="filter()"
@@ -91,186 +101,220 @@
       </div>
 
       <div id="filtration-fields" class="filter-group">
-        <select
-          class="stylized-input"
-          id="teaching-subject"
-          onchange="filter()"
-        >
-          <option value="all">All</option>
-          <option value="mathematics">Mathematics</option>
-          <option value="biology">Biology</option>
-          <option value="chemistry">Chemistry</option>
-          <option value="physics">Physics</option>
-          <option value="earth_science">Arabic</option>
-          <option value="earth_science">Social Studies</option>
-        </select>
-
-        <select class="stylized-input" id="teaching-gov">
-          <option value="cairo">Cairo</option>
-          <option value="alexandria">Alexandria</option>
-          <option value="giza">Giza</option>
-          <option value="luxor">Luxor</option>
-          <option value="aswan">Aswan</option>
-        </select>
-
-        <select class="stylized-input" id="teaching-area">
-          <!-- Cairo -->
-          <optgroup label="cairo">
-            <option value="nasr city">Nasr City</option>
-            <option value="maadi">Maadi</option>
-            <option value="zamalek">Zamalek</option>
-            <option value="heliopolis">Heliopolis</option>
-            <option value="mohandessin">Mohandessin</option>
-            <option value="helwan">Helwan</option>
-            <option value="sayeda zeinab">Sayeda Zeinab</option>
-            <option value="garden city">Garden City</option>
-          </optgroup>
-
-          <!-- Alexandria -->
-          <optgroup class="stylized-input" label="alexandria">
-            <option value="montaza">Montaza</option>
-            <option value="smouha">Smouha</option>
-            <option value="roushdy">Roushdy</option>
-            <option value="san stefano">San Stefano</option>
-            <option value="sporting">Sporting</option>
-            <option value="agami">Agami</option>
-            <option value="hadara">Hadara</option>
-            <option value="miami">Miami</option>
-            <option value="el shatby">El Shatby</option>
-            <option value="sidi bishr">Sidi Bishr</option>
-          </optgroup>
-
-          <!-- Giza -->
-          <optgroup class="stylized-input" label="giza">
-            <option value="mohandiseen">Mohandiseen</option>
-            <option value="agouza">Agouza</option>
-            <option value="sheikh zayed city">Sheikh Zayed City</option>
-            <option value="haram">Haram</option>
-            <option value="6th of october city">6th of October City</option>
-            <option value="faisal">Faisal</option>
-            <option value="dokki">Dokki</option>
-            <option value="imbaba">Imbaba</option>
-            <option value="ousim">Ousim</option>
-            <option value="warraq">Warraq</option>
-          </optgroup>
-
-          <!-- Luxor -->
-          <optgroup label="luxor">
-            <option value="east bank">East Bank</option>
-            <option value="west bank">West Bank</option>
-            <option value="karnak">Karnak</option>
-            <option value="al toud">Al Toud</option>
-          </optgroup>
-
-          <!-- Aswan -->
-          <optgroup label="aswan">
-            <option value="aswan city">Aswan City</option>
-            <option value="aswan west bank">Aswan West Bank</option>
-            <option value="daraw">Daraw</option>
-            <option value="kom ombo">Kom Ombo</option>
-            <option value="edfu">Edfu</option>
-            <option value="abu simbel">Abu Simbel</option>
-            <option value="nagaa hammadi">Nagaa Hammadi</option>
-          </optgroup>
-        </select>
         <div
-          id="medical-filter"
-          style="
-        border-radius: 50px;
-        border: 3px solid #c2a83e;
-        color: #000;
-        /* margin-top: 3vh"
+          id="TeachingFilters"
+          style="margin: 0%"
+          class="filter-group collapsible"
         >
-          <input
-            oninput="filter()"
-            id="medical-org"
-            placeholder="Organization Name"
-          />
+          <h5 class="collapsible-header">
+            <i
+              class="fa-solid fa-caret-right clickableArrow"
+              style="font-size: 24px"
+              onclick="toggleCollapsible(this)"
+            ></i>
+            Teaching Filters
+          </h5>
+          <div class="collapsible-content" style="margin-bottom: 1%">
+            <label for="teaching-subject">Teaching Subject:</label>
+            <select
+              class="stylized-input"
+              id="teaching-subject"
+              onchange="filter()"
+            >
+              <option id="value" ="all">All</option>
+              <option value="mathematics">Mathematics</option>
+              <option value="biology">Biology</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="physics">Physics</option>
+              <option value="earth_science">Arabic</option>
+              <option value="earth_science">Social Studies</option>
+            </select>
+            <label for="teaching-gov">Teaching Governate:</label>
+            <select class="stylized-input" id="teaching-gov">
+              <option value="cairo">Cairo</option>
+              <option value="alexandria">Alexandria</option>
+              <option value="giza">Giza</option>
+              <option value="luxor">Luxor</option>
+              <option value="aswan">Aswan</option>
+            </select>
+            <label for="teaching-area">Teaching Area:</label
+            ><select class="stylized-input" id="teaching-area">
+              Cairo
+              <optgroup label="cairo">
+                <option value="nasr city">Nasr City</option>
+                <option value="maadi">Maadi</option>
+                <option value="zamalek">Zamalek</option>
+                <option value="heliopolis">Heliopolis</option>
+                <option value="mohandessin">Mohandessin</option>
+                <option value="helwan">Helwan</option>
+                <option value="sayeda zeinab">Sayeda Zeinab</option>
+                <option value="garden city">Garden City</option>
+              </optgroup>
+
+              <optgroup class="stylized-input" label="alexandria">
+                <option value="montaza">Montaza</option>
+                <option value="smouha">Smouha</option>
+                <option value="roushdy">Roushdy</option>
+                <option value="san stefano">San Stefano</option>
+                <option value="sporting">Sporting</option>
+                <option value="agami">Agami</option>
+                <option value="hadara">Hadara</option>
+                <option value="miami">Miami</option>
+                <option value="el shatby">El Shatby</option>
+                <option value="sidi bishr">Sidi Bishr</option>
+              </optgroup>
+
+              <optgroup class="stylized-input" label="giza">
+                <option value="mohandiseen">Mohandiseen</option>
+                <option value="agouza">Agouza</option>
+                <option value="sheikh zayed city">Sheikh Zayed City</option>
+                <option value="haram">Haram</option>
+                <option value="6th of october city">6th of October City</option>
+                <option value="faisal">Faisal</option>
+                <option value="dokki">Dokki</option>
+                <option value="imbaba">Imbaba</option>
+                <option value="ousim">Ousim</option>
+                <option value="warraq">Warraq</option>
+              </optgroup>
+
+              <!-- Luxor -->
+              <optgroup label="luxor">
+                <option value="east bank">East Bank</option>
+                <option value="west bank">West Bank</option>
+                <option value="karnak">Karnak</option>
+                <option value="al toud">Al Toud</option>
+              </optgroup>
+              <!-- Aswan -->
+              <optgroup label="aswan">
+                <option value="aswan city">Aswan City</option>
+                <option value="aswan west bank">Aswan West Bank</option>
+                <option value="daraw">Daraw</option>
+                <option value="kom ombo">Kom Ombo</option>
+                <option value="edfu">Edfu</option>
+                <option value="abu simbel">Abu Simbel</option>
+                <option value="nagaa hammadi">Nagaa Hammadi</option>
+              </optgroup>
+            </select>
+          </div>
         </div>
+        <div id="stationery-filter" class="filter-group collapsible">
+          <h5 class="collapsible-header">
+            <i
+              class="fa-solid fa-caret-right clickableArrow"
+              style="font-size: 24px"
+              onclick="toggleCollapsible(this)"
+            ></i>
+            Doctor Filters
+          </h5>
+          <div class="collapsible-content" style="margin-bottom: 3%">
+            <label for="teaching-area">Doctor Speciality:</label
+            ><select
+              class="stylized-input"
+              id="medical-speciality"
+              onchange="filter()"
+            >
+              <option value="cardiology">Cardiology</option>
+              <option value="dermatology">Dermatology</option>
+              <option value="neurology">Neurology</option>
+              <option value="oncology">Oncology</option>
+              <option value="pediatrics">Pediatrics</option>
+              <option value="psychiatry">Psychiatry</option>
+              <option value="radiology">Radiology</option>
+              <option value="surgery">Surgery</option>
+            </select>
 
-        <select
-          class="stylized-input"
-          id="medical-speciality"
-          onchange="filter()"
-        >
-          <option value="cardiology">Cardiology</option>
-          <option value="dermatology">Dermatology</option>
-          <option value="neurology">Neurology</option>
-          <option value="oncology">Oncology</option>
-          <option value="pediatrics">Pediatrics</option>
-          <option value="psychiatry">Psychiatry</option>
-          <option value="radiology">Radiology</option>
-          <option value="surgery">Surgery</option>
-        </select>
+            <label for="teaching-area">Governate:</label
+            ><select
+              class="stylized-input"
+              id="medical-gov"
+              onchange="filter()"
+            >
+              <option value="cairo">Cairo</option>
+              <option value="alexandria">Alexandria</option>
+              <option value="giza">Giza</option>
+              <option value="luxor">Luxor</option>
+              <option value="aswan">Aswan</option>
+            </select>
 
-        <select class="stylized-input" id="medical-gov" onchange="filter()">
-          <option value="cairo">Cairo</option>
-          <option value="alexandria">Alexandria</option>
-          <option value="giza">Giza</option>
-          <option value="luxor">Luxor</option>
-          <option value="aswan">Aswan</option>
-        </select>
+            <label for="teaching-area">Area:</label
+            ><select class="stylized-input" id="medical-area">
+              <!-- Cairo -->
+              <optgroup label="cairo">
+                <option value="nasr city">Nasr City</option>
+                <option value="maadi">Maadi</option>
+                <option value="zamalek">Zamalek</option>
+                <option value="heliopolis">Heliopolis</option>
+                <option value="mohandessin">Mohandessin</option>
+                <option value="helwan">Helwan</option>
+                <option value="sayeda zeinab">Sayeda Zeinab</option>
+                <option value="garden city">Garden City</option>
+              </optgroup>
 
-        <select class="stylized-input" id="medical-area">
-          <!-- Cairo -->
-          <optgroup label="cairo">
-            <option value="nasr city">Nasr City</option>
-            <option value="maadi">Maadi</option>
-            <option value="zamalek">Zamalek</option>
-            <option value="heliopolis">Heliopolis</option>
-            <option value="mohandessin">Mohandessin</option>
-            <option value="helwan">Helwan</option>
-            <option value="sayeda zeinab">Sayeda Zeinab</option>
-            <option value="garden city">Garden City</option>
-          </optgroup>
+              <!-- Alexandria -->
+              <optgroup class="stylized-input" label="alexandria">
+                <option value="montaza">Montaza</option>
+                <option value="smouha">Smouha</option>
+                <option value="roushdy">Roushdy</option>
+                <option value="san stefano">San Stefano</option>
+                <option value="sporting">Sporting</option>
+                <option value="agami">Agami</option>
+                <option value="hadara">Hadara</option>
+                <option value="miami">Miami</option>
+                <option value="el shatby">El Shatby</option>
+                <option value="sidi bishr">Sidi Bishr</option>
+              </optgroup>
 
-          <!-- Alexandria -->
-          <optgroup class="stylized-input" label="alexandria">
-            <option value="montaza">Montaza</option>
-            <option value="smouha">Smouha</option>
-            <option value="roushdy">Roushdy</option>
-            <option value="san stefano">San Stefano</option>
-            <option value="sporting">Sporting</option>
-            <option value="agami">Agami</option>
-            <option value="hadara">Hadara</option>
-            <option value="miami">Miami</option>
-            <option value="el shatby">El Shatby</option>
-            <option value="sidi bishr">Sidi Bishr</option>
-          </optgroup>
+              <!-- Giza -->
+              <optgroup class="stylized-input" label="giza">
+                <option value="mohandiseen">Mohandiseen</option>
+                <option value="agouza">Agouza</option>
+                <option value="sheikh zayed city">Sheikh Zayed City</option>
+                <option value="haram">Haram</option>
+                <option value="6th of october city">6th of October City</option>
+                <option value="faisal">Faisal</option>
+                <option value="dokki">Dokki</option>
+                <option value="imbaba">Imbaba</option>
+                <option value="ousim">Ousim</option>
+                <option value="warraq">Warraq</option>
+              </optgroup>
 
-          <!-- Giza -->
-          <optgroup class="stylized-input" label="giza">
-            <option value="mohandiseen">Mohandiseen</option>
-            <option value="agouza">Agouza</option>
-            <option value="sheikh zayed city">Sheikh Zayed City</option>
-            <option value="haram">Haram</option>
-            <option value="6th of october city">6th of October City</option>
-            <option value="faisal">Faisal</option>
-            <option value="dokki">Dokki</option>
-            <option value="imbaba">Imbaba</option>
-            <option value="ousim">Ousim</option>
-            <option value="warraq">Warraq</option>
-          </optgroup>
+              <!-- Luxor -->
+              <optgroup class="stylized-input" label="luxor">
+                <option value="east bank">East Bank</option>
+                <option value="west bank">West Bank</option>
+                <option value="karnak">Karnak</option>
+                <option value="al toud">Al Toud</option>
+              </optgroup>
 
-          <!-- Luxor -->
-          <optgroup class="stylized-input" label="luxor">
-            <option value="east bank">East Bank</option>
-            <option value="west bank">West Bank</option>
-            <option value="karnak">Karnak</option>
-            <option value="al toud">Al Toud</option>
-          </optgroup>
+              <!-- Aswan -->
+              <optgroup class="stylized-input" label="aswan">
+                <option value="aswan city">Aswan City</option>
+                <option value="aswan west bank">Aswan West Bank</option>
+                <option value="daraw">Daraw</option>
+                <option value="kom ombo">Kom Ombo</option>
+                <option value="edfu">Edfu</option>
+                <option value="abu simbel">Abu Simbel</option>
+                <option value="nagaa hammadi">Nagaa Hammadi</option>
+              </optgroup>
+            </select>
 
-          <!-- Aswan -->
-          <optgroup class="stylized-input" label="aswan">
-            <option value="aswan city">Aswan City</option>
-            <option value="aswan west bank">Aswan West Bank</option>
-            <option value="daraw">Daraw</option>
-            <option value="kom ombo">Kom Ombo</option>
-            <option value="edfu">Edfu</option>
-            <option value="abu simbel">Abu Simbel</option>
-            <option value="nagaa hammadi">Nagaa Hammadi</option>
-          </optgroup>
-        </select>
+            <input
+              oninput="filter()"
+              id="medical-org"
+              style="
+                height: 50px;
+                /* width: 500px; */
+                border-radius: 50px;
+                border: 3px solid #c2a83e;
+                color: #000;
+                width: 50%;
+                margin-top: 3vh;
+                margin-bottom: 3vh;
+              "
+              placeholder="Organization Name"
+            />
+          </div>
+        </div>
       </div>
 
       <div id="posts">
@@ -282,10 +326,6 @@
             <span class="description">
               We are looking for an enthusiastic physics tutor to inspire and
               engage high school students in the fascinating world of physics.
-              The successful candidate will possess excellent communication
-              skills and the ability to adapt teaching methods to meet the
-              diverse needs of learners. Join us in fostering a love for science
-              and empowering students to reach their full potential.
             </span>
           </p>
           <h5>Subject(s): <span class="subjects">Physics</span></h5>
@@ -303,8 +343,6 @@
               Dive into the wonders of biology as our camp instructor! We're
               seeking a creative and dynamic educator to lead engaging hands-on
               activities and experiments that spark curiosity and exploration.
-              Join us in creating memorable learning experiences for students as
-              they discover the fascinating world of life sciences.
             </span>
           </p>
           <h5>Subject(s): <span class="subjects">Biology</span></h5>
@@ -322,9 +360,7 @@
             <span class="description">
               Ahmed Abdelrahman, a 60-year-old male, is in critical condition
               and requires immediate cardiac surgery due to severe blockage in
-              his coronary arteries. Without intervention, he faces a high risk
-              of heart failure. Your expertise and swift action can save Ahmed's
-              life and offer hope to his family during this challenging time.
+              his coronary arteries.
             </span>
           </p>
           <h5 hidden>Name: <span class="name">Ahmed Abdelrahman</span></h5>
@@ -345,9 +381,7 @@
             <span class="description">
               Sarah Ahmed, a 35-year-old female, sustained a head injury in a
               car accident and is experiencing persistent headaches and
-              confusion. A neurology consultation is urgently needed to assess
-              her condition, identify any neurological deficits, and develop an
-              appropriate treatment plan.
+              confusion.
             </span>
           </p>
           <h5 hidden>Name: <span class="name">Sarah Ahmed</span></h5>
@@ -368,8 +402,7 @@
             <span class="description">
               Mahmoud Hassan, a 25-year-old male, has been diagnosed with acute
               appendicitis and requires immediate surgical intervention to
-              prevent complications such as rupture and infection. Your prompt
-              action can alleviate Mahmoud's pain and restore his health.
+              prevent complications such as rupture and infection.
             </span>
           </p>
           <h5 hidden>Name: <span class="name">Mahmoud Hassan</span></h5>
