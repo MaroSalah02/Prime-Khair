@@ -274,9 +274,9 @@
         <p class="description">
             Make a meaningful impact by donating critical medical supplies. Your generosity can help save lives and support healthcare efforts globally. Together, let's make a difference in the fight against illness and injury.
         </p>
-        <p>Type: <span class="type">Face Masks</span></p>
+        <p>Type: <span class="type">Equipment</span></p>
         <p>Quantity Available: <span  class="quantity">1000</span></p>
-        <button>Donate</button>
+        <button onclick="medicalSupply()" >Donate</button>
       </div>
       <div class="post stationery"> 
         <h3 class="title">School Supplies Drive: Donate Today!</h3>
@@ -288,7 +288,7 @@
         <p>Type: <span  class="type">Ruler</span></p>
 
         <p hidden class="quantity">500</p>
-        <button>Donate</button>
+        <button onclick="stationery()">Donate</button>
       </div>
     
       <div class="post books">
@@ -320,7 +320,7 @@
         </h5>
 
 
-        <button style="flex-basis: 100%">Donate</button>
+        <button onclick="book()" style="flex-basis: 100%">Donate</button>
       </div>
 
       <div class="post toys">
@@ -347,7 +347,7 @@
         <h5 hidden>
           <span class="quantity">Quantity Requested: 200</span>
         </h5>
-        <button>Donate</button>
+        <button onclick="toys()">Donate</button>
       </div>
 
       <div class="post food">
@@ -360,7 +360,7 @@
         <p class="category-value" hidden>vegetable</p>
         <h5>Item Name: <span class="food-name">Btengan</span></hh5>
           <p hidden>Quantity Required: <span class="food-quantity">500</span> KG</p>
-          <button>Donate</button>
+          <button onclick="food()">Donate</button>
       </div>
 
       <!-- <div class="post medical-supplies">
@@ -429,7 +429,7 @@
         <h5>Area: <span class="area">7aga</span></h5>
         <h5>Hospital: <span class="hospital">El Gawwy</span></h5>
         <img hidden src="stuffed_animal.jpg" alt="Stuffed Animal" />
-        <button>Donate</button>
+        <button onclick="blood()">Donate</button>
       </div>
 
       <div class="post clothes">
@@ -446,7 +446,7 @@
         <h5>Material: <span class="material" hidden>Cotton</span> </h5>
         <img hidden src="stuffed_animal.jpg" alt="Stuffed Animal" />
         <h5 class="quantity" hidden>Quantity Requested: 200</h5>
-        <button>Donate</button>
+        <button onclick="cloths()">Donate</button>
       </div>
     </div>
   </div>
