@@ -27,6 +27,12 @@ function check_empty(...args) {
     }
   }
 }
+function login(){
+  console.log(1)
+  if(user_name.value === 'mohamad' && password.value === '123456' ){
+      window.location.href = "../Account_management/account.html?type=admin";
+  }
+}
 login.addEventListener("click", function () {
   check_empty(user_name, password);
 });
