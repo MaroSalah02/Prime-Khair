@@ -307,10 +307,12 @@ function buttonClickHandler() {
         if(userType == 'donor'){
             let donor = new Donor();
             console.log(donor.full_info());
+            alert('Your application has been sent to admin for review');
         }
         else{
             let organization = new Organization_info();
             console.log(organization.full_info());
+            alert('Your application has been sent to admin for review');
         }
     }
 }
