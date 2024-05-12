@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      div#page {
-        margin-top: 0%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding-top: 7%;
-        align-items: start;
-      }
-    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volunteer</title>
+    <link rel="icon" href="/icons/Main_icon.png" type="image/x-icon" />
 
     <title>Volunteering Opportunities</title>
     <link rel="icon" href="/icons/Main_icon.png" type="image/x-icon" />
@@ -20,6 +12,31 @@
     <link rel="stylesheet" href="/Styles/navElements.css" />
     <link rel="stylesheet" href="/Styles/donor.css" />
     <link rel="stylesheet" href="" />
+
+    <style>
+      #page {
+        margin-top: 0%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 7%;
+        align-items: start;
+      }
+
+      .post Button {
+        width: 50%;
+        margin-top: auto;
+        position: absolute;
+        bottom: 3%;
+        left: 25%;
+        text-align: center;
+      }
+
+      .post {
+        height: 600px;
+        position: relative;
+      }
+    </style>
     <script src="/Scripts/donor.js"></script>
 
     <link
@@ -52,7 +69,7 @@
           </div>
         </div>
         <hr class="visible fade" />
-        <div class="profile-user-photo visible fade">
+        <div class="profile-user-photo visible fade" style="width: 100%">
           <i class="fa-solid fa-user fa-2xl" style="color: #ffffff"></i>
           <p>user name</p>
           <div style="display: flex; flex-direction: column; width: 100%">
@@ -62,7 +79,9 @@
             <a class="link" href="/Donor/organizations.html"
               >View Organizations</a
             >
-            <a class="link" href="/Donor/donor.html">View Donation Requests</a>
+            <a class="link" href="/Donor/volunteer.html"
+              >View Volunteer Requests</a
+            >
             <a class="link" href="/main/main.html">Logout</a>
           </div>
         </div>
@@ -88,20 +107,21 @@
 
     <div id="page">
       <!-- Filtration Fields -->
-      <div class="searchengine" style="padding-bottom: 2%">
+      <div class="searchengine">
         <input
           id="searchbar"
-          oninput="filter()"
+          oninput="filter3()"
           placeholder="Search...."
           style="margin-top: 3vh"
+          class="stylized-input"
         />
-        <input
+        <!-- <input
           type="text"
           id="typeSelector"
           oninput="filterSelection()"
           list="options"
           placeholder="Search category"
-        />
+        /> -->
 
         <datalist id="options">
           <option selected value="All"></option>
@@ -110,12 +130,8 @@
         </datalist>
       </div>
 
-      <div id="filtration-fields" class="filter-group">
-        <div
-          id="TeachingFilters"
-          style="margin: 0%"
-          class="filter-group collapsible"
-        >
+      <div id="filtration-fields" style="margin-top: 3%">
+        <div id="TeachingFilters" class="filter-group collapsible">
           <h5 class="collapsible-header">
             <i
               class="fa-solid fa-caret-right clickableArrow"
@@ -125,89 +141,143 @@
             Teaching Filters
           </h5>
           <div class="collapsible-content" style="margin-bottom: 1%">
-            <label for="teaching-subject">Teaching Subject:</label>
-            <select
-              class="stylized-input"
-              id="teaching-subject"
-              onchange="filter()"
-            >
-              <option id="value" ="all">All</option>
-              <option value="mathematics">Mathematics</option>
-              <option value="biology">Biology</option>
-              <option value="chemistry">Chemistry</option>
-              <option value="physics">Physics</option>
-              <option value="earth_science">Arabic</option>
-              <option value="earth_science">Social Studies</option>
-            </select>
-            <label for="teaching-gov">Teaching Governate:</label>
-            <select class="stylized-input" id="teaching-gov">
-              <option value="cairo">Cairo</option>
-              <option value="alexandria">Alexandria</option>
-              <option value="giza">Giza</option>
-              <option value="luxor">Luxor</option>
-              <option value="aswan">Aswan</option>
-            </select>
-            <label for="teaching-area">Teaching Area:</label
-            ><select class="stylized-input" id="teaching-area">
-              Cairo
-              <optgroup label="cairo">
-                <option value="nasr city">Nasr City</option>
-                <option value="maadi">Maadi</option>
-                <option value="zamalek">Zamalek</option>
-                <option value="heliopolis">Heliopolis</option>
-                <option value="mohandessin">Mohandessin</option>
-                <option value="helwan">Helwan</option>
-                <option value="sayeda zeinab">Sayeda Zeinab</option>
-                <option value="garden city">Garden City</option>
-              </optgroup>
+            <div class="wrap">
+              <label
+                for="teaching-subject"
+                style="margin-right: 0px; margin-left: 0px"
+                >Subject:&nbsp;</label
+              >
+              <select
+                class="stylized-input"
+                id="teaching-subject"
+                onchange="filter3()"
+              >
+                <option id="subject-filter" value="all">All Subjects</option>
+                <option value="mathematics">Mathematics</option>
+                <option value="biology">Biology</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="physics">Physics</option>
+                <option value="arabic">Arabic</option>
+                <option value="Social Studies">Social Studies</option>
+              </select>
+            </div>
+            <div class="wrap">
+              <label
+                for="teaching-gov"
+                style="margin-right: 0px; margin-left: 0px"
+                >Governate:&nbsp;</label
+              >
+              <select
+                class="stylized-input"
+                id="teaching-gov"
+                onchange="filter3()"
+              >
+                <option selected value="All">All Governates</option>
+                <option value="Alexandria">Alexandria</option>
+                <option value="Aswan">Aswan</option>
+                <option value="Asyut">Asyut</option>
+                <option value="Beheira">Beheira</option>
+                <option value="Beni Suef">Beni Suef</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Dakahlia">Dakahlia</option>
+                <option value="Damietta">Damietta</option>
+                <option value="Faiyum">Faiyum</option>
+                <option value="Gharbia">Gharbia</option>
+                <option value="Giza">Giza</option>
+                <option value="Ismailia">Ismailia</option>
+                <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+                <option value="Luxor">Luxor</option>
+                <option value="Matrouh">Matrouh</option>
+                <option value="Minya">Minya</option>
+                <option value="Monufia">Monufia</option>
+                <option value="New Valley">New Valley</option>
+                <option value="North Sinai">North Sinai</option>
+                <option value="Port Said">Port Said</option>
+                <option value="Qalyubia">Qalyubia</option>
+                <option value="Qena">Qena</option>
+                <option value="Red Sea">Red Sea</option>
+                <option value="Sharqia">Sharqia</option>
+                <option value="Sohag">Sohag</option>
+                <option value="South Sinai">South Sinai</option>
+                <option value="Suez">Suez</option>
+              </select>
+            </div>
+            <div class="wrap">
+              <label
+                for="teaching-area"
+                style="margin-right: 0px; margin-left: 0px"
+                >Area:</label
+              >
+              <input
+                class="stylized-input"
+                id="teaching-area"
+                placeholder="Filter Area"
+                oninput="filter3()"
+                ;
+              />
+              <!-- <select class="stylized-input" id="teaching-area"> -->
+              <!-- Cairo
+                <optgroup label="cairo">
+                  <option value="nasr city">Nasr City</option>
+                  <option value="maadi">Maadi</option>
+                  <option value="zamalek">Zamalek</option>
+                  <option value="heliopolis">Heliopolis</option>
+                  <option value="mohandessin">Mohandessin</option>
+                  <option value="helwan">Helwan</option>
+                  <option value="sayeda zeinab">Sayeda Zeinab</option>
+                  <option value="garden city">Garden City</option>
+                </optgroup>
 
-              <optgroup class="stylized-input" label="alexandria">
-                <option value="montaza">Montaza</option>
-                <option value="smouha">Smouha</option>
-                <option value="roushdy">Roushdy</option>
-                <option value="san stefano">San Stefano</option>
-                <option value="sporting">Sporting</option>
-                <option value="agami">Agami</option>
-                <option value="hadara">Hadara</option>
-                <option value="miami">Miami</option>
-                <option value="el shatby">El Shatby</option>
-                <option value="sidi bishr">Sidi Bishr</option>
-              </optgroup>
+                <optgroup class="stylized-input" label="alexandria">
+                  <option value="montaza">Montaza</option>
+                  <option value="smouha">Smouha</option>
+                  <option value="roushdy">Roushdy</option>
+                  <option value="san stefano">San Stefano</option>
+                  <option value="sporting">Sporting</option>
+                  <option value="agami">Agami</option>
+                  <option value="hadara">Hadara</option>
+                  <option value="miami">Miami</option>
+                  <option value="el shatby">El Shatby</option>
+                  <option value="sidi bishr">Sidi Bishr</option>
+                </optgroup>
 
-              <optgroup class="stylized-input" label="giza">
-                <option value="mohandiseen">Mohandiseen</option>
-                <option value="agouza">Agouza</option>
-                <option value="sheikh zayed city">Sheikh Zayed City</option>
-                <option value="haram">Haram</option>
-                <option value="6th of october city">6th of October City</option>
-                <option value="faisal">Faisal</option>
-                <option value="dokki">Dokki</option>
-                <option value="imbaba">Imbaba</option>
-                <option value="ousim">Ousim</option>
-                <option value="warraq">Warraq</option>
-              </optgroup>
+                <optgroup class="stylized-input" label="giza">
+                  <option value="mohandiseen">Mohandiseen</option>
+                  <option value="agouza">Agouza</option>
+                  <option value="sheikh zayed city">Sheikh Zayed City</option>
+                  <option value="haram">Haram</option>
+                  <option value="6th of october city">
+                    6th of October City
+                  </option>
+                  <option value="faisal">Faisal</option>
+                  <option value="dokki">Dokki</option>
+                  <option value="imbaba">Imbaba</option>
+                  <option value="ousim">Ousim</option>
+                  <option value="warraq">Warraq</option>
+                </optgroup>
 
-              <!-- Luxor -->
-              <optgroup label="luxor">
-                <option value="east bank">East Bank</option>
-                <option value="west bank">West Bank</option>
-                <option value="karnak">Karnak</option>
-                <option value="al toud">Al Toud</option>
-              </optgroup>
-              <!-- Aswan -->
-              <optgroup label="aswan">
-                <option value="aswan city">Aswan City</option>
-                <option value="aswan west bank">Aswan West Bank</option>
-                <option value="daraw">Daraw</option>
-                <option value="kom ombo">Kom Ombo</option>
-                <option value="edfu">Edfu</option>
-                <option value="abu simbel">Abu Simbel</option>
-                <option value="nagaa hammadi">Nagaa Hammadi</option>
-              </optgroup>
-            </select>
+                <!- Luxor ->
+                <optgroup label="luxor">
+                  <option value="east bank">East Bank</option>
+                  <option value="west bank">West Bank</option>
+                  <option value="karnak">Karnak</option>
+                  <option value="al toud">Al Toud</option>
+                </optgroup>
+                <!- Aswan ->
+                <optgroup label="aswan">
+                  <option value="aswan city">Aswan City</option>
+                  <option value="aswan west bank">Aswan West Bank</option>
+                  <option value="daraw">Daraw</option>
+                  <option value="kom ombo">Kom Ombo</option>
+                  <option value="edfu">Edfu</option>
+                  <option value="abu simbel">Abu Simbel</option>
+                  <option value="nagaa hammadi">Nagaa Hammadi</option>
+                </optgroup>
+              </select> -->
+            </div>
           </div>
         </div>
-        <div id="stationery-filter" class="filter-group collapsible">
+        <div id="doctor-filter" class="filter-group collapsible">
           <h5 class="collapsible-header">
             <i
               class="fa-solid fa-caret-right clickableArrow"
@@ -217,118 +287,98 @@
             Doctor Filters
           </h5>
           <div class="collapsible-content" style="margin-bottom: 3%">
-            <label for="teaching-area">Doctor Speciality:</label
-            ><select
-              class="stylized-input"
-              id="medical-speciality"
-              onchange="filter()"
-            >
-              <option value="cardiology">Cardiology</option>
-              <option value="dermatology">Dermatology</option>
-              <option value="neurology">Neurology</option>
-              <option value="oncology">Oncology</option>
-              <option value="pediatrics">Pediatrics</option>
-              <option value="psychiatry">Psychiatry</option>
-              <option value="radiology">Radiology</option>
-              <option value="surgery">Surgery</option>
-            </select>
-
-            <label for="teaching-area">Governate:</label
-            ><select
-              class="stylized-input"
-              id="medical-gov"
-              onchange="filter()"
-            >
-              <option value="cairo">Cairo</option>
-              <option value="alexandria">Alexandria</option>
-              <option value="giza">Giza</option>
-              <option value="luxor">Luxor</option>
-              <option value="aswan">Aswan</option>
-            </select>
-
-            <label for="teaching-area">Area:</label
-            ><select class="stylized-input" id="medical-area">
-              <!-- Cairo -->
-              <optgroup label="cairo">
-                <option value="nasr city">Nasr City</option>
-                <option value="maadi">Maadi</option>
-                <option value="zamalek">Zamalek</option>
-                <option value="heliopolis">Heliopolis</option>
-                <option value="mohandessin">Mohandessin</option>
-                <option value="helwan">Helwan</option>
-                <option value="sayeda zeinab">Sayeda Zeinab</option>
-                <option value="garden city">Garden City</option>
-              </optgroup>
-
-              <!-- Alexandria -->
-              <optgroup class="stylized-input" label="alexandria">
-                <option value="montaza">Montaza</option>
-                <option value="smouha">Smouha</option>
-                <option value="roushdy">Roushdy</option>
-                <option value="san stefano">San Stefano</option>
-                <option value="sporting">Sporting</option>
-                <option value="agami">Agami</option>
-                <option value="hadara">Hadara</option>
-                <option value="miami">Miami</option>
-                <option value="el shatby">El Shatby</option>
-                <option value="sidi bishr">Sidi Bishr</option>
-              </optgroup>
-
-              <!-- Giza -->
-              <optgroup class="stylized-input" label="giza">
-                <option value="mohandiseen">Mohandiseen</option>
-                <option value="agouza">Agouza</option>
-                <option value="sheikh zayed city">Sheikh Zayed City</option>
-                <option value="haram">Haram</option>
-                <option value="6th of october city">6th of October City</option>
-                <option value="faisal">Faisal</option>
-                <option value="dokki">Dokki</option>
-                <option value="imbaba">Imbaba</option>
-                <option value="ousim">Ousim</option>
-                <option value="warraq">Warraq</option>
-              </optgroup>
-
-              <!-- Luxor -->
-              <optgroup class="stylized-input" label="luxor">
-                <option value="east bank">East Bank</option>
-                <option value="west bank">West Bank</option>
-                <option value="karnak">Karnak</option>
-                <option value="al toud">Al Toud</option>
-              </optgroup>
-
-              <!-- Aswan -->
-              <optgroup class="stylized-input" label="aswan">
-                <option value="aswan city">Aswan City</option>
-                <option value="aswan west bank">Aswan West Bank</option>
-                <option value="daraw">Daraw</option>
-                <option value="kom ombo">Kom Ombo</option>
-                <option value="edfu">Edfu</option>
-                <option value="abu simbel">Abu Simbel</option>
-                <option value="nagaa hammadi">Nagaa Hammadi</option>
-              </optgroup>
-            </select>
-
-            <input
-              oninput="filter()"
-              id="medical-org"
-              style="
-                height: 50px;
-                /* width: 500px; */
-                border-radius: 50px;
-                border: 3px solid #c2a83e;
-                color: #000;
-                width: 50%;
-                margin-top: 3vh;
-                margin-bottom: 3vh;
-              "
-              placeholder="Organization Name"
-            />
+            <div class="wrap">
+              <label
+                for="medical-speciality"
+                style="margin-right: 0px; margin-left: 0px"
+                >Doctor Speciality:&nbsp;</label
+              ><select
+                class="stylized-input"
+                id="medical-speciality"
+                onchange="filter3()"
+              >
+                <option value="cardiology">Cardiology</option>
+                <option value="dermatology">Dermatology</option>
+                <option value="neurology">Neurology</option>
+                <option value="oncology">Oncology</option>
+                <option value="pediatrics">Pediatrics</option>
+                <option value="psychiatry">Psychiatry</option>
+                <option value="radiology">Radiology</option>
+                <option value="surgery">Surgery</option>
+              </select>
+            </div>
+            <div class="wrap">
+              <label
+                for="medical-gov"
+                style="margin-right: 0px; margin-left: 0px"
+                >Governate:&nbsp;</label
+              ><select
+                class="stylized-input"
+                id="medical-gov"
+                onchange="filter3()"
+              >
+                <option selected value="All">All Governates</option>
+                <option value="Alexandria">Alexandria</option>
+                <option value="Aswan">Aswan</option>
+                <option value="Asyut">Asyut</option>
+                <option value="Beheira">Beheira</option>
+                <option value="Beni Suef">Beni Suef</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Dakahlia">Dakahlia</option>
+                <option value="Damietta">Damietta</option>
+                <option value="Faiyum">Faiyum</option>
+                <option value="Gharbia">Gharbia</option>
+                <option value="Giza">Giza</option>
+                <option value="Ismailia">Ismailia</option>
+                <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+                <option value="Luxor">Luxor</option>
+                <option value="Matrouh">Matrouh</option>
+                <option value="Minya">Minya</option>
+                <option value="Monufia">Monufia</option>
+                <option value="New Valley">New Valley</option>
+                <option value="North Sinai">North Sinai</option>
+                <option value="Port Said">Port Said</option>
+                <option value="Qalyubia">Qalyubia</option>
+                <option value="Qena">Qena</option>
+                <option value="Red Sea">Red Sea</option>
+                <option value="Sharqia">Sharqia</option>
+                <option value="Sohag">Sohag</option>
+                <option value="South Sinai">South Sinai</option>
+                <option value="Suez">Suez</option>
+              </select>
+            </div>
+            <div class="wrap">
+              <label
+                for="doctoring-area"
+                style="margin-right: 0px; margin-left: 0px"
+                >Area:&nbsp;</label
+              >
+              <input
+                placeholder="Filter Area"
+                id="doctoring-area"
+                class="stylized-input"
+                oninput="filter3()"
+              />
+            </div>
+            <div class="wrap">
+              <label
+                for="organization-filter"
+                style="margin-right: 0px; margin-left: 0px"
+                >Organization:&nbsp;</label
+              >
+              <input
+                oninput="filter3()"
+                id="organization-filter"
+                class="stylized-input"
+                placeholder="Organization Name"
+              />
+            </div>
           </div>
         </div>
       </div>
 
       <div id="posts">
-        <div class="post">
+        <div class="post teaching">
           <h3 class="title">
             Enthusiastic Physics Tutor Needed for High School Students
           </h3>
@@ -344,7 +394,7 @@
           <h5>Area: <span class="area">Dokki</span></h5>
           <button>Volunteer</button>
         </div>
-        <div class="post">
+        <div class="post teaching">
           <h3 class="title">
             Biology Instructor for Interactive Summer Camp Sessions
           </h3>
@@ -362,7 +412,7 @@
           <button>Volunteer</button>
         </div>
         <!-- Medical Cases -->
-        <div class="post">
+        <div class="post doctor">
           <h3 class="title">
             Urgent Cardiac Surgery Needed for Critical Patient
           </h3>
@@ -385,7 +435,7 @@
           <h5>Speciality: <span class="speciality">Cardiology</span></h5>
           <button>Volunteer</button>
         </div>
-        <div class="post">
+        <div class="post doctor">
           <h3 class="title">Neurology Consultation for Head Trauma Patient</h3>
           <p>
             <span class="description">
@@ -406,7 +456,7 @@
           <h5>Speciality: <span class="speciality">Neurology</span></h5>
           <button>Volunteer</button>
         </div>
-        <div class="post">
+        <div class="post doctor">
           <h3 class="title">Surgery Preparation for Appendicitis Patient</h3>
           <p>
             <span class="description">
@@ -434,6 +484,7 @@
 
   <script src="script.js"></script>
   <script src="/Scripts/sidebar.js"></script>
+  <script src="/Scripts/filtrationVol.js"></script>
   <script src="/Scripts/filtration.js"></script>
   <script
     src="https://kit.fontawesome.com/7e3bb74f76.js"
