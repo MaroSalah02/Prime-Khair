@@ -6,6 +6,7 @@
     <title>Donor Details</title>
     <link rel="stylesheet" href="CSS/donorMoreDetails.css" />
     <link rel="stylesheet" type="text/css" href="/Styles/navElements.css" />
+    <link rel="icon" href="/icons/Main_icon.png" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   </head>
@@ -21,9 +22,15 @@
             </div>
         </div>
         <hr class="visible fade">
-        <div class="profile-user-photo visible fade">
+        <div class="profile-user-photo visible fade" style="width: 100%;">
             <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
-            <p>Organization name</p>
+            <p>user name</p>
+            <div style="display: flex;flex-direction: column;width: 100%;">
+              <a class="link" href="/Admin/accountAdmin.html">Account Management</a>
+              <a class="link" href="/Admin/organizationsRequestsReview.html">View Organizations Requests </a>
+              <a class="link" href="/Admin/donorsRequestsReview.html">View Donors Requests</a>
+              <a class="link" href="/main/main.html">Logout</a>
+            </div>
         </div>
     </div>
       <header class="topbar">
@@ -165,7 +172,24 @@
       defer
     ></script>
     <script src="/Admin/JS/script.js"></script>
-    <script src="/Scripts/map.js"></script>
+    <script>
+      function initMap() {
+  const center = { lat: 30.0444, lng: 31.2357 };
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 12,
+    center: center,
+  });
+
+  const marker = new google.maps.Marker({
+    position: center,
+    map: map,
+    title: "Marker Title",
+  });
+
+}
+
+    </script>
     <script src="/Scripts/fulfilBookRequestScript.js"></script>
     <script src="/Scripts/sidebar.js"></script>
     <script
