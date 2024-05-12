@@ -168,7 +168,7 @@
           <h1>Donation Information</h1>
           <hr />
         </div>
-
+        <h3>Pick up desired time for donation</h3>
         <div class="horizontalFlex" style="margin: 3%">
           <input id="time-input" class="stylized-input" type="datetime-local" />
         </div>
@@ -187,8 +187,21 @@
           "
         ></div>
 
-        <input id="location-field" class="stylized-input" style="text-align: center;" placeholder="Pickup Address">
-            <label style="color: #555555;margin-bottom: 3%; text-align: left; padding-left: 15px;">Estimated Arrival Time: 3 Days</label>
+        <input
+          id="location-field"
+          class="stylized-input"
+          style="text-align: center"
+          placeholder="Pickup Address"
+        />
+        <label
+          style="
+            color: #555555;
+            margin-bottom: 3%;
+            text-align: left;
+            padding-left: 15px;
+          "
+          >Estimated Arrival Time: 3 Days</label
+        >
 
         <div
           style="
@@ -228,9 +241,7 @@
           map: map,
           title: "Marker Title",
         });
-
       }
-
     </script>
     <script src="/Scripts/fulfulForm.js"></script>
   </body>
