@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Organization Details</title>
     <link rel="stylesheet" href="CSS/organizationMoreDetails.css" />
+    <link rel="icon" href="/icons/Main_icon.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="/Styles/navElements.css" />
   </head>
   <body>
@@ -144,7 +145,23 @@
       defer
     ></script>
     <script src="/Admin/JS/script.js"></script>
-    <script src="/Scripts/map.js"></script>
+    <script>
+      function initMap() {
+  const center = { lat: 31.17659463213256, lng: 29.89843823772673 };
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 12,
+    center: center,
+  });
+
+  const marker = new google.maps.Marker({
+    position: center,
+    map: map,
+    title: "Marker Title",
+  });
+}
+
+    </script>
     <script src="/Scripts/fulfilBookRequestScript.js"></script>
     <script src="/Scripts/sidebar.js"></script>
     <script
