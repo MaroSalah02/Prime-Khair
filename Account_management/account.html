@@ -21,7 +21,7 @@
                 </div>
             </div>
             <hr class="visible fade">
-            <div class="profile-user-photo">
+            <div class="profile-user-photo visible fade">
                 <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
                 <p id="type_of_user"></p>
             </div>
@@ -34,30 +34,196 @@
 
     <div id="page">
         <div class="card" id="admin_card">
-            <label for="operation">Choose an operation</label>
-            <select id="operation_admin">
-                <option value="" disabled selected>Select an operation</option>
-                <option value="update">Update Password</option>
-                <option value="view">View Donors and Organizations</option>
-            </select>
+            <h1>Admin Info</h1>
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td>Mohamad</td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>Rageh</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>rageh205@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>123-cont<i class="fa-solid fa-pen-to-square icon" id="update_password_admin"></i></td>
+                </tr>
+            </table>
+            <div class="update_password" id="admin_password">
+                <label for="">Enter old Password<input type="text" name="" id="admin_old_password" style="margin-left: 10px;"></label>
+                <label for="">Enter new Password<input type="text" name="" id="admin_new_password" style="margin-left: 4px;"></label>
+                <p id="error"></p>
+                <button>Update</button>
+            </div>
+            <button class="show_org_donor" onclick="show_org_donor()">Show Organizations and donors</button>
+            <div class="donor_org_info" id="donor_org_info">
+                <div class="account">
+                    <table id="table1">
+                        <tr>
+                            <th>Field</th>
+                            <th>Value<i class="fa-solid fa-trash icon" id="icon_table1"></i></th>
+                        </tr>
+                        <tr>
+                            <td>First Name</td>
+                            <td>Mohamad</td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td>Rageh</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>Male</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>Regular</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>rageh205@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Contact Info</td>
+                            <td>01097806990</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>123-ask-admin</td>
+                        </tr>
+                        <tr>
+                            <td>Donor Area</td>
+                            <td>New Cairo</td>
+                        </tr>
+                        <tr>
+                            <td>Donor Address</td>
+                            <td>Fifth Settlement</td>
+                        </tr>
+                        <tr>
+                            <td>Donor Governorate</td>
+                            <td>Cairo</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="account">
+                    <table id="table2">
+                        <tr>
+                            <th>Field</th>
+                            <th>Value<i class="fa-solid fa-trash icon" id="icon_table2"></i></th>
+                        </tr>
+                        <tr>
+                            <td>First Name</td>
+                            <td>Mohamad</td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td>Rageh</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>Male</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>rageh205@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Contact Info</td>
+                            <td>01097806990</td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>123-ask-admin</td>
+                        </tr>
+                        <tr>
+                            <td>Organization Area</td>
+                            <td>New Cairo</td>
+                        </tr>
+                        <tr>
+                            <td>Organization Address</td>
+                            <td>Fifth Settlement</td>
+                        </tr>
+                        <tr>
+                            <td>Organization Governorate</td>
+                            <td>Cairo</td>
+                        </tr>
+                        <tr>
+                            <td>Organization Name</td>
+                            <td>DUMMY</td>
+                        </tr>
+                        <tr>
+                            <td>Organization Type</td>
+                            <td>Production</td>
+                        </tr>
+                        </table>
+                </div>
+            </div>
         </div>
 
         <div class="card" id="donor_card">
-            <h1 style="margin-bottom: 10px;">Update account info</h1>
-            <hr>
-            <select id="operation_donor">
-                <option value="" disabled selected>Select an operation</option>
-                <option value="update_email">Update email</option>
-                <option value="update_contact">Update contact info</option>
-                <option value="update_password">Update password</option>
-                <option value="update_area">Update area</option>
-                <option value="update_address">Update address</option>
-                <option value="update_governorate">Update governorate</option>
-            </select>
+            <h1>Donor Info</h1>
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td>Mohamad</td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>Rageh</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>Regular</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>rageh205@gmail.com <i class="fa-solid fa-pen-to-square icon" id="update_email_donor"></i></td>
+                </tr>
+                <tr>
+                    <td>Contact Info</td>
+                    <td>01097806990 <i class="fa-solid fa-pen-to-square icon" id="update_contact_donor"></i></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>123-ask-admin <i class="fa-solid fa-pen-to-square icon" id="update_password_donor"></i></td>
+                </tr>
+                <tr>
+                    <td>Donor Area</td>
+                    <td>New Cairo <i class="fa-solid fa-pen-to-square icon" id="update_area_donor"></i></td>
+                </tr>
+                <tr>
+                    <td>Donor Address</td>
+                    <td>Fifth Settlement <i class="fa-solid fa-pen-to-square icon" id="update_address_donor"></i></td>
+                </tr>
+                <tr>
+                    <td>Donor Governorate</td>
+                    <td>Cairo <i class="fa-solid fa-pen-to-square icon" id="update_governorate_donor"></i></td>
+                </tr>
+            </table>
             <div class="update_password">
                 <label for="" id="donor_email">Enter new Email<input type="text" name="" style="margin-left: 10px;"></label>
                 <label for="" id="donor_contact">Enter new contact info<input type="text" name=""  style="margin-left: 10px;"></label>
-                <div class="update_password" id="update_password_donor">
+                <div class="update_password" id="donor_password">
                     <label for="" id="donor_old_password">Enter old Password<input type="text" name=""  style="margin-left: 10px;"></label>
                     <label for="" id="donor_new_password">Enter new Password<input type="text" name=""  style="margin-left: 4px;"></label>
                     <p id="error2" style="margin-bottom: 5px;"></p>
@@ -66,67 +232,74 @@
                 <label for="" id="donor_address">Enter new address<input type="text" name="" style="margin-left: 10px;"></label>
                 <label for="" id="donor_governorate">Enter new governorate<input type="text" name=""  style="margin-left: 10px;"></label>
             </div>
-            <button onclick="update()">Update</button>
+            <button onclick="update()">Update Info</button>
         </div>
 
         <div class="card" id="organization_card">
-            <h1 style="margin-bottom: 10px;">Update account info</h1>
-            <hr>
-            <select id="operation_organization">
-                <option value="" disabled selected>Select an operation</option>
-                <option value="update_email">Update email</option>
-                <option value="update_contact">Update contact info</option>
-                <option value="update_password">Update password</option>
-                <option value="update_area">Update area</option>
-                <option value="update_address">Update address</option>
-                <option value="update_governorate">Update governorate</option>
-            </select>
-            <div class="update_password">
-                <label for="" id="organization_email">Enter new Email<input type="text" name="" style="margin-left: 10px;"></label>
-                <label for="" id="organization_contact">Enter new contact info<input type="text" name=""  style="margin-left: 10px;"></label>
-                <div class="update_password" id="update_password_organization">
-                    <label for="" id="organization_old_password">Enter old Password<input type="text" name=""  style="margin-left: 10px;"></label>
-                    <label for="" id="organization_new_password">Enter new Password<input type="text" name=""  style="margin-left: 4px;"></label>
-                    <p id="error2" style="margin-bottom: 5px;"></p>
-                </div>
-                <label for="" id="organization_area">Enter new area<input type="text" name=""  style="margin-left: 10px;"></label>
-                <label for="" id="organization_address">Enter new address<input type="text" name="" style="margin-left: 10px;"></label>
-                <label for="" id="organization_governorate">Enter new governorate<input type="text" name=""  style="margin-left: 10px;"></label>
-            </div>
-            <button onclick="update()">Update</button>
-        </div>
-
-        <div id="confirmation-form" class="card invisible">
-            <div class="details" id="details_for_password">
-                <h1>
-                    Password Change
-                </h1>
-                <hr>
+            <h1>Organization Info</h1>
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td>Mohamad</td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>Rageh</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>rageh205@gmail.com <i class="fa-solid fa-pen-to-square icon" id="update_email_org"></i></td>
+                </tr>
+                <tr>
+                    <td>Contact Info</td>
+                    <td>01097806990 <i class="fa-solid fa-pen-to-square icon" id="update_contact_org"></i></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>123-ask-admin <i class="fa-solid fa-pen-to-square icon" id="update_password_org"></i></td>
+                </tr>
+                <tr>
+                    <td>Organization Area</td>
+                    <td>New Cairo <i class="fa-solid fa-pen-to-square icon" id="update_area_org"></i></td>
+                </tr>
+                <tr>
+                    <td>Organization Address</td>
+                    <td>Fifth Settlement <i class="fa-solid fa-pen-to-square icon" id="update_address_org"></i></td>
+                </tr>
+                <tr>
+                    <td>Organization Governorate</td>
+                    <td>Cairo <i class="fa-solid fa-pen-to-square icon" id="update_governorate_org"></i></td>
+                </tr>
+                <tr>
+                    <td>Organization Name</td>
+                    <td>DUMMY</td>
+                </tr>
+                <tr>
+                    <td>Organization Type</td>
+                    <td>Production</td>
+                </tr>
+                </table>
                 <div class="update_password">
-                    <label for="">Enter old Password<input type="text" name="" id="admin_old_password" style="margin-left: 10px;"></label>
-                    <label for="">Enter new Password<input type="text" name="" id="admin_new_password" style="margin-left: 4px;"></label>
-                    <p id="error"></p>
+                    <label for="" id="organization_email">Enter new Email<input type="text" name="" style="margin-left: 10px;"></label>
+                    <label for="" id="organization_contact">Enter new contact info<input type="text" name=""  style="margin-left: 10px;"></label>
+                    <div class="update_password" id="update_password_organization">
+                        <label for="" id="organization_old_password">Enter old Password<input type="text" name=""  style="margin-left: 10px;"></label>
+                        <label for="" id="organization_new_password">Enter new Password<input type="text" name=""  style="margin-left: 4px;"></label>
+                        <p id="error2" style="margin-bottom: 5px;"></p>
+                    </div>
+                    <label for="" id="organization_area">Enter new area<input type="text" name=""  style="margin-left: 10px;"></label>
+                    <label for="" id="organization_address">Enter new address<input type="text" name="" style="margin-left: 10px;"></label>
+                    <label for="" id="organization_governorate">Enter new governorate<input type="text" name=""  style="margin-left: 10px;"></label>
                 </div>
-            </div>
-
-            <div class="details" id="details_for_view">
-                <h1>
-                    View Details
-                </h1>
-                <hr>
-                <div class="view">
-
-                </div>
-            </div>
-
-            <div class="details" id="">
-
-            </div>
-
-            <div class="change_back">
-                <button class="cancelButton" onclick="hideForm()">Go back</button>
-                <button class="cancelButton" onclick="">Change</button>
-            </div>
+            <button onclick="update()">Update Info</button>
         </div>
     </div>
 

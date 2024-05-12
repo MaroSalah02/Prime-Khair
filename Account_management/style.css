@@ -6,15 +6,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
 }
-#background-image-container {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-    z-index: -1;
-    position: fixed;
-    width: 100%;
-    height: 100%;
+body{
+    background-color: #aaaaaa;
 }
 h1 {
     font-size: 23px;
@@ -37,25 +30,14 @@ h1 {
     background-color: #ddd;
     box-shadow: 0 14px 14px rgba(0, 0, 0, 0.9);
     border-radius: 20px;
-    padding: 3%;
+    padding: 20px;
     text-align: center;
     transform: scale3d(0.8, 0.8);
-    margin-bottom: 6%;
     min-height: 200px;
 }
 .card label {
     font-weight: bold;
     margin-bottom: 10px;
-}
-.card select {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #f1f7ed;
-    margin-bottom: 10px;
-    margin-top: 10px;
 }
 .details {
     display: flex;
@@ -66,12 +48,13 @@ h1 {
 .card button {
     color: black;
     background-color: #c2a83e;
-    width: 20%;
+    width: fit-content;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
     transition: 0.3s ease-in-out;
 }
 .card button:hover {
@@ -80,47 +63,14 @@ h1 {
 #page {
     margin-left: 3%;
     width: 97%;
-    margin-top: 10.7vh;
+    margin-top: 18px;
     padding-top: 6.5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: transparent;
 }
-.card div button {
-    color: black;
-    background-color: #c2a83e;
-    width: 20%;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: auto;
-    margin-right: auto;
-    transition: 0.3s ease-in-out;
-}
-.card div button:hover {
-    scale: 1.1;
-}
-.invisible {
-    visibility: hidden;
-    max-height: 0px;
-    margin: 0px;
-    max-width: 0%;
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-    position: absolute;
-    z-index: -1;
-}
-.invisible > * {
-    visibility: hidden;
-    max-height: 0px;
-    margin: 0px;
-    max-width: 0%;
-    margin: 0px;
-    padding: 0px;
-}
-.details .horizontalFlex .horizontalFlex > * {
+.details{
     width: 45%;
     flex-shrink: 0;
     margin-bottom: 0%;
@@ -129,7 +79,8 @@ h1 {
 .update_password {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
 }
 .update_password input {
     height: 35px;
@@ -139,4 +90,34 @@ h1 {
     padding-left: 15px;
     color: black;
     font-weight: bold;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    position: relative;
+    min-width: 150px;
+    border: 4px solid #ccc; /* Example border */
+}
+.icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+th {
+    background-color: #f2f2f2;
+    padding: 8px;
+}
+.donor_org_info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.account {
+    padding: 10px;
 }

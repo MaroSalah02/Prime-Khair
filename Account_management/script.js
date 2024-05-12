@@ -9,12 +9,13 @@ function check_user_type(userType){
         admin_card.style.display = "flex";
         donor_card.style.display = "none";
         organization_card.style.display = "none";
+        hide_all(admin_password,donor_org_info);
     } else if(userType === "donor"){
         type_of_user.textContent = "Donor";
         admin_card.style.display = "none";
         donor_card.style.display = "flex";
         organization_card.style.display = "none";
-        hide_all(donor_email,donor_contact,donor_area,donor_address,donor_governorate,update_password_donor);
+        hide_all(donor_email,donor_contact,donor_area,donor_address,donor_governorate,donor_password);
     }
     else {
         type_of_user.textContent = "Organization";
@@ -35,98 +36,106 @@ function getQueryVariable(variable) {
     }
     return null;
 }
-const operationSelect_admin = document.getElementById('operation_admin');
-operationSelect_admin.addEventListener('change',function(){
-    const details_for_view = document.getElementById('details_for_view');
-    const details_for_password = document.getElementById('details_for_password');
-    details_for_view.style.display = 'flex';
-    details_for_password.style.display = 'flex';
-    var form = document.getElementById("confirmation-form");
-    form.classList.remove("invisible");
-    const operationSelect = document.getElementById('operation_admin');
-    const selectedValue = operationSelect_admin.value; // Value of the selected option
-    if(selectedValue === 'update'){
-        details_for_view.style.display = 'none';
+
+const edit_icons = document.getElementsByClassName('fa-solid fa-pen-to-square icon');
+for (let i = 0; i < edit_icons.length; i++) {
+    if(userType === 'admin'){
+        const admin_password = document.getElementById("admin_password");
+        if (edit_icons[i].id === 'update_password_admin') {
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(admin_password);
+            });
+        }
     }
-    else {
-        details_for_password.style.display = 'none';
+    else if (userType === 'donor') {
+        const donor_email = document.getElementById("donor_email");
+        const donor_contact = document.getElementById("donor_contact");
+        const donor_password = document.getElementById("donor_password");
+        const donor_area = document.getElementById("donor_area");
+        const donor_address = document.getElementById("donor_address");
+        const donor_governorate = document.getElementById("donor_governorate");
+        
+        if (edit_icons[i].id === 'update_email_donor') {
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(donor_email,donor_contact,donor_area,donor_address,donor_governorate,donor_password);
+            });
+        } else if (edit_icons[i].id === 'update_contact_donor') {
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(donor_contact,donor_email,donor_area,donor_address,donor_governorate,donor_password);
+            });
+        } else if (edit_icons[i].id === 'update_password_donor') {
+            const donor_old_password = document.getElementById("donor_old_password");
+            const donor_new_password = document.getElementById("donor_new_password");
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(donor_password,donor_email,donor_contact,donor_area,donor_address,donor_governorate);
+            });
+            // Add your validation logic here
+        } else if (edit_icons[i].id === 'update_area_donor') {
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(donor_area,donor_email,donor_contact,donor_address,donor_governorate,donor_password);
+            });
+        } else if (edit_icons[i].id === 'update_address_donor') {
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(donor_address,donor_email,donor_contact,donor_area,donor_governorate,donor_password);
+            });
+        } else {
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(donor_governorate,donor_email,donor_contact,donor_area,donor_address,donor_password);
+            });
+        }
+
+    } else {
+        const organization_email = document.getElementById("organization_email");
+        const organization_contact = document.getElementById("organization_contact");
+        const update_password_organization = document.getElementById("update_password_organization");
+        const organization_area = document.getElementById("organization_area");
+        const organization_address = document.getElementById("organization_address");
+        const organization_governorate = document.getElementById("organization_governorate");
+
+        if (edit_icons[i].id === 'update_email_org') {
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(organization_email, organization_contact, organization_area, organization_address, organization_governorate, update_password_organization);
+            });
+        } else if (edit_icons[i].id === 'update_contact_org') {
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(organization_contact, organization_email, organization_area, organization_address, organization_governorate, update_password_organization);
+            });
+        } else if (edit_icons[i].id === 'update_password_org') {
+            const organization_old_password = document.getElementById("organization_old_password");
+            const organization_new_password = document.getElementById("organization_new_password");
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(update_password_organization, organization_email, organization_contact, organization_area, organization_address, organization_governorate);
+            });
+            // Add your validation logic here
+        } else if (edit_icons[i].id === 'update_area_org') {
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(organization_area, organization_email, organization_contact, organization_address, organization_governorate, update_password_organization);
+            });
+        } else if (edit_icons[i].id === 'update_address_org') {
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(organization_address, organization_email, organization_contact, organization_area, organization_governorate, update_password_organization);
+            });
+        } else {
+            edit_icons[i].addEventListener('click', function() {
+                display_hide(organization_governorate, organization_email, organization_contact, organization_area, organization_address, update_password_organization);
+            });
+        }
     }
-    const scrollPosition =
-    (document.documentElement.scrollHeight - window.innerHeight) * 0.7;
-    window.scrollTo({
-        top: scrollPosition,
-        behavior: "smooth",
-    });
+}
+const icon_table1 = document.getElementById('icon_table1');
+icon_table1.addEventListener('click',function(){
+    const table1 = document.getElementById('table1');
+    table1.style.display = 'none';
 });
-
-const operationSelect_donor = document.getElementById('operation_donor');
-operationSelect_donor.addEventListener('change',function(){
-    const selectedValue = operationSelect_donor.value;
-
-    const donor_email = document.getElementById("donor_email");
-    const donor_contact = document.getElementById("donor_contact");
-    const donor_old_password = document.getElementById("donor_old_password");
-    const donor_new_password = document.getElementById("donor_new_password");
-    const update_password_donor = document.getElementById("update_password_donor");
-    const donor_area = document.getElementById("donor_area");
-    const donor_address = document.getElementById("donor_address");
-    const donor_governorate = document.getElementById("donor_governorate");
-
-    if(selectedValue === 'update_email'){
-        display_hide(donor_email,donor_contact,donor_area,donor_address,donor_governorate,update_password_donor);
-    }
-    else if(selectedValue === 'update_contact'){
-        display_hide(donor_contact,donor_email,donor_area,donor_address,donor_governorate,update_password_donor);
-    }
-    else if(selectedValue === 'update_password'){
-        display_hide(update_password_donor,donor_email,donor_contact,donor_area,donor_address,donor_governorate);
-        // some validations here 
-    }
-    else if(selectedValue === 'update_area'){
-        display_hide(donor_area,donor_email,donor_contact,donor_address,donor_governorate,update_password_donor);
-    }
-    else if(selectedValue === 'update_address'){
-        display_hide(donor_address,donor_email,donor_contact,donor_area,donor_governorate,update_password_donor);
-    }
-    else {
-        display_hide(donor_governorate,donor_email,donor_contact,donor_area,donor_address,update_password_donor);
-    }
+const icon_table2 = document.getElementById('icon_table2');
+icon_table2.addEventListener('click',function(){
+    const table2 = document.getElementById('table2');
+    table2.style.display = 'none';
 });
-
-const operationSelect_organization = document.getElementById('operation_organization');
-operationSelect_organization.addEventListener('change',function(){
-    const selectedValue = operationSelect_organization.value;
-
-    const organization_email = document.getElementById("organization_email");
-    const organization_contact = document.getElementById("organization_contact");
-    const organization_old_password = document.getElementById("organization_old_password");
-    const organization_new_password = document.getElementById("organization_new_password");
-    const update_password_organization = document.getElementById("update_password_organization");
-    const organization_area = document.getElementById("organization_area");
-    const organization_address = document.getElementById("organization_address");
-    const organization_governorate = document.getElementById("organization_governorate");
-
-    if(selectedValue === 'update_email'){
-        display_hide(organization_email,organization_contact,organization_area,organization_address,organization_governorate,update_password_organization);
-    }
-    else if(selectedValue === 'update_contact'){
-        display_hide(organization_contact,organization_email,organization_area,organization_address,organization_governorate,update_password_organization);
-    }
-    else if(selectedValue === 'update_password'){
-        display_hide(update_password_organization,organization_email,organization_contact,organization_area,organization_address,organization_governorate);
-        // some validations here 
-    }
-    else if(selectedValue === 'update_area'){
-        display_hide(organization_area,organization_email,organization_contact,organization_address,organization_governorate,update_password_organization);
-    }
-    else if(selectedValue === 'update_address'){
-        display_hide(organization_address,organization_email,organization_contact,organization_area,organization_governorate,update_password_organization);
-    }
-    else {
-        display_hide(organization_governorate,organization_email,organization_contact,organization_area,organization_address,update_password_organization);
-    }
-});
-
+function show_org_donor(){
+    const donor_org_info = document.getElementById('donor_org_info');
+    donor_org_info.style.display = 'flex';
+}
 function update(){
 
 }
@@ -134,11 +143,11 @@ function display_hide(element_to_show,...args){
     for(let element of args){
         element.style.display = 'none';
     }
-    if(element_to_show === update_password_donor || element_to_show === update_password_organization ){
+    if(element_to_show === update_password_donor || element_to_show === donor_password || admin_password ){
         element_to_show.style.display = 'flex';
     }
     else {
-        element_to_show.style.display = 'block';
+        element_to_show.style.display = 'flex';
     }
 }
 function hide_all(...args){
@@ -146,20 +155,4 @@ function hide_all(...args){
         element.style.display = 'none';
     }
 }
-async function hideForm() {
-    var form = document.getElementById("confirmation-form");
-    const scrollPosition =
-    (document.documentElement.scrollHeight - window.innerHeight) * 0;
-    
-window.scrollTo({
-    top: scrollPosition,
-    behavior: "smooth",
-});
-
-await new Promise((r) => setTimeout(r, 500));
-    form.classList.add("invisible");
-}
-function goBack() {
-    window.location.href = "/Donor/donor.html";
-}
-check_user_type(userType)
+check_user_type(userType);
