@@ -117,7 +117,7 @@
               Hospital Name:<span
                 id="HospitalName"
                 style="margin-left: 5px; font-weight: bold"
-                >Maadi Community Hospital</span
+                >Maadi Military Hospital</span
               >
             </h3>
           </div>
@@ -211,7 +211,34 @@
       async
       defer
     ></script>
-    <script src="/Scripts/map.js"></script>
+    <script>
+      function initMap() {
+        const center = { lat: 29.968393755595493, lng: 31.241426467895508 };
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 12,
+          center: center,
+        });
+
+        const marker = new google.maps.Marker({
+          position: center,
+          map: map,
+          title: "Marker Title",
+        });
+
+        function updateMap(markerPosition) {
+          map.setCenter(markerPosition);
+          console.log("Map Updated: Lat:", markerPosition.lat(), "Lng:", markerPosition.lng());
+        }
+
+        google.maps.event.addListener(map, "click", function (event) {
+          const newMarkerPosition = event.latLng;
+          marker.setPosition(newMarkerPosition);
+          updateMap(newMarkerPosition);
+        });
+      }
+
+    </script>
     <script src="/Scripts/fulfulForm.js"></script>
   </body>
 </html>
