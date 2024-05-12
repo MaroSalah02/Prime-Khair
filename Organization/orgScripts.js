@@ -127,3 +127,11 @@ form.addEventListener('submit', (e) => {
     // Add your form submission logic here
     alert('Form submitted!');
 });
+
+function createNotificationFromDonor(){
+    var card = document.getElementById("Notification");
+    
+    var h5Element = document.createElement("h5");
+    h5Element.textContent = "A donor has fulfilled your B+ donation for patient Ahmed Hassan";
+    card.appendChild(h5Element);
+}
