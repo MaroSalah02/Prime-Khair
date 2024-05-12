@@ -78,7 +78,7 @@
     
     <div class="searchengine">
       <input id="searchbar" oninput="filter()" placeholder="Search...." style="" />
-      <select id="typeSelector">
+      <select id="typeSelector" onchange="filterSelection()">
         <option value="Category" hidden>Category</option>
         <option value="All">All</option>
         <option value="Clothes">Clothes</option>
